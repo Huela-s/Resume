@@ -1,23 +1,14 @@
 /* =============================================================
-   STYLE.CSS — Huela Sravya Portfolio (v5 — Vibrant & Refined)
-   Warm Beige · EB Garamond · Glassmorphism · Scroll Animations
-   =============================================================
-   CHANGES v5:
-    1. Font sizes increased subtly throughout
-    2. Skills: progress bars + hover overlay removed; clean cards
-    3. Design enhanced: dividers, gradients, textures, decorative
-    4. Scroll animations: fade-in + upward motion, slow & premium
-    5. Glassmorphism: navbar + cards get backdrop-filter blur
-    6. Vibrant accents: muted gold, dusty rose, soft warm tones
-    7. Alignment & spacing polished after font size increase
+   STYLE.CSS — Huela Sravya Portfolio (v6 — Warm & Vibrant)
+   Warm Beige · EB Garamond · Red · Orange · Amber · Terracotta
    ============================================================= */
 
 
 /* =============================================================
-   1. CSS VARIABLES — Enhanced palette with vibrant accents
+   1. CSS VARIABLES
    ============================================================= */
 :root {
-  /* Base beige palette */
+  /* ── Base beige palette (unchanged) ── */
   --bg:             #faf6f0;
   --bg-alt:         #f5ede0;
   --bg-warm:        #f0e6d2;
@@ -27,37 +18,63 @@
   --border-light:   #ece4d6;
   --border-faint:   #f3ece2;
 
-  /* Primary: warm brown */
+  /* ── Primary: warm brown (unchanged) ── */
   --primary:        #8b6543;
   --primary-light:  #b08a66;
   --primary-pale:   #f0e4d4;
-  --primary-glow:   rgba(139,101,67,0.16);
+  --primary-glow:   rgba(139,101,67,0.18);
 
-  /* Accent: dusty taupe */
+  /* ── Accent: dusty taupe (unchanged) ── */
   --accent:         #a08070;
   --accent-light:   #d4c0b0;
-  --accent-cool:    #9aab98;
 
-  /* NEW vibrant accents — subtle, warm, complementary */
-  --gold:           #c8973a;       /* muted antique gold */
-  --gold-pale:      #f7edda;       /* pale gold wash */
-  --gold-glow:      rgba(200,151,58,0.18);
-  --rose:           #b07878;       /* dusty rose */
-  --rose-pale:      #f5e8e8;       /* rose wash */
-  --sage:           #7a9688;       /* muted sage green */
-  --sage-pale:      #e8f0ec;       /* sage wash */
-  --terracotta:     #c27a5a;       /* warm terracotta */
+  /* ══════════════════════════════════════════════════════════
+     VIBRANT WARM PALETTE — red · orange · amber · terracotta
+     ══════════════════════════════════════════════════════════ */
 
-  /* Text */
+  /* Amber / golden yellow — primary vibrant accent */
+  --amber:          #c8850a;        /* rich warm amber                  */
+  --amber-bright:   #e09a18;        /* brighter amber for hover         */
+  --amber-pale:     #fdf0d5;        /* pale amber wash                  */
+  --amber-mid:      #f5dfa0;        /* medium amber for borders         */
+  --amber-glow:     rgba(200,133,10,0.22);
+
+  /* Terracotta / burnt orange */
+  --terra:          #c0602a;        /* warm terracotta                  */
+  --terra-bright:   #d97038;        /* brighter terracotta hover        */
+  --terra-pale:     #fce8da;        /* pale terracotta wash             */
+  --terra-mid:      #f0c0a0;        /* medium terracotta border         */
+  --terra-glow:     rgba(192,96,42,0.22);
+
+  /* Warm red / crimson */
+  --red:            #b84030;        /* muted warm red                   */
+  --red-bright:     #cc5040;        /* brighter red hover               */
+  --red-pale:       #fce8e5;        /* pale red wash                    */
+  --red-mid:        #f0b0a8;        /* medium red border                */
+  --red-glow:       rgba(184,64,48,0.20);
+
+  /* Ember / deep orange (between amber and terra) */
+  --ember:          #c85020;        /* deep burnt orange                */
+  --ember-bright:   #e06030;        /* brighter ember hover             */
+  --ember-pale:     #fde8dc;        /* pale ember wash                  */
+  --ember-mid:      #f0b898;        /* medium ember border              */
+  --ember-glow:     rgba(200,80,32,0.22);
+
+  /* Gold (retained from v5 but shifted warmer) */
+  --gold:           #c8870e;        /* antique gold (amber-shifted)     */
+  --gold-pale:      #fdf0d5;        /* same as amber-pale               */
+  --gold-glow:      rgba(200,135,14,0.20);
+
+  /* Text (unchanged) */
   --text:           #3d2e1e;
-  --text-muted:     #7a6858;       /* slightly warmer muted text */
+  --text-muted:     #7a6858;
   --heading:        #2a1e10;
 
-  /* Fonts */
+  /* Fonts (unchanged) */
   --fh: 'EB Garamond','Garamond','Times New Roman',serif;
   --fb: 'Cormorant Garamond','EB Garamond',Georgia,serif;
 
-  /* ENHANCED spacing for larger font */
+  /* Spacing (unchanged) */
   --xs:   0.55rem;
   --sm:   1.2rem;
   --md:   1.9rem;
@@ -65,23 +82,25 @@
   --xl:   5.2rem;
   --2xl:  8.5rem;
 
-  /* Radii */
+  /* Radii (unchanged) */
   --r-sm: 5px;
   --r-md: 12px;
   --r-lg: 22px;
 
-  /* Shadows */
-  --sh-soft:  0 2px 20px rgba(139,101,67,0.08);
-  --sh-card:  0 6px 36px rgba(139,101,67,0.12);
-  --sh-hover: 0 16px 52px rgba(139,101,67,0.21);
-  --sh-glow:  0 0 36px  rgba(139,101,67,0.18);
-  --sh-gold:  0 6px 28px rgba(200,151,58,0.18);
+  /* Shadows — warmed up */
+  --sh-soft:   0 2px 20px rgba(139,101,67,0.09);
+  --sh-card:   0 6px 36px rgba(139,101,67,0.13);
+  --sh-hover:  0 16px 52px rgba(192,96,42,0.22);
+  --sh-glow:   0 0 40px  rgba(200,133,10,0.25);
+  --sh-amber:  0 6px 28px rgba(200,133,10,0.28);
+  --sh-terra:  0 6px 28px rgba(192,96,42,0.28);
+  --sh-red:    0 6px 28px rgba(184,64,48,0.25);
 
-  /* Transitions */
+  /* Transitions (unchanged) */
   --t:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
   --ts: 0.60s cubic-bezier(0.25,0.46,0.45,0.94);
 
-  /* GLASSMORPHISM values */
+  /* Glassmorphism (unchanged) */
   --glass-bg:     rgba(253,249,244,0.72);
   --glass-border: rgba(221,208,187,0.55);
   --glass-blur:   blur(18px);
@@ -101,13 +120,12 @@ html {
   cursor: none;
 }
 
-/* CHANGE 1: base font size increased */
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--fb);
-  font-size: 1.12rem;          /* ↑ from 1.05rem */
-  line-height: 1.88;           /* adjusted for new size */
+  font-size: 1.12rem;
+  line-height: 1.88;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   cursor: none;
@@ -118,7 +136,7 @@ img { display: block; }
 a   { text-decoration: none; color: inherit; }
 a, button { cursor: none; }
 
-/* Parchment texture — slightly warmer */
+/* Parchment texture */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -129,18 +147,18 @@ body::before {
   );
 }
 
-/* CHANGE 3: richer diagonal pattern */
+/* Diagonal pattern — amber-shifted */
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   background-image:
     repeating-linear-gradient(
-      45deg, rgba(200,151,58,0.022) 0, rgba(200,151,58,0.022) 1px,
+      45deg, rgba(200,133,10,0.025) 0, rgba(200,133,10,0.025) 1px,
       transparent 0, transparent 50%
     ),
     repeating-linear-gradient(
-      -45deg, rgba(139,101,67,0.014) 0, rgba(139,101,67,0.014) 1px,
+      -45deg, rgba(192,96,42,0.018) 0, rgba(192,96,42,0.018) 1px,
       transparent 0, transparent 50%
     );
   background-size: 20px 20px;
@@ -148,12 +166,12 @@ body::after {
 
 
 /* =============================================================
-   3. CUSTOM CURSOR
+   3. CUSTOM CURSOR — terracotta dot, amber halo
    ============================================================= */
 #cursor-dot {
   position: fixed; top: 0; left: 0;
-  width: 8px; height: 8px;
-  background: var(--gold);        /* gold accent on dot */
+  width: 9px; height: 9px;
+  background: var(--terra);
   border-radius: 50%;
   pointer-events: none; z-index: 9999;
   transform: translate(-50%,-50%);
@@ -164,8 +182,8 @@ body::after {
 #cursor-halo {
   position: fixed; top: 0; left: 0;
   width: 38px; height: 38px;
-  border: 1.2px solid rgba(200,151,58,0.35);  /* gold halo ring */
-  background: rgba(247,237,218,0.08);
+  border: 1.5px solid rgba(200,133,10,0.40);
+  background: rgba(253,240,213,0.10);
   border-radius: 50%;
   pointer-events: none; z-index: 9998;
   transform: translate(-50%,-50%);
@@ -174,14 +192,14 @@ body::after {
 }
 
 #cursor-halo.halo-hover {
-  width: 56px; height: 56px;
-  background: rgba(247,237,218,0.20);
-  border-color: rgba(200,151,58,0.55);
+  width: 58px; height: 58px;
+  background: rgba(253,240,213,0.22);
+  border-color: rgba(192,96,42,0.60);
 }
 
 
 /* =============================================================
-   4. SCROLL-REVEAL ANIMATIONS — slow, soft, premium
+   4. SCROLL-REVEAL ANIMATIONS (unchanged)
    ============================================================= */
 .reveal-up, .reveal-left, .reveal-right {
   opacity: 0;
@@ -214,46 +232,40 @@ h1,h2,h3,h4 {
   line-height: 1.18; font-weight: 600;
 }
 
-/* CHANGE 1: section-label slightly larger */
+/* Section label — amber */
 .section-label {
   font-family: var(--fh);
-  font-size: 0.76rem;            /* ↑ from 0.70rem */
-  font-weight: 500;
+  font-size: 0.76rem; font-weight: 500;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold);            /* CHANGE 6: gold accent on labels */
+  color: var(--amber);
   display: block; margin-bottom: 0.65rem;
 }
 
-/* CHANGE 1: section-heading larger */
 .section-heading {
-  font-size: clamp(2.1rem,4.2vw,3rem);  /* ↑ from clamp(2rem,4vw,2.8rem) */
-  margin-bottom: 0.45rem;
-  font-weight: 700;
+  font-size: clamp(2.1rem,4.2vw,3rem);
+  margin-bottom: 0.45rem; font-weight: 700;
 }
 
 .centered { text-align: center; }
 
 .section-inner {
   position: relative; z-index: 1;
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: 1080px; margin: 0 auto;
   padding: var(--2xl) var(--md);
 }
 
-/* CHANGE 9: varied section backgrounds for depth */
 .section-cream { background: var(--bg-alt); }
 .section-warm  { background: var(--bg-warm); }
 
-/* CHANGE 3: dot-grid pattern, slightly warmer */
+/* Dot-grid — amber toned */
 .section-pattern {
   position: absolute; inset: 0;
   pointer-events: none; z-index: 0;
-  background-image:
-    radial-gradient(circle, rgba(200,151,58,0.07) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(200,133,10,0.08) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* CHANGE 3: clean ruled top edge for each section */
+/* Section top edge separator — amber-to-terracotta gradient */
 #about, #skills, #experience, #achievements, #education, #contact {
   position: relative;
 }
@@ -261,14 +273,13 @@ h1,h2,h3,h4 {
 #about::before, #skills::before, #experience::before,
 #achievements::before, #education::before, #contact::before {
   content: '';
-  display: block;
-  height: 1px;
+  display: block; height: 1px;
   background: linear-gradient(
     to right,
     transparent 3%,
-    rgba(200,151,58,0.18) 25%,
-    rgba(221,208,187,0.7) 50%,
-    rgba(200,151,58,0.18) 75%,
+    rgba(200,133,10,0.25) 20%,
+    rgba(192,96,42,0.40) 50%,
+    rgba(200,133,10,0.25) 80%,
     transparent 97%
   );
   position: absolute; top: 0; left: 0; right: 0; z-index: 2;
@@ -282,26 +293,26 @@ h1,h2,h3,h4 {
    ============================================================= */
 .ornamental-divider {
   display: flex; align-items: center; gap: var(--sm);
-  justify-content: center;
-  margin-bottom: var(--lg);
-  margin-top: var(--xs);
+  justify-content: center; margin-bottom: var(--lg); margin-top: var(--xs);
 }
 
+/* Orn line: amber to terracotta gradient */
 .orn-line {
   display: block; width: 100px; height: 1px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(200,151,58,0.35) 40%,
-    rgba(221,208,187,0.8) 60%,
+    rgba(200,133,10,0.50) 30%,
+    rgba(192,96,42,0.70) 60%,
     transparent
   );
 }
 
+/* Orn motif: amber */
 .orn-motif {
-  font-family: var(--fh); font-size: 1.25rem;
-  color: var(--gold);
-  opacity: 0.55; line-height: 1; padding: 0 0.3rem;
+  font-family: var(--fh); font-size: 1.3rem;
+  color: var(--terra); opacity: 0.70;
+  line-height: 1; padding: 0 0.3rem;
 }
 
 .hero-rule, .footer-rule {
@@ -311,32 +322,33 @@ h1,h2,h3,h4 {
 
 .bottom-rule { margin-top: var(--lg); margin-bottom: 0; }
 
+/* Rule line — amber gradient */
 .rule-line {
   display: block; width: 88px; height: 1px;
   background: linear-gradient(
-    to right, transparent, var(--border-light) 40%, var(--border) 60%, transparent
+    to right, transparent, rgba(200,133,10,0.45) 40%, rgba(192,96,42,0.55) 60%, transparent
   );
 }
 
+/* Rule diamond — terracotta */
 .rule-diamond {
-  font-size: 0.58rem; color: var(--gold);
+  font-size: 0.58rem; color: var(--terra);
   letter-spacing: 0.1em; padding: 0 0.25rem;
 }
 
 
 /* =============================================================
-   7. BUTTONS — clean, no crack
+   7. BUTTONS — amber primary, terracotta outline
    ============================================================= */
 .btn {
   display: inline-block;
   padding: 0.85rem 2.5rem;
   border-radius: var(--r-sm);
   font-family: var(--fh);
-  font-size: 0.90rem;            /* CHANGE 1: slightly larger */
-  font-weight: 500;
+  font-size: 0.90rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   cursor: none;
-  border: 1.5px solid var(--primary);
+  border: 1.5px solid var(--terra);
   outline: none;
   -webkit-font-smoothing: antialiased;
   transform: translateZ(0);
@@ -344,51 +356,59 @@ h1,h2,h3,h4 {
   -webkit-backface-visibility: hidden;
   background-clip: padding-box;
   position: relative; overflow: hidden;
-  transition: background-color var(--t), color var(--t), transform var(--t), box-shadow var(--t);
+  transition: background-color var(--t), color var(--t), transform var(--t), box-shadow var(--t), border-color var(--t);
 }
 
+/* Primary button: terracotta fill */
 .btn-primary {
-  background: var(--primary); color: #fdf9f4;
+  background: linear-gradient(135deg, var(--terra) 0%, var(--ember) 100%);
+  color: #fdf9f4;
+  border-color: var(--terra);
 }
 
 .btn-primary:hover {
-  background: transparent; color: var(--primary);
+  background: linear-gradient(135deg, var(--ember) 0%, var(--red) 100%);
+  color: #fdf9f4;
   transform: translateY(-3px) translateZ(0);
-  box-shadow: 0 8px 28px var(--primary-glow);
+  box-shadow: 0 10px 32px var(--terra-glow);
+  border-color: var(--red);
 }
 
+/* Outline button: terracotta border */
 .btn-outline {
-  background: transparent; color: var(--primary);
+  background: transparent;
+  color: var(--terra);
+  border-color: var(--terra);
 }
 
 .btn-outline:hover {
-  background: var(--primary); color: #fdf9f4;
+  background: linear-gradient(135deg, var(--terra) 0%, var(--ember) 100%);
+  color: #fdf9f4;
   transform: translateY(-3px) translateZ(0);
+  box-shadow: 0 10px 32px var(--terra-glow);
 }
 
 .btn.full-width { width: 100%; text-align: center; }
 
 
 /* =============================================================
-   8. NAVIGATION BAR — GLASSMORPHISM (CHANGE 5)
+   8. NAVIGATION BAR — glassmorphism + amber accents
    ============================================================= */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  z-index: 1000;
-  /* CHANGE 5: glassmorphism */
+  height: var(--nav-h); z-index: 1000;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(192,96,42,0.20);
   transition: box-shadow var(--t), background var(--t);
 }
 
 #navbar::before { display: none; }
 
 #navbar.scrolled {
-  background: rgba(250,246,240,0.92);
-  box-shadow: 0 3px 28px rgba(139,101,67,0.10);
+  background: rgba(250,246,240,0.94);
+  box-shadow: 0 3px 28px rgba(192,96,42,0.14);
 }
 
 .nav-inner {
@@ -397,67 +417,63 @@ h1,h2,h3,h4 {
   display: flex; align-items: center; justify-content: space-between;
 }
 
+/* Logo — terracotta */
 .nav-logo {
-  font-family: var(--fh);
-  font-size: 1.5rem; font-weight: 700;
-  color: var(--primary); letter-spacing: 0.04em;
-  font-style: italic;
+  font-family: var(--fh); font-size: 1.5rem; font-weight: 700;
+  color: var(--terra); letter-spacing: 0.04em; font-style: italic;
   transition: opacity var(--t);
   display: flex; align-items: baseline; gap: 0.3rem;
 }
 
-.nav-logo:hover { opacity: 0.68; }
+.nav-logo:hover { opacity: 0.72; }
 
+/* Heart — warm red */
 .logo-heart {
   font-style: normal; font-weight: 400;
-  font-size: 1rem; color: var(--rose);  /* CHANGE 6: rose accent */
+  font-size: 1rem; color: var(--red);
   margin-left: 0.15rem;
 }
 
 .nav-links { display: flex; align-items: center; gap: 2.1rem; }
 
 .nav-links a {
-  font-family: var(--fh);
-  font-size: 0.79rem;            /* CHANGE 1: slightly larger */
-  font-weight: 500;
+  font-family: var(--fh); font-size: 0.79rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-muted);
-  position: relative; padding-bottom: 4px;
+  color: var(--text-muted); position: relative; padding-bottom: 4px;
   transition: color var(--t);
 }
 
+/* Nav underline — amber to terracotta */
 .nav-links a::after {
   content: '';
   position: absolute; bottom: 0; left: 0;
-  width: 0; height: 1px;
-  background: var(--gold);      /* CHANGE 6: gold underline */
+  width: 0; height: 1.5px;
+  background: linear-gradient(to right, var(--amber), var(--terra));
   transition: width var(--t);
 }
 
-.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover { color: var(--terra); }
 .nav-links a:hover::after { width: 100%; }
 
 
 /* =============================================================
-   9. HERO / PARALLAX
+   9. HERO / PARALLAX — richer warm gradient
    ============================================================= */
 #home {
-  position: relative;
-  min-height: 100vh;
-  padding-top: var(--nav-h);
+  position: relative; min-height: 100vh; padding-top: var(--nav-h);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; text-align: center;
-  /* CHANGE 3: richer gradient background */
+  /* warm amber-tinted gradient */
   background: linear-gradient(
     160deg,
-    #fdf9f3 0%,
-    #f7ead5 35%,
-    #f0dfc0 65%,
-    #e8d4ad 100%
+    #fdf9f2 0%,
+    #f9e8c8 30%,
+    #f2d9a8 60%,
+    #e8c88a 100%
   );
 }
 
-/* Parallax layers */
+/* Parallax mountain layers — warmed with terracotta tones */
 .parallax-layer {
   position: absolute; bottom: 0; left: 0; right: 0;
   pointer-events: none; will-change: transform;
@@ -465,7 +481,7 @@ h1,h2,h3,h4 {
 
 .layer-back {
   height: 46%;
-  background: linear-gradient(180deg, transparent 0%, rgba(200,178,148,0.22) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(192,96,42,0.18) 100%);
   clip-path: polygon(
     0% 100%, 0% 70%, 6% 48%, 12% 62%, 18% 34%, 26% 55%, 33% 22%,
     40% 48%, 47% 18%, 54% 44%, 60% 28%, 67% 52%, 74% 15%,
@@ -475,7 +491,7 @@ h1,h2,h3,h4 {
 
 .layer-mid {
   height: 34%;
-  background: linear-gradient(180deg, transparent 0%, rgba(185,158,122,0.28) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(192,80,32,0.26) 100%);
   clip-path: polygon(
     0% 100%, 0% 60%, 8% 40%, 16% 58%, 24% 30%, 32% 52%, 40% 20%,
     50% 46%, 58% 28%, 66% 50%, 74% 24%, 82% 46%, 90% 32%, 100% 52%, 100% 100%
@@ -484,23 +500,23 @@ h1,h2,h3,h4 {
 
 .layer-front {
   height: 20%;
-  background: linear-gradient(180deg, transparent 0%, rgba(165,135,98,0.32) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(184,64,48,0.30) 100%);
   clip-path: polygon(
     0% 100%, 0% 72%, 10% 52%, 22% 68%, 34% 40%, 46% 60%,
     58% 44%, 70% 62%, 82% 46%, 92% 58%, 100% 48%, 100% 100%
   );
 }
 
-/* Botanical SVGs */
-.hero-deco { position: absolute; color: var(--primary); pointer-events: none; }
+/* Botanical SVGs — terracotta toned */
+.hero-deco { position: absolute; color: var(--terra); pointer-events: none; }
 
 .deco-tl {
-  top: -30px; left: -30px; width: 280px; opacity: 0.50;
+  top: -30px; left: -30px; width: 280px; opacity: 0.55;
   animation: decoSway 14s ease-in-out infinite alternate;
 }
 
 .deco-br {
-  bottom: -20px; right: -20px; width: 240px; opacity: 0.38;
+  bottom: -20px; right: -20px; width: 240px; opacity: 0.42;
   animation: decoSway 18s ease-in-out infinite alternate-reverse;
 }
 
@@ -509,9 +525,10 @@ h1,h2,h3,h4 {
   100% { transform: rotate(-7deg)  scale(1.05); }
 }
 
+/* Corner ornaments — amber */
 .corner-ornament {
-  position: absolute; font-size: 0.72rem;
-  color: var(--gold); opacity: 0.28; pointer-events: none;  /* CHANGE 6: gold corners */
+  position: absolute; font-size: 0.80rem;
+  color: var(--amber); opacity: 0.40; pointer-events: none;
 }
 
 .corner-tl   { top: 90px;   left: 26px;  }
@@ -519,22 +536,17 @@ h1,h2,h3,h4 {
 .corner-bl   { bottom: 44px; left: 26px; }
 .corner-br-c { bottom: 44px; right: 26px; }
 
-/* Hero text */
 .hero-content {
   position: relative; z-index: 2;
   max-width: 820px; padding: 0 var(--md);
 }
 
-/* CHANGE 1: hero eyebrow larger */
 .hero-eyebrow {
-  font-family: var(--fh);
-  font-size: 0.92rem;            /* ↑ from 0.85rem */
-  font-weight: 400; color: var(--text-muted);
-  letter-spacing: 0.24em; text-transform: uppercase;
+  font-family: var(--fh); font-size: 0.92rem; font-weight: 400;
+  color: var(--text-muted); letter-spacing: 0.24em; text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
-/* CHANGE 1: hero name slightly reduced but still impactful */
 .hero-name {
   font-size: clamp(2.9rem, 6.8vw, 5.8rem);
   font-weight: 800; color: var(--heading);
@@ -545,22 +557,20 @@ h1,h2,h3,h4 {
   font-family: var(--fh); font-style: italic;
   font-size: clamp(0.90rem,1.4vw,1.08rem);
   color: var(--text-muted); letter-spacing: 0.08em;
-  margin-bottom: 0.9rem; opacity: 0.82;
+  margin-bottom: 0.9rem; opacity: 0.85;
 }
 
-/* CHANGE 1: hero title larger */
+/* Hero title — terracotta */
 .hero-title {
   font-size: clamp(1.05rem,2.4vw,1.42rem);
   font-style: italic; font-weight: 400;
-  color: var(--primary); letter-spacing: 0.03em;
+  color: var(--terra); letter-spacing: 0.03em;
   margin-bottom: var(--md); margin-top: 0.25rem;
 }
 
-/* CHANGE 1: tagline slightly larger */
 .hero-tagline {
-  font-size: 1.0rem;             /* ↑ from 0.95rem */
-  color: var(--text-muted); letter-spacing: 0.05em;
-  line-height: 2.0; margin-bottom: var(--lg);
+  font-size: 1.0rem; color: var(--text-muted);
+  letter-spacing: 0.05em; line-height: 2.0; margin-bottom: var(--lg);
 }
 
 .hero-cta {
@@ -571,13 +581,13 @@ h1,h2,h3,h4 {
 .scroll-hint {
   position: absolute; bottom: 2.8rem; left: 50%;
   transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center;
-  z-index: 2;
+  display: flex; flex-direction: column; align-items: center; z-index: 2;
 }
 
+/* Scroll line — amber to terracotta */
 .scroll-line {
   width: 1px; height: 52px;
-  background: linear-gradient(to bottom, transparent, rgba(200,151,58,0.45));
+  background: linear-gradient(to bottom, transparent, rgba(192,96,42,0.55));
   animation: scrollPulse 2.2s ease-in-out infinite;
 }
 
@@ -595,30 +605,30 @@ h1,h2,h3,h4 {
 #about { background: var(--bg); }
 
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  display: grid; grid-template-columns: 1fr 1.5fr;
   gap: var(--xl); align-items: center;
 }
 
 .about-image-wrap { position: relative; display: flex; justify-content: center; }
 
+/* Photo frame — amber-tinted glow */
 .about-frame-outer {
   padding: 10px;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(192,96,42,0.28);
   border-radius: 50%;
-  /* CHANGE 3: richer gradient frame */
   background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-deep) 100%);
   box-shadow: var(--sh-card);
   transition: box-shadow var(--ts);
 }
 
-.about-frame-outer:hover { box-shadow: var(--sh-glow); }
+.about-frame-outer:hover {
+  box-shadow: 0 0 44px rgba(200,133,10,0.30);
+}
 
 .about-image-frame {
   width: 290px; height: 290px;
-  border-radius: 50%; overflow: hidden;
-  position: relative;
-  border: 2px solid var(--border);
+  border-radius: 50%; overflow: hidden; position: relative;
+  border: 2px solid rgba(192,96,42,0.22);
   background: var(--bg-deep);
 }
 
@@ -628,68 +638,65 @@ h1,h2,h3,h4 {
   display: block; border-radius: 50%;
 }
 
+/* ══ BADGE — vibrant warm red-to-terracotta gradient ══ */
 .about-badge {
   position: absolute; bottom: 14px; right: 6px;
-  /* CHANGE 6: gold-toned badge */
-  background: linear-gradient(135deg, var(--gold) 0%, #a8762a 100%);
+  background: linear-gradient(135deg, var(--red) 0%, var(--terra) 50%, var(--amber) 100%);
   color: #fdf9f4;
   border-radius: var(--r-md);
-  padding: 0.75rem 1rem;
+  padding: 0.80rem 1.05rem;
   text-align: center;
-  box-shadow: var(--sh-gold);
+  box-shadow: 0 6px 28px rgba(184,64,48,0.40), 0 2px 8px rgba(200,133,10,0.20);
   display: flex; flex-direction: column; align-items: center; gap: 5px;
   transition: transform var(--t), box-shadow var(--t);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-.about-badge:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(200,151,58,0.32); }
+.about-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(184,64,48,0.45), 0 4px 12px rgba(200,133,10,0.25);
+}
 
 .badge-icon-svg {
   display: flex; align-items: center; justify-content: center;
-  width: 22px; height: 22px; color: rgba(255,255,255,0.90);
+  width: 22px; height: 22px; color: rgba(255,255,255,0.95);
 }
 
 .badge-icon-svg svg { width: 100%; height: 100%; }
 
-/* CHANGE 1: badge text slightly larger */
 .badge-text {
   font-family: var(--fh); font-size: 0.70rem; font-weight: 500;
   letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5;
 }
 
-/* CHANGE 1: about text paragraphs slightly larger */
-.about-text p {
-  color: var(--text-muted); margin-bottom: var(--sm);
-  font-size: 1.02rem;           /* ↑ from 0.98rem */
-}
-
+/* About text */
+.about-text p { color: var(--text-muted); margin-bottom: var(--sm); font-size: 1.02rem; }
 .about-text strong { color: var(--heading); }
 
-/* CHANGE 3: about-facts with gold accent border */
+/* Facts box — amber-tinted */
 .about-facts {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: var(--sm);
-  margin: var(--md) 0 var(--lg);
+  gap: var(--sm); margin: var(--md) 0 var(--lg);
   padding: var(--md) var(--lg);
-  background: linear-gradient(135deg, var(--primary-pale) 0%, var(--gold-pale) 100%);
-  border: 1px solid rgba(200,151,58,0.22);
+  background: linear-gradient(135deg, var(--amber-pale) 0%, var(--terra-pale) 100%);
+  border: 1px solid rgba(192,96,42,0.25);
   border-radius: var(--r-md);
+  box-shadow: inset 0 0 0 1px rgba(200,133,10,0.08);
 }
 
 .about-facts li { display: flex; flex-direction: column; gap: 4px; }
 
-/* CHANGE 6: facts label in gold */
+/* Facts label — amber */
 .about-facts strong {
   font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
 }
 
-/* CHANGE 1: facts value slightly larger */
 .about-facts span { font-size: 0.96rem; color: var(--heading); }
 
 
 /* =============================================================
-   11. SKILLS SECTION — CHANGE 2: NO progress bars, NO hover overlay
+   11. SKILLS SECTION — clean cards, warm accents
    ============================================================= */
 #skills { background: var(--bg-alt); }
 
@@ -699,61 +706,62 @@ h1,h2,h3,h4 {
   gap: var(--md);
 }
 
-/* CHANGE 2 + CHANGE 5: glassmorphism skill cards */
+/* Skill card — glassmorphism + amber top border */
 .skill-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(192,96,42,0.18);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
   position: relative; overflow: hidden;
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-  /* CHANGE 3: thin gold top edge accent */
-  border-top: 2px solid rgba(200,151,58,0.28);
+  /* Amber top edge */
+  border-top: 2.5px solid rgba(200,133,10,0.45);
 }
 
-/* CHANGE 2: NO hover overlay pseudo-element — removed completely */
+/* Decorative warm gradient wash bottom strip */
+.skill-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--amber), var(--terra), var(--red));
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
 .skill-card::before { display: none; }
 
 .skill-card:hover {
   transform: translateY(-7px);
-  box-shadow: var(--sh-hover);
-  border-color: rgba(200,151,58,0.40);
-  border-top-color: var(--gold);
+  box-shadow: 0 16px 52px rgba(192,96,42,0.20);
+  border-color: rgba(192,96,42,0.40);
+  border-top-color: var(--terra);
 }
+
+.skill-card:hover::after { opacity: 1; }
 
 .skill-icon-wrap { margin-bottom: var(--sm); display: flex; align-items: center; }
 
-/* CHANGE 6: skill SVG in gold */
+/* Skill icon — amber/terracotta */
 .skill-svg {
   width: 28px; height: 28px;
-  color: var(--gold);
-  opacity: 0.80;
-  transition: opacity var(--t), transform var(--t);
+  color: var(--terra); opacity: 0.80;
+  transition: opacity var(--t), transform var(--t), color var(--t);
 }
 
-.skill-card:hover .skill-svg { opacity: 1; transform: scale(1.08); }
+.skill-card:hover .skill-svg { opacity: 1; transform: scale(1.10); color: var(--amber); }
 
-/* CHANGE 1: skill name larger */
-.skill-name {
-  font-size: 1.15rem;            /* ↑ from 1.1rem */
-  margin-bottom: 0.6rem;
-}
+.skill-name { font-size: 1.15rem; margin-bottom: 0.6rem; }
 
-/* CHANGE 1: skill desc larger; CHANGE 2: no bottom margin needed (no bar) */
-.skill-desc {
-  font-size: 0.92rem;            /* ↑ from 0.86rem */
-  color: var(--text-muted); line-height: 1.75;
-}
+.skill-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
 
-/* CHANGE 2: hide any remnant progress elements */
+/* Hide any progress remnants */
 .progress-wrap, .progress-bar, .progress-fill, .progress-pct { display: none !important; }
 
 
 /* =============================================================
-   12. EXPERIENCE SECTION
+   12. EXPERIENCE SECTION — warm palette, NO blue tones
    ============================================================= */
 #experience { background: var(--bg); }
 
@@ -763,99 +771,150 @@ h1,h2,h3,h4 {
   gap: var(--lg);
 }
 
-/* CHANGE 5: glassmorphism experience cards */
+/* Experience card base */
 .exp-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(192,96,42,0.18);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-card);
-  overflow: hidden;
-  display: flex; flex-direction: column;
+  overflow: hidden; display: flex; flex-direction: column;
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
 }
 
 .exp-card:hover {
   transform: translateY(-9px);
-  box-shadow: var(--sh-hover);
-  border-color: rgba(200,151,58,0.35);
+  box-shadow: 0 20px 56px rgba(192,96,42,0.24);
+  border-color: rgba(192,96,42,0.38);
 }
 
-/* CHANGE 6: accent bars use vibrant tones */
-.exp-card-accent { height: 4px; width: 100%; }
-.accent-warm { background: linear-gradient(90deg, var(--gold) 0%, var(--terracotta) 100%); }
-.accent-cool { background: linear-gradient(90deg, var(--sage) 0%, #b8c8b2 100%); }
+/* ── Accent top bars — both fully warm, NO blue ── */
+.exp-card-accent { height: 5px; width: 100%; }
+
+/* Card 1 (Badminton Coach): amber → terracotta */
+.accent-warm {
+  background: linear-gradient(90deg, var(--amber) 0%, var(--terra) 60%, var(--ember) 100%);
+}
+
+/* Card 2 (Sid's Farm): ember → red — fully warm, replaces old blue/sage */
+.accent-ember {
+  background: linear-gradient(90deg, var(--ember) 0%, var(--terra) 40%, var(--red) 100%);
+}
 
 .exp-card-body { padding: var(--lg); flex: 1; display: flex; flex-direction: column; }
 
 .exp-header { display: flex; align-items: flex-start; gap: var(--md); margin-bottom: var(--md); }
 
-/* CHANGE 6: icon wrap with gold tint */
+/* ── Icon wraps — warm palette ── */
 .exp-icon-wrap {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: var(--gold-pale);
-  border: 1.5px solid rgba(200,151,58,0.25);
+  width: 52px; height: 52px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: background var(--t), transform var(--t);
+  flex-shrink: 0; transition: background var(--t), transform var(--t);
 }
 
-.exp-card:hover .exp-icon-wrap {
-  background: rgba(200,151,58,0.16); transform: scale(1.07);
+/* Card 1 icon: amber tint */
+.exp-icon-warm {
+  background: var(--amber-pale);
+  border: 1.5px solid rgba(200,133,10,0.30);
 }
 
-.exp-svg { width: 22px; height: 22px; color: var(--gold); opacity: 0.85; }
+.exp-icon-warm:hover,
+.exp-card:hover .exp-icon-warm {
+  background: rgba(200,133,10,0.18); transform: scale(1.07);
+}
+
+/* Card 2 icon: ember tint */
+.exp-icon-ember {
+  background: var(--ember-pale);
+  border: 1.5px solid rgba(200,80,32,0.30);
+}
+
+.exp-card:hover .exp-icon-ember {
+  background: rgba(200,80,32,0.18); transform: scale(1.07);
+}
+
+.exp-svg { width: 22px; height: 22px; opacity: 0.88; }
+
+/* Card 1 SVG: amber */
+.exp-svg { color: var(--amber); }
+
+/* Card 2 SVG: ember */
+.exp-svg-ember { color: var(--ember); }
 
 .exp-title-block { flex: 1; }
 
-/* CHANGE 6: duration pill in gold */
+/* ── Duration pills — warm ── */
 .exp-duration {
   display: inline-block; font-family: var(--fh);
   font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-pale);
-  border: 1px solid rgba(200,151,58,0.22);
   border-radius: 99px; padding: 3px 12px; margin-bottom: 0.5rem;
 }
 
-/* CHANGE 1: exp title larger */
+/* Card 1 pill: amber */
+.exp-duration-warm {
+  color: var(--amber);
+  background: var(--amber-pale);
+  border: 1px solid rgba(200,133,10,0.28);
+}
+
+/* Card 2 pill: ember (warm, NOT blue) */
+.exp-duration-ember {
+  color: var(--ember);
+  background: var(--ember-pale);
+  border: 1px solid rgba(200,80,32,0.28);
+}
+
 .exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
 
 .exp-org { font-style: italic; font-size: 0.95rem; color: var(--text-muted); }
 
-.exp-divider { height: 1px; background: var(--border-faint); margin: 0 0 var(--md); }
+/* ── Dividers inside cards ── */
+.exp-divider { height: 1px; margin: 0 0 var(--md); }
 
-/* CHANGE 1: exp desc larger */
-.exp-desc {
-  font-size: 0.95rem; color: var(--text-muted);
-  line-height: 1.88; margin-bottom: var(--md); flex: 1;
-}
+.exp-divider-warm { background: linear-gradient(to right, var(--amber-pale), rgba(200,133,10,0.15), var(--amber-pale)); }
+.exp-divider-ember { background: linear-gradient(to right, var(--ember-pale), rgba(200,80,32,0.15), var(--ember-pale)); }
 
+.exp-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.88; margin-bottom: var(--md); flex: 1; }
 .exp-desc strong { color: var(--heading); }
 
+/* ── Tag pills — warm ── */
 .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--md); }
 
-/* CHANGE 6: tags in gold */
 .exp-tags li {
   font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: var(--gold); background: var(--gold-pale);
-  border: 1px solid rgba(200,151,58,0.22);
   border-radius: 99px; padding: 3px 12px;
-  transition: background var(--t), color var(--t);
+  transition: background var(--t), color var(--t), border-color var(--t);
 }
 
-.exp-tags li:hover { background: var(--gold); color: #fdf9f4; }
+/* Card 1 tags: amber */
+.exp-tags-warm li {
+  color: var(--amber);
+  background: var(--amber-pale);
+  border: 1px solid rgba(200,133,10,0.25);
+}
 
+.exp-tags-warm li:hover { background: var(--amber); color: #fdf9f4; border-color: var(--amber); }
+
+/* Card 2 tags: ember (warm, NOT blue) */
+.exp-tags-ember li {
+  color: var(--ember);
+  background: var(--ember-pale);
+  border: 1px solid rgba(200,80,32,0.25);
+}
+
+.exp-tags-ember li:hover { background: var(--ember); color: #fdf9f4; border-color: var(--ember); }
+
+/* ── Blockquote borders — warm ── */
 .exp-quote {
   font-family: var(--fh); font-style: italic; font-size: 0.93rem;
-  color: var(--text-muted);
-  border-left: 2px solid rgba(200,151,58,0.35);  /* CHANGE 6: gold quote border */
-  padding-left: var(--sm); margin-top: auto; line-height: 1.72;
+  color: var(--text-muted); padding-left: var(--sm); margin-top: auto; line-height: 1.72;
 }
+
+.exp-quote-warm { border-left: 2.5px solid rgba(200,133,10,0.45); }
+.exp-quote-ember { border-left: 2.5px solid rgba(200,80,32,0.45); }
 
 
 /* =============================================================
@@ -864,37 +923,36 @@ h1,h2,h3,h4 {
 #achievements { background: var(--bg-warm); }
 
 .achievements-layout { display: flex; gap: var(--lg); align-items: flex-start; }
-
 .achievement-era { flex: 1; }
-
 .era-header { margin-bottom: var(--md); }
 
-/* CHANGE 6: era badge in gold */
+/* Era badge — terracotta */
 .era-badge {
   display: inline-block; font-family: var(--fh);
   font-size: 0.82rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); background: var(--gold-pale);
-  border: 1px solid rgba(200,151,58,0.28);
+  color: var(--terra); background: var(--terra-pale);
+  border: 1px solid rgba(192,96,42,0.32);
   padding: 0.4rem 1.2rem; border-radius: 99px;
 }
 
+/* Era divider diamond — terracotta */
 .era-divider {
-  font-size: 0.7rem; color: rgba(200,151,58,0.35);
+  font-size: 0.7rem; color: rgba(192,96,42,0.45);
   padding-top: 3.5rem; writing-mode: vertical-rl; letter-spacing: 1.2rem;
   align-self: stretch; display: flex; align-items: flex-start; justify-content: center;
 }
 
 .achievement-list { display: flex; flex-direction: column; gap: var(--md); }
 
-/* CHANGE 5: glassmorphism achievement items */
+/* Achievement item — glassmorphism + warm border */
 .achievement-item {
   display: flex; gap: var(--sm); align-items: flex-start;
   padding: var(--sm) var(--md);
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(192,96,42,0.18);
   border-radius: var(--r-md);
   box-shadow: var(--sh-soft);
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
@@ -902,21 +960,21 @@ h1,h2,h3,h4 {
 
 .achievement-item:hover {
   transform: translateX(6px);
-  box-shadow: var(--sh-card);
-  border-color: rgba(200,151,58,0.30);
+  box-shadow: 0 8px 32px rgba(192,96,42,0.20);
+  border-color: rgba(192,96,42,0.38);
 }
 
+/* Achievement icon — amber */
 .ach-icon-svg {
   display: flex; align-items: center; justify-content: center;
   width: 28px; height: 28px;
-  color: var(--gold); opacity: 0.75;  /* CHANGE 6: gold icons */
+  color: var(--amber); opacity: 0.80;
   flex-shrink: 0; margin-top: 2px;
 }
 
 .ach-icon-svg svg { width: 100%; height: 100%; }
 .ach-icon { display: none; }
 
-/* CHANGE 1: achievement text larger */
 .achievement-item strong {
   display: block; font-family: var(--fh);
   font-size: 1.02rem; color: var(--heading); margin-bottom: 4px;
@@ -930,20 +988,17 @@ h1,h2,h3,h4 {
    ============================================================= */
 #education { background: var(--bg-alt); }
 
-.timeline {
-  position: relative; margin-top: var(--md); padding-left: 2.9rem;
-}
+.timeline { position: relative; margin-top: var(--md); padding-left: 2.9rem; }
 
+/* Timeline line — amber to terracotta gradient */
 .timeline::before {
   content: '';
-  position: absolute; left: 11px; top: 14px; bottom: 14px;
-  width: 1px;
-  /* CHANGE 6: gold-tinted timeline line */
+  position: absolute; left: 11px; top: 14px; bottom: 14px; width: 1px;
   background: linear-gradient(
     to bottom,
-    var(--border-light),
-    rgba(200,151,58,0.30) 50%,
-    var(--border-light)
+    rgba(200,133,10,0.20),
+    rgba(192,96,42,0.55) 50%,
+    rgba(184,64,48,0.20)
   );
 }
 
@@ -956,54 +1011,55 @@ h1,h2,h3,h4 {
 
 .timeline-dot {
   position: absolute; left: -2.9rem; top: 14px;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--bg-alt);
-  border: 2px solid var(--border);
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg-alt); border: 2px solid rgba(192,96,42,0.30);
   z-index: 1;
   transition: background var(--t), border-color var(--t), transform var(--t);
 }
 
 .timeline-node:hover .timeline-dot {
-  transform: scale(1.25);
-  border-color: var(--gold);
-  background: var(--gold-pale);
+  transform: scale(1.28);
+  border-color: var(--terra);
+  background: var(--terra-pale);
 }
 
+/* Active dot — vibrant warm red */
 .dot-active {
-  background: var(--gold) !important;
-  border-color: var(--gold) !important;
-  box-shadow: 0 0 0 5px rgba(200,151,58,0.18);
+  background: linear-gradient(135deg, var(--amber) 0%, var(--terra) 100%) !important;
+  border-color: var(--terra) !important;
+  box-shadow: 0 0 0 5px rgba(192,96,42,0.22);
 }
 
-/* CHANGE 5: glassmorphism timeline cards */
+/* Timeline cards — glassmorphism */
 .timeline-card {
   flex: 1;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-left: 3px solid var(--border);
+  border: 1px solid rgba(192,96,42,0.15);
+  border-left: 3px solid rgba(200,133,10,0.30);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
-  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t), border-left-color var(--t);
 }
 
 .timeline-card:hover {
-  box-shadow: var(--sh-card);
+  box-shadow: 0 10px 36px rgba(192,96,42,0.18);
   transform: translateX(5px);
-  border-left-color: var(--gold);
+  border-left-color: var(--terra);
 }
 
-.highlight-card { border-left-color: rgba(200,151,58,0.40); }
+.highlight-card { border-left-color: rgba(200,133,10,0.50); }
 
+/* Active card — amber warm wash */
 .active-card {
-  border-left-color: var(--gold);
-  background: linear-gradient(135deg, rgba(247,237,218,0.80) 0%, rgba(253,249,244,0.90) 100%);
+  border-left-color: var(--terra);
+  border-left-width: 4px;
+  background: linear-gradient(135deg, rgba(253,240,213,0.85) 0%, rgba(252,232,218,0.85) 100%);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(200,151,58,0.10);
+  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(192,96,42,0.12);
 }
 
 .active-card-header {
@@ -1011,35 +1067,30 @@ h1,h2,h3,h4 {
   flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;
 }
 
-/* CHANGE 1: timeline year larger; CHANGE 6: gold */
+/* Year label — amber */
 .timeline-year {
   font-family: var(--fh); font-size: 0.76rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold); display: block; margin-bottom: 0.45rem;
+  color: var(--amber); display: block; margin-bottom: 0.45rem;
 }
 
 .active-card-header .timeline-year { margin-bottom: 0; }
-.active-year { color: var(--gold); }
+.active-year { color: var(--terra); }
 
-/* CHANGE 1: timeline title larger */
 .timeline-title { font-size: 1.14rem; margin-bottom: 0.38rem; }
-
-.timeline-place {
-  font-style: italic; font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.5rem;
-}
-
+.timeline-place { font-style: italic; font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.5rem; }
 .timeline-detail { font-size: 0.91rem; color: var(--text-muted); line-height: 1.72; }
 .timeline-detail strong { color: var(--heading); }
 
-/* CHANGE 6: active badge in gold */
+/* Active badge — red to amber gradient */
 .active-badge {
   display: inline-flex; align-items: center;
   font-family: var(--fh); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: #fdf9f4;
-  background: linear-gradient(135deg, var(--gold) 0%, #a8762a 100%);
-  padding: 3px 12px; border-radius: 99px; white-space: nowrap;
-  box-shadow: 0 2px 10px rgba(200,151,58,0.28);
+  background: linear-gradient(135deg, var(--red) 0%, var(--terra) 50%, var(--amber) 100%);
+  padding: 3px 14px; border-radius: 99px; white-space: nowrap;
+  box-shadow: 0 3px 12px rgba(184,64,48,0.35);
 }
 
 
@@ -1049,105 +1100,87 @@ h1,h2,h3,h4 {
 #contact { background: var(--bg); }
 
 .contact-layout { display: flex; gap: var(--xl); align-items: flex-start; }
-
 .contact-info { flex: 1; }
 
-/* CHANGE 1: contact-intro larger */
-.contact-intro {
-  color: var(--text-muted); font-size: 1.0rem;
-  line-height: 1.92; margin-bottom: var(--lg);
-}
+.contact-intro { color: var(--text-muted); font-size: 1.0rem; line-height: 1.92; margin-bottom: var(--lg); }
 
-.contact-details {
-  display: flex; flex-direction: column; gap: var(--md);
-  margin-bottom: var(--lg);
-}
+.contact-details { display: flex; flex-direction: column; gap: var(--md); margin-bottom: var(--lg); }
 
 .contact-details li {
-  display: flex; align-items: flex-start;
-  gap: var(--sm); font-size: 0.96rem;
+  display: flex; align-items: flex-start; gap: var(--sm); font-size: 0.96rem;
   transition: transform var(--t);
 }
 
 .contact-details li:hover { transform: translateX(5px); }
 
-/* CHANGE 6: contact icon wrap in gold tint */
+/* Contact icon circles — amber */
 .contact-icon-svg {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--gold-pale);
-  border: 1px solid rgba(200,151,58,0.22);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--amber-pale);
+  border: 1px solid rgba(200,133,10,0.28);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 2px;
-  transition: background var(--t);
+  transition: background var(--t), border-color var(--t);
 }
 
-.contact-details li:hover .contact-icon-svg { background: rgba(200,151,58,0.16); }
+.contact-details li:hover .contact-icon-svg {
+  background: rgba(200,133,10,0.18);
+  border-color: rgba(192,96,42,0.38);
+}
 
-.contact-icon-svg svg { width: 15px; height: 15px; color: var(--gold); opacity: 0.85; }
+.contact-icon-svg svg { width: 15px; height: 15px; color: var(--terra); opacity: 0.90; }
 
 .contact-icon { display: none; }
 
+/* Contact labels — amber */
 .contact-details strong {
   display: block; font-family: var(--fh);
   font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 1px;
+  color: var(--amber); margin-bottom: 1px;
 }
 
-.contact-details span,
-.contact-link { color: var(--text-muted); font-size: 0.93rem; word-break: break-all; }
-
+.contact-details span, .contact-link { color: var(--text-muted); font-size: 0.93rem; word-break: break-all; }
 .contact-link { transition: color var(--t); }
-.contact-link:hover { color: var(--primary); }
+.contact-link:hover { color: var(--terra); }
 
-/* CHANGE 5: glassmorphism form card */
+/* Contact form — glassmorphism */
 .contact-form-wrap {
   flex: 1;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(192,96,42,0.20);
   border-radius: var(--r-lg);
   padding: var(--lg);
   box-shadow: var(--sh-card);
   transition: box-shadow var(--ts);
 }
 
-.contact-form-wrap:hover { box-shadow: var(--sh-hover); }
+.contact-form-wrap:hover { box-shadow: 0 20px 56px rgba(192,96,42,0.22); }
 
-.form-group {
-  display: flex; flex-direction: column;
-  gap: 0.48rem; margin-bottom: var(--md);
-}
+.form-group { display: flex; flex-direction: column; gap: 0.48rem; margin-bottom: var(--md); }
 
-/* CHANGE 1: form label larger; CHANGE 6: gold */
+/* Form labels — amber */
 .form-group label {
   font-family: var(--fh); font-size: 0.74rem; font-weight: 500;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber);
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
   width: 100%; padding: 0.85rem 1.15rem;
-  background: rgba(250,246,240,0.75);
-  border: 1px solid var(--border);
+  background: rgba(250,246,240,0.78);
+  border: 1px solid rgba(192,96,42,0.22);
   border-radius: var(--r-sm); color: var(--text);
-  font-family: var(--fb);
-  font-size: 1.0rem;             /* CHANGE 1: input text larger */
-  outline: none;
+  font-family: var(--fb); font-size: 1.0rem; outline: none;
   transition: border-color var(--t), box-shadow var(--t);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(200,151,58,0.12);
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--terra);
+  box-shadow: 0 0 0 3px rgba(192,96,42,0.14);
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder { color: var(--accent-light); }
-
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--accent-light); }
 .contact-form textarea { resize: vertical; min-height: 140px; }
 
 
@@ -1155,8 +1188,8 @@ h1,h2,h3,h4 {
    16. FOOTER
    ============================================================= */
 #footer {
-  border-top: 1px solid var(--border-light);
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 100%);
+  border-top: 1px solid rgba(192,96,42,0.18);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #e2d4bc 100%);
 }
 
 #footer::before { display: none; }
@@ -1169,22 +1202,18 @@ h1,h2,h3,h4 {
   align-items: center; gap: var(--xs); text-align: center;
 }
 
-/* CHANGE 1: footer logo larger; CHANGE 6: gold */
+/* Footer logo — terracotta */
 .footer-logo {
   font-family: var(--fh); font-size: 1.6rem; font-weight: 700;
-  color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.2rem;
+  color: var(--terra); letter-spacing: 0.06em; margin-bottom: 0.2rem;
 }
 
 .footer-meaning {
-  font-family: var(--fh); font-style: italic;
-  font-size: 0.92rem; color: var(--text-muted);
-  letter-spacing: 0.06em; opacity: 0.82; margin-bottom: 0.3rem;
+  font-family: var(--fh); font-style: italic; font-size: 0.92rem;
+  color: var(--text-muted); letter-spacing: 0.06em; opacity: 0.82; margin-bottom: 0.3rem;
 }
 
-.footer-copy {
-  font-family: var(--fh); font-size: 0.82rem;
-  color: var(--text-muted); letter-spacing: 0.06em;
-}
+.footer-copy { font-family: var(--fh); font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.06em; }
 
 .footer-nav {
   display: flex; gap: 2rem; flex-wrap: wrap;
@@ -1197,17 +1226,17 @@ h1,h2,h3,h4 {
   color: var(--text-muted); transition: color var(--t);
 }
 
-.footer-nav a:hover { color: var(--gold); }
+/* Footer hover — amber */
+.footer-nav a:hover { color: var(--amber); }
 
 .footer-rule { width: 100%; margin-bottom: var(--md); }
 .footer-rule .rule-line { width: 120px; }
 
 
 /* =============================================================
-   17. MEDIA QUERIES — unchanged structure, adjusted for larger font
+   17. MEDIA QUERIES (unchanged structure)
    ============================================================= */
 
-/* Tablet (≤ 920px) */
 @media (max-width: 920px) {
   html, body, a, button { cursor: auto; }
   #cursor-dot, #cursor-halo { display: none; }
@@ -1225,20 +1254,16 @@ h1,h2,h3,h4 {
   .contact-info, .contact-form-wrap { width: 100%; flex: none; }
 
   .nav-links { gap: 1.4rem; }
-  .nav-links li:nth-child(6),
-  .nav-links li:nth-child(7) { display: none; }
+  .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display: none; }
 }
 
-/* Mobile (≤ 600px) */
 @media (max-width: 600px) {
   body { font-size: 1.05rem; }
 
   .nav-links { gap: var(--xs); }
   .nav-links a { font-size: 0.72rem; letter-spacing: 0.07em; }
-  .nav-links li:nth-child(4),
-  .nav-links li:nth-child(5),
-  .nav-links li:nth-child(6),
-  .nav-links li:nth-child(7) { display: none; }
+  .nav-links li:nth-child(4), .nav-links li:nth-child(5),
+  .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display: none; }
 
   .hero-tagline { font-size: 0.94rem; }
   .hero-cta { flex-direction: column; align-items: center; }
@@ -1256,7 +1281,6 @@ h1,h2,h3,h4 {
   .active-card-header { flex-direction: column; align-items: flex-start; }
 }
 
-/* Very small (≤ 380px) */
 @media (max-width: 380px) {
   .about-badge { right: 0; bottom: 0; }
   .footer-nav { gap: var(--sm); }

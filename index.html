@@ -169,7 +169,6 @@
 
       <div class="skills-grid">
 
-        <!-- Progress bars REMOVED — cards are now clean icon + title + desc only -->
         <article class="skill-card reveal-up delay-1">
           <div class="skill-icon-wrap">
             <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -249,22 +248,23 @@
 
       <div class="experience-grid">
 
+        <!-- Card 1: Badminton Coach — warm terracotta accent -->
         <article class="exp-card reveal-up delay-1">
           <div class="exp-card-accent accent-warm"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap">
+              <div class="exp-icon-wrap exp-icon-warm">
                 <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
               </div>
               <div class="exp-title-block">
-                <span class="exp-duration">1 Month · Internship</span>
+                <span class="exp-duration exp-duration-warm">1 Month · Internship</span>
                 <h3 class="exp-title">Assistant Badminton Coach</h3>
                 <p class="exp-org">Sports Training Academy</p>
               </div>
             </div>
-            <div class="exp-divider" aria-hidden="true"></div>
+            <div class="exp-divider exp-divider-warm" aria-hidden="true"></div>
             <p class="exp-desc">
               Gained hands-on experience mentoring and training players in a
               high-discipline sports environment. This role strengthened my
@@ -273,35 +273,36 @@
               skills, adaptability, and ability to take initiative while managing
               responsibility in a dynamic setting.
             </p>
-            <ul class="exp-tags">
+            <ul class="exp-tags exp-tags-warm">
               <li>Leadership</li>
               <li>Mentorship</li>
               <li>Communication</li>
               <li>Adaptability</li>
               <li>Initiative</li>
             </ul>
-            <blockquote class="exp-quote">
+            <blockquote class="exp-quote exp-quote-warm">
               "Coaching taught me that the best leaders know when to push and when to encourage."
             </blockquote>
           </div>
         </article>
 
+        <!-- Card 2: Sid's Farm — burnt orange accent (NO blue tones) -->
         <article class="exp-card reveal-up delay-2">
-          <div class="exp-card-accent accent-cool"></div>
+          <div class="exp-card-accent accent-ember"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap">
-                <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <div class="exp-icon-wrap exp-icon-ember">
+                <svg class="exp-svg exp-svg-ember" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M3 3h18v4H3z"/><path d="M3 10h18v4H3z"/><path d="M3 17h11v4H3z"/>
                 </svg>
               </div>
               <div class="exp-title-block">
-                <span class="exp-duration">3 Months · Internship</span>
+                <span class="exp-duration exp-duration-ember">3 Months · Internship</span>
                 <h3 class="exp-title">Marketing Intern</h3>
                 <p class="exp-org">Sid's Farm</p>
               </div>
             </div>
-            <div class="exp-divider" aria-hidden="true"></div>
+            <div class="exp-divider exp-divider-ember" aria-hidden="true"></div>
             <p class="exp-desc">
               Worked in a fast-paced, real-world business environment where I developed
               strong <strong>interpersonal and communication skills</strong>. I learned to
@@ -311,14 +312,14 @@
               challenging situations. It also built confidence in handling real-time
               interactions, decision-making, and professional collaboration.
             </p>
-            <ul class="exp-tags">
+            <ul class="exp-tags exp-tags-ember">
               <li>Marketing</li>
               <li>Consumer Behaviour</li>
               <li>Problem Solving</li>
               <li>Interpersonal Skills</li>
               <li>Decision-Making</li>
             </ul>
-            <blockquote class="exp-quote">
+            <blockquote class="exp-quote exp-quote-ember">
               "Every conversation with a customer was a lesson in empathy and persuasion."
             </blockquote>
           </div>
@@ -618,7 +619,6 @@
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
-  /* 1. CUSTOM CURSOR */
   (function () {
     const dot  = document.getElementById('cursor-dot');
     const halo = document.getElementById('cursor-halo');
@@ -643,7 +643,6 @@
     })();
   })();
 
-  /* 2. SCROLL REVEAL */
   (function () {
     const els = document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right');
     if (!els.length) return;
@@ -655,12 +654,10 @@
     els.forEach(el => obs.observe(el));
   })();
 
-  /* 3. NAVBAR SCROLL STATE */
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  /* 4. PARALLAX */
   (function () {
     const back  = document.querySelector('.layer-back');
     const mid   = document.querySelector('.layer-mid');
