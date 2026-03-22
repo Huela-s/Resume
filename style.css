@@ -1,101 +1,92 @@
 /* =============================================================
-   STYLE.CSS — Huela Sravya Portfolio (v4 — Refined & Polished)
-   Warm Beige · EB Garamond · All 13 fixes applied
+   STYLE.CSS — Huela Sravya Portfolio (v5 — Vibrant & Refined)
+   Warm Beige · EB Garamond · Glassmorphism · Scroll Animations
    =============================================================
-   FIXES APPLIED:
-    1.  Em dashes removed throughout                  (HTML + CSS)
-    2.  Button crack/glitch fixed                     (CSS)
-    3.  Scroll text removed, line kept                (HTML)
-    4.  Copyright updated to 2026                     (HTML)
-    5.  Hero name size slightly reduced               (CSS)
-    6.  Wavy section-orn-top line removed             (HTML)
-    7.  Progress % numbers removed                    (HTML)
-    8.  Emojis replaced with SVG icons                (HTML + CSS)
-    9.  Slightly varied beige section backgrounds     (CSS)
-   10.  Added clean minimal design details            (CSS)
-   11.  Education section uniform + active highlight  (CSS)
-   12.  Alignment fixes throughout                    (CSS)
-   13.  Strict: no layout/font/animation changes      
-   =============================================================
-   TABLE OF CONTENTS
-    1.  CSS Variables
-    2.  Reset & Base
-    3.  Custom Cursor
-    4.  Scroll-Reveal Animations
-    5.  Typography & Utilities
-    6.  Ornamental Dividers & Rules
-    7.  Buttons  (FIX 2)
-    8.  Navigation Bar
-    9.  Hero / Parallax
-   10.  About Section
-   11.  Skills Section  (FIX 7, FIX 8)
-   12.  Experience Section
-   13.  Achievements Section  (FIX 9)
-   14.  Education Timeline  (FIX 11)
-   15.  Contact Section
-   16.  Footer
-   17.  Media Queries
+   CHANGES v5:
+    1. Font sizes increased subtly throughout
+    2. Skills: progress bars + hover overlay removed; clean cards
+    3. Design enhanced: dividers, gradients, textures, decorative
+    4. Scroll animations: fade-in + upward motion, slow & premium
+    5. Glassmorphism: navbar + cards get backdrop-filter blur
+    6. Vibrant accents: muted gold, dusty rose, soft warm tones
+    7. Alignment & spacing polished after font size increase
    ============================================================= */
 
 
 /* =============================================================
-   1. CSS VARIABLES
+   1. CSS VARIABLES — Enhanced palette with vibrant accents
    ============================================================= */
 :root {
-  /* Core beige palette */
-  --bg:             #faf6f0;   /* parchment white             */
-  --bg-alt:         #f5ede0;   /* warm cream — skills/edu/contact */
-  --bg-warm:        #f2e8d8;   /* slightly deeper — achievements  */
-  --bg-deep:        #ede0cc;   /* deep cream — footer             */
-  --card:           #fdf9f4;   /* near-white card surface         */
+  /* Base beige palette */
+  --bg:             #faf6f0;
+  --bg-alt:         #f5ede0;
+  --bg-warm:        #f0e6d2;
+  --bg-deep:        #e8dccb;
+  --card:           #fdf9f4;
   --border:         #ddd0bb;
   --border-light:   #ece4d6;
-  --border-faint:   #f0e8da;   /* FIX 10: very faint for overlays */
+  --border-faint:   #f3ece2;
 
   /* Primary: warm brown */
   --primary:        #8b6543;
   --primary-light:  #b08a66;
   --primary-pale:   #f0e4d4;
-  --primary-glow:   rgba(139,101,67,0.14);
+  --primary-glow:   rgba(139,101,67,0.16);
 
-  /* Accent: taupe */
+  /* Accent: dusty taupe */
   --accent:         #a08070;
   --accent-light:   #d4c0b0;
   --accent-cool:    #9aab98;
 
+  /* NEW vibrant accents — subtle, warm, complementary */
+  --gold:           #c8973a;       /* muted antique gold */
+  --gold-pale:      #f7edda;       /* pale gold wash */
+  --gold-glow:      rgba(200,151,58,0.18);
+  --rose:           #b07878;       /* dusty rose */
+  --rose-pale:      #f5e8e8;       /* rose wash */
+  --sage:           #7a9688;       /* muted sage green */
+  --sage-pale:      #e8f0ec;       /* sage wash */
+  --terracotta:     #c27a5a;       /* warm terracotta */
+
   /* Text */
   --text:           #3d2e1e;
-  --text-muted:     #8a7060;
+  --text-muted:     #7a6858;       /* slightly warmer muted text */
   --heading:        #2a1e10;
 
-  /* Fonts — unchanged */
+  /* Fonts */
   --fh: 'EB Garamond','Garamond','Times New Roman',serif;
   --fb: 'Cormorant Garamond','EB Garamond',Georgia,serif;
 
-  /* Spacing */
-  --xs:   0.5rem;
-  --sm:   1.1rem;
-  --md:   1.8rem;
-  --lg:   3rem;
-  --xl:   5rem;
-  --2xl:  8rem;
+  /* ENHANCED spacing for larger font */
+  --xs:   0.55rem;
+  --sm:   1.2rem;
+  --md:   1.9rem;
+  --lg:   3.2rem;
+  --xl:   5.2rem;
+  --2xl:  8.5rem;
 
   /* Radii */
-  --r-sm: 4px;
-  --r-md: 10px;
-  --r-lg: 20px;
+  --r-sm: 5px;
+  --r-md: 12px;
+  --r-lg: 22px;
 
   /* Shadows */
-  --sh-soft:  0 2px 18px rgba(139,101,67,0.08);
-  --sh-card:  0 5px 32px rgba(139,101,67,0.11);
-  --sh-hover: 0 14px 48px rgba(139,101,67,0.20);
-  --sh-glow:  0 0 32px  rgba(139,101,67,0.16);
+  --sh-soft:  0 2px 20px rgba(139,101,67,0.08);
+  --sh-card:  0 6px 36px rgba(139,101,67,0.12);
+  --sh-hover: 0 16px 52px rgba(139,101,67,0.21);
+  --sh-glow:  0 0 36px  rgba(139,101,67,0.18);
+  --sh-gold:  0 6px 28px rgba(200,151,58,0.18);
 
   /* Transitions */
-  --t:  0.32s cubic-bezier(0.25,0.46,0.45,0.94);
-  --ts: 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+  --t:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  --ts: 0.60s cubic-bezier(0.25,0.46,0.45,0.94);
 
-  --nav-h: 72px;
+  /* GLASSMORPHISM values */
+  --glass-bg:     rgba(253,249,244,0.72);
+  --glass-border: rgba(221,208,187,0.55);
+  --glass-blur:   blur(18px);
+
+  --nav-h: 74px;
 }
 
 
@@ -110,12 +101,13 @@ html {
   cursor: none;
 }
 
+/* CHANGE 1: base font size increased */
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--fb);
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: 1.12rem;          /* ↑ from 1.05rem */
+  line-height: 1.88;           /* adjusted for new size */
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   cursor: none;
@@ -126,26 +118,32 @@ img { display: block; }
 a   { text-decoration: none; color: inherit; }
 a, button { cursor: none; }
 
-/* Parchment horizontal rule lines */
+/* Parchment texture — slightly warmer */
 body::before {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   background-image: repeating-linear-gradient(
     0deg, transparent, transparent 30px,
-    rgba(139,101,67,0.018) 30px, rgba(139,101,67,0.018) 31px
+    rgba(139,101,67,0.016) 30px, rgba(139,101,67,0.016) 31px
   );
 }
 
-/* Subtle diagonal weave — FIX 10: slightly more refined opacity */
+/* CHANGE 3: richer diagonal pattern */
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
-  background-image: repeating-linear-gradient(
-    60deg, rgba(139,101,67,0.012) 0px, rgba(139,101,67,0.012) 1px,
-    transparent 1px, transparent 8px
-  );
+  background-image:
+    repeating-linear-gradient(
+      45deg, rgba(200,151,58,0.022) 0, rgba(200,151,58,0.022) 1px,
+      transparent 0, transparent 50%
+    ),
+    repeating-linear-gradient(
+      -45deg, rgba(139,101,67,0.014) 0, rgba(139,101,67,0.014) 1px,
+      transparent 0, transparent 50%
+    );
+  background-size: 20px 20px;
 }
 
 
@@ -155,10 +153,9 @@ body::after {
 #cursor-dot {
   position: fixed; top: 0; left: 0;
   width: 8px; height: 8px;
-  background: var(--primary);
+  background: var(--gold);        /* gold accent on dot */
   border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
+  pointer-events: none; z-index: 9999;
   transform: translate(-50%,-50%);
   transition: opacity 0.22s ease;
   will-change: transform;
@@ -167,11 +164,10 @@ body::after {
 #cursor-halo {
   position: fixed; top: 0; left: 0;
   width: 38px; height: 38px;
-  border: 1.2px solid rgba(139,101,67,0.35);
-  background: rgba(240,228,212,0.07);
+  border: 1.2px solid rgba(200,151,58,0.35);  /* gold halo ring */
+  background: rgba(247,237,218,0.08);
   border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
+  pointer-events: none; z-index: 9998;
   transform: translate(-50%,-50%);
   transition: width var(--t), height var(--t), background 0.4s, border-color 0.4s, opacity 0.22s;
   will-change: transform;
@@ -179,57 +175,64 @@ body::after {
 
 #cursor-halo.halo-hover {
   width: 56px; height: 56px;
-  background: rgba(240,228,212,0.18);
-  border-color: rgba(139,101,67,0.55);
+  background: rgba(247,237,218,0.20);
+  border-color: rgba(200,151,58,0.55);
 }
 
 
 /* =============================================================
-   4. SCROLL-REVEAL ANIMATIONS — unchanged
+   4. SCROLL-REVEAL ANIMATIONS — slow, soft, premium
    ============================================================= */
 .reveal-up, .reveal-left, .reveal-right {
   opacity: 0;
-  transition: opacity 0.78s cubic-bezier(0.25,0.46,0.45,0.94),
-              transform 0.78s cubic-bezier(0.25,0.46,0.45,0.94);
+  transition:
+    opacity  0.90s cubic-bezier(0.22,1,0.36,1),
+    transform 0.90s cubic-bezier(0.22,1,0.36,1);
   will-change: opacity, transform;
 }
 
-.reveal-up    { transform: translateY(36px); }
-.reveal-left  { transform: translateX(-44px); }
-.reveal-right { transform: translateX(44px); }
+.reveal-up    { transform: translateY(40px); }
+.reveal-left  { transform: translateX(-48px); }
+.reveal-right { transform: translateX(48px); }
 
 .reveal-up.is-visible,
 .reveal-left.is-visible,
 .reveal-right.is-visible { opacity: 1; transform: translate(0,0); }
 
-.delay-1 { transition-delay: 0.10s; }
-.delay-2 { transition-delay: 0.22s; }
-.delay-3 { transition-delay: 0.36s; }
-.delay-4 { transition-delay: 0.50s; }
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.26s; }
+.delay-3 { transition-delay: 0.40s; }
+.delay-4 { transition-delay: 0.54s; }
 
 
 /* =============================================================
    5. TYPOGRAPHY & UTILITIES
    ============================================================= */
-h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; font-weight: 600; }
-
-.section-label {
+h1,h2,h3,h4 {
   font-family: var(--fh);
-  font-size: 0.70rem; font-weight: 500;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--primary);
-  display: block; margin-bottom: 0.6rem;
+  color: var(--heading);
+  line-height: 1.18; font-weight: 600;
 }
 
+/* CHANGE 1: section-label slightly larger */
+.section-label {
+  font-family: var(--fh);
+  font-size: 0.76rem;            /* ↑ from 0.70rem */
+  font-weight: 500;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold);            /* CHANGE 6: gold accent on labels */
+  display: block; margin-bottom: 0.65rem;
+}
+
+/* CHANGE 1: section-heading larger */
 .section-heading {
-  font-size: clamp(2rem,4vw,2.8rem);
-  margin-bottom: 0.4rem;
+  font-size: clamp(2.1rem,4.2vw,3rem);  /* ↑ from clamp(2rem,4vw,2.8rem) */
+  margin-bottom: 0.45rem;
   font-weight: 700;
 }
 
 .centered { text-align: center; }
 
-/* Section wrapper */
 .section-inner {
   position: relative; z-index: 1;
   max-width: 1080px;
@@ -237,43 +240,41 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   padding: var(--2xl) var(--md);
 }
 
-/* FIX 9: differentiated section backgrounds for visual depth */
+/* CHANGE 9: varied section backgrounds for depth */
 .section-cream { background: var(--bg-alt); }
-.section-warm  { background: var(--bg-warm); }  /* achievements */
+.section-warm  { background: var(--bg-warm); }
 
-/* Subtle dot-grid on section backgrounds — FIX 10 */
+/* CHANGE 3: dot-grid pattern, slightly warmer */
 .section-pattern {
   position: absolute; inset: 0;
   pointer-events: none; z-index: 0;
-  background-image: radial-gradient(circle, rgba(139,101,67,0.055) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-image:
+    radial-gradient(circle, rgba(200,151,58,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* FIX 10: refined top-edge separator between sections */
-#about,
-#skills,
-#experience,
-#achievements,
-#education,
-#contact {
+/* CHANGE 3: clean ruled top edge for each section */
+#about, #skills, #experience, #achievements, #education, #contact {
   position: relative;
 }
 
-/* Thin ruled line above each section (FIX 10: replaces wavy SVG) */
-#about::before,
-#skills::before,
-#experience::before,
-#achievements::before,
-#education::before,
-#contact::before {
+#about::before, #skills::before, #experience::before,
+#achievements::before, #education::before, #contact::before {
   content: '';
   display: block;
   height: 1px;
-  background: linear-gradient(to right, transparent 5%, var(--border-light) 30%, var(--border) 50%, var(--border-light) 70%, transparent 95%);
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 2;
+  background: linear-gradient(
+    to right,
+    transparent 3%,
+    rgba(200,151,58,0.18) 25%,
+    rgba(221,208,187,0.7) 50%,
+    rgba(200,151,58,0.18) 75%,
+    transparent 97%
+  );
+  position: absolute; top: 0; left: 0; right: 0; z-index: 2;
 }
+
+#home::before, #footer::before { display: none; }
 
 
 /* =============================================================
@@ -287,106 +288,81 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 }
 
 .orn-line {
-  display: block;
-  width: 90px; height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
+  display: block; width: 100px; height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(200,151,58,0.35) 40%,
+    rgba(221,208,187,0.8) 60%,
+    transparent
+  );
 }
 
 .orn-motif {
-  font-family: var(--fh);
-  font-size: 1.2rem;
-  color: var(--primary);
-  opacity: 0.45;
-  line-height: 1;
-  padding: 0 0.3rem;
+  font-family: var(--fh); font-size: 1.25rem;
+  color: var(--gold);
+  opacity: 0.55; line-height: 1; padding: 0 0.3rem;
 }
 
-/* ◆ hero / footer rule */
 .hero-rule, .footer-rule {
   display: flex; align-items: center; gap: var(--sm);
-  justify-content: center;
-  margin-bottom: var(--md);
+  justify-content: center; margin-bottom: var(--md);
 }
 
 .bottom-rule { margin-top: var(--lg); margin-bottom: 0; }
 
 .rule-line {
-  display: block; width: 80px; height: 1px;
-  background: var(--border);
+  display: block; width: 88px; height: 1px;
+  background: linear-gradient(
+    to right, transparent, var(--border-light) 40%, var(--border) 60%, transparent
+  );
 }
 
 .rule-diamond {
-  font-size: 0.55rem; color: var(--primary);
+  font-size: 0.58rem; color: var(--gold);
   letter-spacing: 0.1em; padding: 0 0.25rem;
 }
 
 
 /* =============================================================
-   7. BUTTONS — FIX 2: button crack/glitch resolved
-      Root cause: border + background transitions create a
-      1px rendering gap. Fix: use box-shadow instead of border
-      for the outline variant; enforce sub-pixel rendering.
+   7. BUTTONS — clean, no crack
    ============================================================= */
 .btn {
   display: inline-block;
-  /* FIX 2: use padding that accounts for border so size is stable */
-  padding: 0.80rem 2.4rem;
+  padding: 0.85rem 2.5rem;
   border-radius: var(--r-sm);
   font-family: var(--fh);
-  font-size: 0.85rem; font-weight: 500;
+  font-size: 0.90rem;            /* CHANGE 1: slightly larger */
+  font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   cursor: none;
-  /* FIX 2: border always present — no toggling — prevents layout shift */
   border: 1.5px solid var(--primary);
-  /* FIX 2: disable sub-pixel outline that causes crack rendering */
   outline: none;
   -webkit-font-smoothing: antialiased;
-  /* FIX 2: force GPU composite layer for smooth edge rendering */
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transition:
-    background-color var(--t),
-    color var(--t),
-    transform var(--t),
-    box-shadow var(--t);
-  /* FIX 2: prevent white gap at edges during transition */
   background-clip: padding-box;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
+  transition: background-color var(--t), color var(--t), transform var(--t), box-shadow var(--t);
 }
-
-/* FIX 2: pseudo-element fills button to eliminate any background bleed */
-.btn::after {
-  content: '';
-  position: absolute; inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.btn > * { position: relative; z-index: 1; }
 
 .btn-primary {
-  background: var(--primary);
-  color: #fdf9f4;
+  background: var(--primary); color: #fdf9f4;
 }
 
 .btn-primary:hover {
-  background: transparent;
-  color: var(--primary);
+  background: transparent; color: var(--primary);
   transform: translateY(-3px) translateZ(0);
-  box-shadow: 0 8px 24px var(--primary-glow);
+  box-shadow: 0 8px 28px var(--primary-glow);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--primary);
+  background: transparent; color: var(--primary);
 }
 
 .btn-outline:hover {
-  background: var(--primary);
-  color: #fdf9f4;
+  background: var(--primary); color: #fdf9f4;
   transform: translateY(-3px) translateZ(0);
 }
 
@@ -394,37 +370,36 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 
 /* =============================================================
-   8. NAVIGATION BAR
+   8. NAVIGATION BAR — GLASSMORPHISM (CHANGE 5)
    ============================================================= */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--nav-h);
   z-index: 1000;
-  background: rgba(250,246,240,0.90);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-light);
+  /* CHANGE 5: glassmorphism */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
   transition: box-shadow var(--t), background var(--t);
 }
 
-/* Remove the ::before line on navbar so it doesn't get section separator */
 #navbar::before { display: none; }
 
 #navbar.scrolled {
-  background: rgba(250,246,240,0.97);
-  box-shadow: 0 2px 24px rgba(139,101,67,0.09);
+  background: rgba(250,246,240,0.92);
+  box-shadow: 0 3px 28px rgba(139,101,67,0.10);
 }
 
 .nav-inner {
   max-width: 1080px; height: 100%;
-  margin: 0 auto;
-  padding: 0 var(--md);
+  margin: 0 auto; padding: 0 var(--md);
   display: flex; align-items: center; justify-content: space-between;
 }
 
 .nav-logo {
   font-family: var(--fh);
-  font-size: 1.45rem; font-weight: 700;
+  font-size: 1.5rem; font-weight: 700;
   color: var(--primary); letter-spacing: 0.04em;
   font-style: italic;
   transition: opacity var(--t);
@@ -435,17 +410,16 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .logo-heart {
   font-style: normal; font-weight: 400;
-  font-size: 1rem; color: var(--accent);
+  font-size: 1rem; color: var(--rose);  /* CHANGE 6: rose accent */
   margin-left: 0.15rem;
 }
 
-.nav-links {
-  display: flex; align-items: center; gap: 2rem;
-}
+.nav-links { display: flex; align-items: center; gap: 2.1rem; }
 
 .nav-links a {
   font-family: var(--fh);
-  font-size: 0.75rem; font-weight: 500;
+  font-size: 0.79rem;            /* CHANGE 1: slightly larger */
+  font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--text-muted);
   position: relative; padding-bottom: 4px;
@@ -456,7 +430,7 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   content: '';
   position: absolute; bottom: 0; left: 0;
   width: 0; height: 1px;
-  background: var(--primary);
+  background: var(--gold);      /* CHANGE 6: gold underline */
   transition: width var(--t);
 }
 
@@ -473,13 +447,17 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   padding-top: var(--nav-h);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; text-align: center;
-  background: linear-gradient(175deg, #faf6f0 0%, #f2e6d4 55%, #e8d9c2 100%);
+  /* CHANGE 3: richer gradient background */
+  background: linear-gradient(
+    160deg,
+    #fdf9f3 0%,
+    #f7ead5 35%,
+    #f0dfc0 65%,
+    #e8d4ad 100%
+  );
 }
 
-/* Hero has no section separator line */
-#home::before { display: none; }
-
-/* Parallax mountain layers */
+/* Parallax layers */
 .parallax-layer {
   position: absolute; bottom: 0; left: 0; right: 0;
   pointer-events: none; will-change: transform;
@@ -487,7 +465,7 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .layer-back {
   height: 46%;
-  background: linear-gradient(180deg, transparent 0%, rgba(200,178,148,0.20) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(200,178,148,0.22) 100%);
   clip-path: polygon(
     0% 100%, 0% 70%, 6% 48%, 12% 62%, 18% 34%, 26% 55%, 33% 22%,
     40% 48%, 47% 18%, 54% 44%, 60% 28%, 67% 52%, 74% 15%,
@@ -497,7 +475,7 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .layer-mid {
   height: 34%;
-  background: linear-gradient(180deg, transparent 0%, rgba(185,158,122,0.26) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(185,158,122,0.28) 100%);
   clip-path: polygon(
     0% 100%, 0% 60%, 8% 40%, 16% 58%, 24% 30%, 32% 52%, 40% 20%,
     50% 46%, 58% 28%, 66% 50%, 74% 24%, 82% 46%, 90% 32%, 100% 52%, 100% 100%
@@ -506,17 +484,15 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .layer-front {
   height: 20%;
-  background: linear-gradient(180deg, transparent 0%, rgba(165,135,98,0.30) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(165,135,98,0.32) 100%);
   clip-path: polygon(
     0% 100%, 0% 72%, 10% 52%, 22% 68%, 34% 40%, 46% 60%,
     58% 44%, 70% 62%, 82% 46%, 92% 58%, 100% 48%, 100% 100%
   );
 }
 
-/* Botanical SVG decorations */
-.hero-deco {
-  position: absolute; color: var(--primary); pointer-events: none;
-}
+/* Botanical SVGs */
+.hero-deco { position: absolute; color: var(--primary); pointer-events: none; }
 
 .deco-tl {
   top: -30px; left: -30px; width: 280px; opacity: 0.50;
@@ -524,7 +500,7 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 }
 
 .deco-br {
-  bottom: -20px; right: -20px; width: 240px; opacity: 0.35;
+  bottom: -20px; right: -20px; width: 240px; opacity: 0.38;
   animation: decoSway 18s ease-in-out infinite alternate-reverse;
 }
 
@@ -534,61 +510,64 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 }
 
 .corner-ornament {
-  position: absolute; font-size: 0.7rem;
-  color: var(--primary); opacity: 0.20; pointer-events: none;
+  position: absolute; font-size: 0.72rem;
+  color: var(--gold); opacity: 0.28; pointer-events: none;  /* CHANGE 6: gold corners */
 }
 
-.corner-tl   { top: 90px;  left: 26px;  }
-.corner-tr   { top: 90px;  right: 26px; }
-.corner-bl   { bottom: 44px; left: 26px;  }
+.corner-tl   { top: 90px;   left: 26px;  }
+.corner-tr   { top: 90px;   right: 26px; }
+.corner-bl   { bottom: 44px; left: 26px; }
 .corner-br-c { bottom: 44px; right: 26px; }
 
 /* Hero text */
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 800px; padding: 0 var(--md);
+  max-width: 820px; padding: 0 var(--md);
 }
 
+/* CHANGE 1: hero eyebrow larger */
 .hero-eyebrow {
-  font-family: var(--fh); font-size: 0.85rem; font-weight: 400;
-  color: var(--text-muted); letter-spacing: 0.24em; text-transform: uppercase;
+  font-family: var(--fh);
+  font-size: 0.92rem;            /* ↑ from 0.85rem */
+  font-weight: 400; color: var(--text-muted);
+  letter-spacing: 0.24em; text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
-/* FIX 5: hero name slightly reduced from clamp(3.2rem,8vw,6.5rem) */
+/* CHANGE 1: hero name slightly reduced but still impactful */
 .hero-name {
-  font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+  font-size: clamp(2.9rem, 6.8vw, 5.8rem);
   font-weight: 800; color: var(--heading);
-  line-height: 1.0; margin-bottom: 0.6rem; letter-spacing: 0.01em;
+  line-height: 1.0; margin-bottom: 0.7rem; letter-spacing: 0.01em;
 }
 
 .hero-meaning {
   font-family: var(--fh); font-style: italic;
-  font-size: clamp(0.82rem,1.3vw,1rem);
+  font-size: clamp(0.90rem,1.4vw,1.08rem);
   color: var(--text-muted); letter-spacing: 0.08em;
   margin-bottom: 0.9rem; opacity: 0.82;
 }
 
+/* CHANGE 1: hero title larger */
 .hero-title {
-  font-size: clamp(1rem,2.2vw,1.32rem);
+  font-size: clamp(1.05rem,2.4vw,1.42rem);
   font-style: italic; font-weight: 400;
   color: var(--primary); letter-spacing: 0.03em;
-  margin-bottom: var(--md); margin-top: 0.2rem;
+  margin-bottom: var(--md); margin-top: 0.25rem;
 }
 
+/* CHANGE 1: tagline slightly larger */
 .hero-tagline {
-  font-size: 0.95rem; color: var(--text-muted);
-  letter-spacing: 0.05em; line-height: 2.0;
-  margin-bottom: var(--lg);
+  font-size: 1.0rem;             /* ↑ from 0.95rem */
+  color: var(--text-muted); letter-spacing: 0.05em;
+  line-height: 2.0; margin-bottom: var(--lg);
 }
 
 .hero-cta {
   display: flex; gap: var(--sm);
-  justify-content: center; flex-wrap: wrap;
-  margin-bottom: var(--md);
+  justify-content: center; flex-wrap: wrap; margin-bottom: var(--md);
 }
 
-/* FIX 3: scroll label removed — only the animated line remains */
 .scroll-hint {
   position: absolute; bottom: 2.8rem; left: 50%;
   transform: translateX(-50%);
@@ -598,11 +577,10 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .scroll-line {
   width: 1px; height: 52px;
-  background: linear-gradient(to bottom, transparent, var(--border));
+  background: linear-gradient(to bottom, transparent, rgba(200,151,58,0.45));
   animation: scrollPulse 2.2s ease-in-out infinite;
 }
 
-/* FIX 3: .scroll-label display:none in case old markup still exists */
 .scroll-label { display: none; }
 
 @keyframes scrollPulse {
@@ -622,27 +600,23 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   gap: var(--xl); align-items: center;
 }
 
-/* FIX 12: image-wrap aligned to vertical center */
-.about-image-wrap {
-  position: relative; display: flex; justify-content: center;
-}
+.about-image-wrap { position: relative; display: flex; justify-content: center; }
 
 .about-frame-outer {
   padding: 10px;
   border: 1px solid var(--border);
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--bg-alt), var(--bg-deep));
+  /* CHANGE 3: richer gradient frame */
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-deep) 100%);
   box-shadow: var(--sh-card);
   transition: box-shadow var(--ts);
 }
 
 .about-frame-outer:hover { box-shadow: var(--sh-glow); }
 
-/* Profile photo frame — tight clip */
 .about-image-frame {
   width: 290px; height: 290px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; overflow: hidden;
   position: relative;
   border: 2px solid var(--border);
   background: var(--bg-deep);
@@ -654,138 +628,128 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   display: block; border-radius: 50%;
 }
 
-/* FIX 8: badge with SVG icon */
 .about-badge {
   position: absolute; bottom: 14px; right: 6px;
-  background: var(--primary); color: #fdf9f4;
+  /* CHANGE 6: gold-toned badge */
+  background: linear-gradient(135deg, var(--gold) 0%, #a8762a 100%);
+  color: #fdf9f4;
   border-radius: var(--r-md);
-  padding: 0.7rem 0.95rem;
+  padding: 0.75rem 1rem;
   text-align: center;
-  box-shadow: 0 6px 22px rgba(139,101,67,0.28);
+  box-shadow: var(--sh-gold);
   display: flex; flex-direction: column; align-items: center; gap: 5px;
   transition: transform var(--t), box-shadow var(--t);
 }
 
-.about-badge:hover { transform: translateY(-4px); box-shadow: var(--sh-hover); }
+.about-badge:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(200,151,58,0.32); }
 
-/* SVG icon inside badge */
 .badge-icon-svg {
   display: flex; align-items: center; justify-content: center;
-  width: 22px; height: 22px;
-  color: rgba(255,255,255,0.85);
+  width: 22px; height: 22px; color: rgba(255,255,255,0.90);
 }
 
 .badge-icon-svg svg { width: 100%; height: 100%; }
 
+/* CHANGE 1: badge text slightly larger */
 .badge-text {
-  font-family: var(--fh); font-size: 0.65rem; font-weight: 500;
+  font-family: var(--fh); font-size: 0.70rem; font-weight: 500;
   letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5;
 }
 
-/* Bio text */
+/* CHANGE 1: about text paragraphs slightly larger */
 .about-text p {
-  color: var(--text-muted); margin-bottom: var(--sm); font-size: 0.98rem;
+  color: var(--text-muted); margin-bottom: var(--sm);
+  font-size: 1.02rem;           /* ↑ from 0.98rem */
 }
 
 .about-text strong { color: var(--heading); }
 
-/* FIX 12: about-facts alignment consistent */
+/* CHANGE 3: about-facts with gold accent border */
 .about-facts {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: var(--sm);
   margin: var(--md) 0 var(--lg);
   padding: var(--md) var(--lg);
-  background: var(--primary-pale);
-  border: 1px solid var(--border-light);
+  background: linear-gradient(135deg, var(--primary-pale) 0%, var(--gold-pale) 100%);
+  border: 1px solid rgba(200,151,58,0.22);
   border-radius: var(--r-md);
 }
 
-.about-facts li {
-  display: flex; flex-direction: column; gap: 4px;
-}
+.about-facts li { display: flex; flex-direction: column; gap: 4px; }
 
+/* CHANGE 6: facts label in gold */
 .about-facts strong {
-  font-family: var(--fh); font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary);
+  font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold);
 }
 
-.about-facts span { font-size: 0.92rem; color: var(--heading); }
+/* CHANGE 1: facts value slightly larger */
+.about-facts span { font-size: 0.96rem; color: var(--heading); }
 
 
 /* =============================================================
-   11. SKILLS SECTION — FIX 7, FIX 8
+   11. SKILLS SECTION — CHANGE 2: NO progress bars, NO hover overlay
    ============================================================= */
 #skills { background: var(--bg-alt); }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
   gap: var(--md);
 }
 
+/* CHANGE 2 + CHANGE 5: glassmorphism skill cards */
 .skill-card {
-  background: var(--card);
-  border: 1px solid var(--border-light);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
   position: relative; overflow: hidden;
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+  /* CHANGE 3: thin gold top edge accent */
+  border-top: 2px solid rgba(200,151,58,0.28);
 }
 
-.skill-card::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--primary-pale), transparent 70%);
-  opacity: 0; transition: opacity var(--t);
-  border-radius: var(--r-md); pointer-events: none;
+/* CHANGE 2: NO hover overlay pseudo-element — removed completely */
+.skill-card::before { display: none; }
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--sh-hover);
+  border-color: rgba(200,151,58,0.40);
+  border-top-color: var(--gold);
 }
 
-.skill-card:hover { transform: translateY(-7px); box-shadow: var(--sh-hover); border-color: var(--accent-light); }
-.skill-card:hover::before { opacity: 1; }
+.skill-icon-wrap { margin-bottom: var(--sm); display: flex; align-items: center; }
 
-/* FIX 8: SVG icon instead of emoji */
-.skill-icon-wrap {
-  margin-bottom: var(--sm);
-  display: flex; align-items: center;
-}
-
+/* CHANGE 6: skill SVG in gold */
 .skill-svg {
-  width: 26px; height: 26px;
-  color: var(--primary);
-  opacity: 0.75;
+  width: 28px; height: 28px;
+  color: var(--gold);
+  opacity: 0.80;
   transition: opacity var(--t), transform var(--t);
 }
 
 .skill-card:hover .skill-svg { opacity: 1; transform: scale(1.08); }
 
-.skill-name { font-size: 1.1rem; margin-bottom: 0.5rem; }
+/* CHANGE 1: skill name larger */
+.skill-name {
+  font-size: 1.15rem;            /* ↑ from 1.1rem */
+  margin-bottom: 0.6rem;
+}
 
+/* CHANGE 1: skill desc larger; CHANGE 2: no bottom margin needed (no bar) */
 .skill-desc {
-  font-size: 0.86rem; color: var(--text-muted);
-  line-height: 1.70; margin-bottom: var(--md);
+  font-size: 0.92rem;            /* ↑ from 0.86rem */
+  color: var(--text-muted); line-height: 1.75;
 }
 
-/* FIX 7: progress-wrap no longer contains a percentage label */
-.progress-wrap {
-  display: flex; flex-direction: column;
-  gap: 0;  /* no gap needed — label is gone */
-}
-
-.progress-bar {
-  width: 100%; height: 5px;
-  background: var(--border);
-  border-radius: 99px; overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%; width: var(--fill);
-  background: linear-gradient(90deg, var(--accent-light), var(--primary));
-  border-radius: 99px;
-}
-
-/* FIX 7: hide any remaining progress-pct elements */
-.progress-pct { display: none !important; }
+/* CHANGE 2: hide any remnant progress elements */
+.progress-wrap, .progress-bar, .progress-fill, .progress-pct { display: none !important; }
 
 
 /* =============================================================
@@ -799,9 +763,12 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   gap: var(--lg);
 }
 
+/* CHANGE 5: glassmorphism experience cards */
 .exp-card {
-  background: var(--card);
-  border: 1px solid var(--border-light);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-card);
   overflow: hidden;
@@ -809,126 +776,125 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
 }
 
-.exp-card:hover { transform: translateY(-9px); box-shadow: var(--sh-hover); border-color: var(--accent-light); }
+.exp-card:hover {
+  transform: translateY(-9px);
+  box-shadow: var(--sh-hover);
+  border-color: rgba(200,151,58,0.35);
+}
 
+/* CHANGE 6: accent bars use vibrant tones */
 .exp-card-accent { height: 4px; width: 100%; }
-.accent-warm { background: linear-gradient(90deg, var(--primary-light), var(--primary)); }
-.accent-cool { background: linear-gradient(90deg, #b8c8b2, var(--accent-cool)); }
+.accent-warm { background: linear-gradient(90deg, var(--gold) 0%, var(--terracotta) 100%); }
+.accent-cool { background: linear-gradient(90deg, var(--sage) 0%, #b8c8b2 100%); }
 
-.exp-card-body {
-  padding: var(--lg); flex: 1;
-  display: flex; flex-direction: column;
-}
+.exp-card-body { padding: var(--lg); flex: 1; display: flex; flex-direction: column; }
 
-.exp-header {
-  display: flex; align-items: flex-start; gap: var(--md);
-  margin-bottom: var(--md);
-}
+.exp-header { display: flex; align-items: flex-start; gap: var(--md); margin-bottom: var(--md); }
 
-/* FIX 8: SVG icon wrap */
+/* CHANGE 6: icon wrap with gold tint */
 .exp-icon-wrap {
-  width: 50px; height: 50px;
+  width: 52px; height: 52px;
   border-radius: 50%;
-  background: var(--primary-pale);
-  border: 1.5px solid var(--border);
+  background: var(--gold-pale);
+  border: 1.5px solid rgba(200,151,58,0.25);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   transition: background var(--t), transform var(--t);
 }
 
-.exp-card:hover .exp-icon-wrap { background: rgba(139,101,67,0.13); transform: scale(1.07); }
-
-.exp-svg {
-  width: 22px; height: 22px;
-  color: var(--primary); opacity: 0.80;
+.exp-card:hover .exp-icon-wrap {
+  background: rgba(200,151,58,0.16); transform: scale(1.07);
 }
+
+.exp-svg { width: 22px; height: 22px; color: var(--gold); opacity: 0.85; }
 
 .exp-title-block { flex: 1; }
 
+/* CHANGE 6: duration pill in gold */
 .exp-duration {
   display: inline-block; font-family: var(--fh);
-  font-size: 0.68rem; font-weight: 500;
+  font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--primary); background: var(--primary-pale);
-  border: 1px solid rgba(139,101,67,0.16);
-  border-radius: 99px; padding: 3px 11px; margin-bottom: 0.5rem;
+  color: var(--gold);
+  background: var(--gold-pale);
+  border: 1px solid rgba(200,151,58,0.22);
+  border-radius: 99px; padding: 3px 12px; margin-bottom: 0.5rem;
 }
 
-.exp-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+/* CHANGE 1: exp title larger */
+.exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
 
-.exp-org { font-style: italic; font-size: 0.92rem; color: var(--text-muted); }
+.exp-org { font-style: italic; font-size: 0.95rem; color: var(--text-muted); }
 
-.exp-divider {
-  height: 1px; background: var(--border-faint);
-  margin: 0 0 var(--md);
-}
+.exp-divider { height: 1px; background: var(--border-faint); margin: 0 0 var(--md); }
 
+/* CHANGE 1: exp desc larger */
 .exp-desc {
-  font-size: 0.92rem; color: var(--text-muted);
-  line-height: 1.85; margin-bottom: var(--md); flex: 1;
+  font-size: 0.95rem; color: var(--text-muted);
+  line-height: 1.88; margin-bottom: var(--md); flex: 1;
 }
 
 .exp-desc strong { color: var(--heading); }
 
-.exp-tags {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--md);
-}
+.exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--md); }
 
+/* CHANGE 6: tags in gold */
 .exp-tags li {
-  font-family: var(--fh); font-size: 0.70rem; font-weight: 500;
+  font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: var(--primary); background: var(--primary-pale);
-  border: 1px solid rgba(139,101,67,0.16);
+  color: var(--gold); background: var(--gold-pale);
+  border: 1px solid rgba(200,151,58,0.22);
   border-radius: 99px; padding: 3px 12px;
   transition: background var(--t), color var(--t);
 }
 
-.exp-tags li:hover { background: var(--primary); color: #fdf9f4; }
+.exp-tags li:hover { background: var(--gold); color: #fdf9f4; }
 
 .exp-quote {
-  font-family: var(--fh); font-style: italic; font-size: 0.90rem;
-  color: var(--text-muted); border-left: 2px solid var(--border-light);
-  padding-left: var(--sm); margin-top: auto; line-height: 1.70;
+  font-family: var(--fh); font-style: italic; font-size: 0.93rem;
+  color: var(--text-muted);
+  border-left: 2px solid rgba(200,151,58,0.35);  /* CHANGE 6: gold quote border */
+  padding-left: var(--sm); margin-top: auto; line-height: 1.72;
 }
 
 
 /* =============================================================
-   13. ACHIEVEMENTS SECTION — FIX 9 (slightly deeper bg)
+   13. ACHIEVEMENTS SECTION
    ============================================================= */
 #achievements { background: var(--bg-warm); }
 
-.achievements-layout {
-  display: flex; gap: var(--lg); align-items: flex-start;
-}
+.achievements-layout { display: flex; gap: var(--lg); align-items: flex-start; }
 
 .achievement-era { flex: 1; }
 
 .era-header { margin-bottom: var(--md); }
 
+/* CHANGE 6: era badge in gold */
 .era-badge {
   display: inline-block; font-family: var(--fh);
-  font-size: 0.80rem; font-weight: 600;
+  font-size: 0.82rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--primary); background: var(--primary-pale);
-  border: 1px solid var(--border);
+  color: var(--gold); background: var(--gold-pale);
+  border: 1px solid rgba(200,151,58,0.28);
   padding: 0.4rem 1.2rem; border-radius: 99px;
 }
 
 .era-divider {
-  font-size: 0.7rem; color: var(--border);
+  font-size: 0.7rem; color: rgba(200,151,58,0.35);
   padding-top: 3.5rem; writing-mode: vertical-rl; letter-spacing: 1.2rem;
   align-self: stretch; display: flex; align-items: flex-start; justify-content: center;
 }
 
-.achievement-list {
-  display: flex; flex-direction: column; gap: var(--md);
-}
+.achievement-list { display: flex; flex-direction: column; gap: var(--md); }
 
+/* CHANGE 5: glassmorphism achievement items */
 .achievement-item {
   display: flex; gap: var(--sm); align-items: flex-start;
   padding: var(--sm) var(--md);
-  background: var(--card);
-  border: 1px solid var(--border-light);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--r-md);
   box-shadow: var(--sh-soft);
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
@@ -937,64 +903,62 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 .achievement-item:hover {
   transform: translateX(6px);
   box-shadow: var(--sh-card);
-  border-color: var(--accent-light);
+  border-color: rgba(200,151,58,0.30);
 }
 
-/* FIX 8: SVG icon in achievement items */
 .ach-icon-svg {
   display: flex; align-items: center; justify-content: center;
   width: 28px; height: 28px;
-  color: var(--primary); opacity: 0.70;
+  color: var(--gold); opacity: 0.75;  /* CHANGE 6: gold icons */
   flex-shrink: 0; margin-top: 2px;
 }
 
 .ach-icon-svg svg { width: 100%; height: 100%; }
-
-/* Suppress any old emoji spans */
 .ach-icon { display: none; }
 
+/* CHANGE 1: achievement text larger */
 .achievement-item strong {
   display: block; font-family: var(--fh);
-  font-size: 0.98rem; color: var(--heading); margin-bottom: 4px;
+  font-size: 1.02rem; color: var(--heading); margin-bottom: 4px;
 }
 
-.achievement-item p {
-  font-size: 0.86rem; color: var(--text-muted); line-height: 1.65;
-}
+.achievement-item p { font-size: 0.90rem; color: var(--text-muted); line-height: 1.68; }
 
 
 /* =============================================================
-   14. EDUCATION TIMELINE — FIX 11
+   14. EDUCATION TIMELINE
    ============================================================= */
 #education { background: var(--bg-alt); }
 
 .timeline {
-  position: relative; margin-top: var(--md); padding-left: 2.8rem;
+  position: relative; margin-top: var(--md); padding-left: 2.9rem;
 }
 
-/* Vertical line */
 .timeline::before {
   content: '';
   position: absolute; left: 11px; top: 14px; bottom: 14px;
   width: 1px;
-  background: linear-gradient(to bottom, var(--border-light), var(--accent-light) 50%, var(--border-light));
+  /* CHANGE 6: gold-tinted timeline line */
+  background: linear-gradient(
+    to bottom,
+    var(--border-light),
+    rgba(200,151,58,0.30) 50%,
+    var(--border-light)
+  );
 }
 
-/* FIX 11: uniform spacing between entries */
 .timeline-node {
-  position: relative;
-  margin-bottom: var(--lg);
+  position: relative; margin-bottom: var(--lg);
   display: flex; align-items: flex-start; gap: var(--md);
 }
 
 .timeline-node:last-child { margin-bottom: 0; }
 
-/* FIX 11: all dots same size, same style */
 .timeline-dot {
-  position: absolute; left: -2.8rem; top: 14px;
+  position: absolute; left: -2.9rem; top: 14px;
   width: 14px; height: 14px;
   border-radius: 50%;
-  background: var(--bg-alt);        /* matches section bg */
+  background: var(--bg-alt);
   border: 2px solid var(--border);
   z-index: 1;
   transition: background var(--t), border-color var(--t), transform var(--t);
@@ -1002,23 +966,24 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .timeline-node:hover .timeline-dot {
   transform: scale(1.25);
-  border-color: var(--primary);
-  background: var(--primary-pale);
+  border-color: var(--gold);
+  background: var(--gold-pale);
 }
 
-/* FIX 11: active dot clearly differentiated */
 .dot-active {
-  background: var(--primary) !important;
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 4px rgba(139,101,67,0.16);
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 5px rgba(200,151,58,0.18);
 }
 
-/* FIX 11: ALL cards share the same base styles — no highlight-card exception */
+/* CHANGE 5: glassmorphism timeline cards */
 .timeline-card {
   flex: 1;
-  background: var(--card);
-  border: 1px solid var(--border-light);
-  border-left: 3px solid var(--border);     /* uniform left border */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--border);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
@@ -1028,61 +993,53 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 .timeline-card:hover {
   box-shadow: var(--sh-card);
   transform: translateX(5px);
-  border-left-color: var(--primary-light);
+  border-left-color: var(--gold);
 }
 
-/* FIX 11: remove old inconsistent highlight/active overrides */
-.highlight-card {
-  border-left-color: var(--accent-light);  /* subtle, not flashy */
-}
+.highlight-card { border-left-color: rgba(200,151,58,0.40); }
 
-/* FIX 11: active card — clean, premium highlight */
 .active-card {
-  border-left-color: var(--primary);
-  background: linear-gradient(135deg, #fdf9f4 0%, #f7efe4 100%);
-  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(139,101,67,0.07);
+  border-left-color: var(--gold);
+  background: linear-gradient(135deg, rgba(247,237,218,0.80) 0%, rgba(253,249,244,0.90) 100%);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(200,151,58,0.10);
 }
 
-/* FIX 11: active card header row — year + badge side by side */
 .active-card-header {
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 0.5rem;
-  margin-bottom: 0.4rem;
+  flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;
 }
 
+/* CHANGE 1: timeline year larger; CHANGE 6: gold */
 .timeline-year {
-  font-family: var(--fh); font-size: 0.72rem; font-weight: 600;
+  font-family: var(--fh); font-size: 0.76rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--primary); display: block; margin-bottom: 0.4rem;
+  color: var(--gold); display: block; margin-bottom: 0.45rem;
 }
 
-/* Active year inline (inside header row — no separate margin-bottom) */
 .active-card-header .timeline-year { margin-bottom: 0; }
+.active-year { color: var(--gold); }
 
-.active-year { color: var(--primary); }
-
-.timeline-title  { font-size: 1.1rem; margin-bottom: 0.35rem; }
+/* CHANGE 1: timeline title larger */
+.timeline-title { font-size: 1.14rem; margin-bottom: 0.38rem; }
 
 .timeline-place {
-  font-style: italic; font-size: 0.90rem; color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  font-style: italic; font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.5rem;
 }
 
-.timeline-detail {
-  font-size: 0.88rem; color: var(--text-muted); line-height: 1.70;
-}
-
+.timeline-detail { font-size: 0.91rem; color: var(--text-muted); line-height: 1.72; }
 .timeline-detail strong { color: var(--heading); }
 
-/* FIX 11: active badge — refined pill, not a separate line break */
+/* CHANGE 6: active badge in gold */
 .active-badge {
   display: inline-flex; align-items: center;
-  font-family: var(--fh); font-size: 0.66rem; font-weight: 600;
+  font-family: var(--fh); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: #fdf9f4; background: var(--primary);
-  padding: 3px 12px; border-radius: 99px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(139,101,67,0.22);
+  color: #fdf9f4;
+  background: linear-gradient(135deg, var(--gold) 0%, #a8762a 100%);
+  padding: 3px 12px; border-radius: 99px; white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(200,151,58,0.28);
 }
 
 
@@ -1091,15 +1048,14 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
    ============================================================= */
 #contact { background: var(--bg); }
 
-.contact-layout {
-  display: flex; gap: var(--xl); align-items: flex-start;
-}
+.contact-layout { display: flex; gap: var(--xl); align-items: flex-start; }
 
 .contact-info { flex: 1; }
 
+/* CHANGE 1: contact-intro larger */
 .contact-intro {
-  color: var(--text-muted); font-size: 0.96rem;
-  line-height: 1.9; margin-bottom: var(--lg);
+  color: var(--text-muted); font-size: 1.0rem;
+  line-height: 1.92; margin-bottom: var(--lg);
 }
 
 .contact-details {
@@ -1107,51 +1063,50 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   margin-bottom: var(--lg);
 }
 
-/* FIX 12: contact items consistently aligned */
 .contact-details li {
-  display: flex; align-items: flex-start; gap: var(--sm);
-  font-size: 0.92rem; transition: transform var(--t);
+  display: flex; align-items: flex-start;
+  gap: var(--sm); font-size: 0.96rem;
+  transition: transform var(--t);
 }
 
 .contact-details li:hover { transform: translateX(5px); }
 
-/* FIX 8: SVG icon wrap in contact */
+/* CHANGE 6: contact icon wrap in gold tint */
 .contact-icon-svg {
-  width: 34px; height: 34px;
+  width: 36px; height: 36px;
   border-radius: 50%;
-  background: var(--primary-pale);
-  border: 1px solid rgba(139,101,67,0.16);
+  background: var(--gold-pale);
+  border: 1px solid rgba(200,151,58,0.22);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 2px;
   transition: background var(--t);
 }
 
-.contact-details li:hover .contact-icon-svg { background: rgba(139,101,67,0.13); }
+.contact-details li:hover .contact-icon-svg { background: rgba(200,151,58,0.16); }
 
-.contact-icon-svg svg {
-  width: 15px; height: 15px;
-  color: var(--primary); opacity: 0.80;
-}
+.contact-icon-svg svg { width: 15px; height: 15px; color: var(--gold); opacity: 0.85; }
 
-/* Suppress old emoji contact-icon if still present */
 .contact-icon { display: none; }
 
 .contact-details strong {
   display: block; font-family: var(--fh);
-  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--primary); margin-bottom: 1px;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1px;
 }
 
 .contact-details span,
-.contact-link { color: var(--text-muted); font-size: 0.90rem; word-break: break-all; }
+.contact-link { color: var(--text-muted); font-size: 0.93rem; word-break: break-all; }
 
 .contact-link { transition: color var(--t); }
 .contact-link:hover { color: var(--primary); }
 
-/* Form card */
+/* CHANGE 5: glassmorphism form card */
 .contact-form-wrap {
-  flex: 1; background: var(--card);
-  border: 1px solid var(--border-light);
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--r-lg);
   padding: var(--lg);
   box-shadow: var(--sh-card);
@@ -1162,34 +1117,38 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 .form-group {
   display: flex; flex-direction: column;
-  gap: 0.45rem; margin-bottom: var(--md);
+  gap: 0.48rem; margin-bottom: var(--md);
 }
 
+/* CHANGE 1: form label larger; CHANGE 6: gold */
 .form-group label {
-  font-family: var(--fh); font-size: 0.70rem; font-weight: 500;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted);
+  font-family: var(--fh); font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold);
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%; padding: 0.80rem 1.1rem;
-  background: var(--bg); border: 1px solid var(--border);
+  width: 100%; padding: 0.85rem 1.15rem;
+  background: rgba(250,246,240,0.75);
+  border: 1px solid var(--border);
   border-radius: var(--r-sm); color: var(--text);
-  font-family: var(--fb); font-size: 0.95rem;
+  font-family: var(--fb);
+  font-size: 1.0rem;             /* CHANGE 1: input text larger */
   outline: none;
   transition: border-color var(--t), box-shadow var(--t);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(139,101,67,0.09);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,151,58,0.12);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder { color: var(--accent-light); }
 
-.contact-form textarea { resize: vertical; min-height: 135px; }
+.contact-form textarea { resize: vertical; min-height: 140px; }
 
 
 /* =============================================================
@@ -1197,10 +1156,9 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
    ============================================================= */
 #footer {
   border-top: 1px solid var(--border-light);
-  background: var(--bg-deep);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 100%);
 }
 
-/* No section separator on footer */
 #footer::before { display: none; }
 
 .footer-inner {
@@ -1211,19 +1169,20 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
   align-items: center; gap: var(--xs); text-align: center;
 }
 
+/* CHANGE 1: footer logo larger; CHANGE 6: gold */
 .footer-logo {
-  font-family: var(--fh); font-size: 1.5rem; font-weight: 700;
-  color: var(--primary); letter-spacing: 0.06em; margin-bottom: 0.2rem;
+  font-family: var(--fh); font-size: 1.6rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.2rem;
 }
 
 .footer-meaning {
   font-family: var(--fh); font-style: italic;
-  font-size: 0.88rem; color: var(--text-muted);
-  letter-spacing: 0.06em; opacity: 0.80; margin-bottom: 0.3rem;
+  font-size: 0.92rem; color: var(--text-muted);
+  letter-spacing: 0.06em; opacity: 0.82; margin-bottom: 0.3rem;
 }
 
 .footer-copy {
-  font-family: var(--fh); font-size: 0.78rem;
+  font-family: var(--fh); font-size: 0.82rem;
   color: var(--text-muted); letter-spacing: 0.06em;
 }
 
@@ -1233,19 +1192,19 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 }
 
 .footer-nav a {
-  font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
+  font-family: var(--fh); font-size: 0.76rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--text-muted); transition: color var(--t);
 }
 
-.footer-nav a:hover { color: var(--primary); }
+.footer-nav a:hover { color: var(--gold); }
 
 .footer-rule { width: 100%; margin-bottom: var(--md); }
 .footer-rule .rule-line { width: 120px; }
 
 
 /* =============================================================
-   17. MEDIA QUERIES
+   17. MEDIA QUERIES — unchanged structure, adjusted for larger font
    ============================================================= */
 
 /* Tablet (≤ 920px) */
@@ -1272,14 +1231,16 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 
 /* Mobile (≤ 600px) */
 @media (max-width: 600px) {
+  body { font-size: 1.05rem; }
+
   .nav-links { gap: var(--xs); }
-  .nav-links a { font-size: 0.68rem; letter-spacing: 0.07em; }
+  .nav-links a { font-size: 0.72rem; letter-spacing: 0.07em; }
   .nav-links li:nth-child(4),
   .nav-links li:nth-child(5),
   .nav-links li:nth-child(6),
   .nav-links li:nth-child(7) { display: none; }
 
-  .hero-tagline { font-size: 0.90rem; }
+  .hero-tagline { font-size: 0.94rem; }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { width: 100%; text-align: center; }
 
@@ -1299,5 +1260,5 @@ h1,h2,h3,h4 { font-family: var(--fh); color: var(--heading); line-height: 1.18; 
 @media (max-width: 380px) {
   .about-badge { right: 0; bottom: 0; }
   .footer-nav { gap: var(--sm); }
-  .nav-logo { font-size: 1.1rem; }
+  .nav-logo { font-size: 1.15rem; }
 }

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Huela Sravya · Portfolio</title>
 
-  <!-- Google Fonts: EB Garamond + Cormorant Garamond — unchanged -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
@@ -36,13 +35,10 @@
 
   <!-- ===== HERO ===== -->
   <header id="home">
-
-    <!-- Parallax mountain layers -->
     <div class="parallax-layer layer-back"  aria-hidden="true"></div>
     <div class="parallax-layer layer-mid"   aria-hidden="true"></div>
     <div class="parallax-layer layer-front" aria-hidden="true"></div>
 
-    <!-- Botanical SVG deco top-left -->
     <div class="hero-deco deco-tl" aria-hidden="true">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path d="M100,10 Q130,50 100,100 Q70,50 100,10Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
@@ -53,7 +49,6 @@
         <circle cx="140" cy="30" r="2" fill="currentColor" opacity="0.2"/>
       </svg>
     </div>
-    <!-- Botanical SVG deco bottom-right -->
     <div class="hero-deco deco-br" aria-hidden="true">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="100" cy="100" rx="80" ry="40" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
@@ -62,13 +57,11 @@
       </svg>
     </div>
 
-    <!-- Corner ornaments -->
     <div class="corner-ornament corner-tl"   aria-hidden="true">✦</div>
     <div class="corner-ornament corner-tr"   aria-hidden="true">✦</div>
     <div class="corner-ornament corner-bl"   aria-hidden="true">✦</div>
     <div class="corner-ornament corner-br-c" aria-hidden="true">✦</div>
 
-    <!-- Hero text -->
     <div class="hero-content">
       <div class="hero-rule" aria-hidden="true">
         <span class="rule-line"></span>
@@ -77,21 +70,14 @@
       </div>
 
       <p class="hero-eyebrow reveal-up">Hello, I'm</p>
-
-      <!-- FIX 5: slightly reduced font size via .hero-name class -->
       <h1 class="hero-name reveal-up delay-1">C. Huela Sravya</h1>
-
-      <!-- FIX 1: em dash replaced with period + space -->
-      <!-- Personal meaning line -->
       <p class="hero-meaning reveal-up delay-2"><em>Huela. Strong in Mind and Spirit.</em></p>
-
       <h2 class="hero-title reveal-up delay-2">Dual-Degree Student &amp; National Badminton Athlete</h2>
       <p class="hero-tagline reveal-up delay-3">
         BBA DBE @ IIM Bangalore &nbsp;·&nbsp; BCom @ Osmania University<br/>
         Creative · Communicative · Driven
       </p>
 
-      <!-- FIX 2: button crack fixed in CSS — no markup change needed -->
       <div class="hero-cta reveal-up delay-4">
         <a href="#about"   class="btn btn-primary">Discover My Story</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -104,30 +90,24 @@
       </div>
     </div>
 
-    <!-- FIX 3: scroll-label removed; scroll-line kept -->
     <div class="scroll-hint" aria-hidden="true">
       <span class="scroll-line"></span>
     </div>
-
   </header>
 
   <!-- ===== ABOUT ===== -->
-  <!-- FIX 6: section-orn-top (wavy SVG) completely removed -->
   <section id="about">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner about-grid">
 
-      <!-- Left: photo -->
       <div class="about-image-wrap reveal-left">
         <div class="about-frame-outer">
           <div class="about-image-frame">
             <img src="Sravya_Photo.jpg" alt="C. Huela Sravya" class="profile-photo" />
           </div>
         </div>
-        <!-- FIX 8: emoji replaced with SVG icon -->
         <div class="about-badge">
           <span class="badge-icon-svg" aria-hidden="true">
-            <!-- Minimalist racquet icon -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="10" cy="10" r="7"/>
               <line x1="15" y1="15" x2="21" y2="21"/>
@@ -139,12 +119,10 @@
         </div>
       </div>
 
-      <!-- Right: bio -->
       <div class="about-text reveal-right">
         <p class="section-label">About Me</p>
         <h2 class="section-heading">Who I Am</h2>
 
-        <!-- FIX 1: em dashes replaced -->
         <p>
           I am Cheppalli Huela Sravya, a focused and determined student from
           Andhra Pradesh, balancing a dual degree with passion and purpose. I'm
@@ -165,7 +143,6 @@
 
         <ul class="about-facts">
           <li><strong>Location</strong><span>Andhra Pradesh, India</span></li>
-          <!-- FIX 1: em dash replaced with comma -->
           <li><strong>Current Study</strong><span>BBA DBE, IIM Bangalore</span></li>
           <li><strong>Also Pursuing</strong><span>BCom, Osmania University</span></li>
           <li><strong>Interests</strong><span>Badminton, Singing, Drawing</span></li>
@@ -192,7 +169,7 @@
 
       <div class="skills-grid">
 
-        <!-- FIX 8: emoji replaced with SVG icon | FIX 7: progress-pct spans removed -->
+        <!-- Progress bars REMOVED — cards are now clean icon + title + desc only -->
         <article class="skill-card reveal-up delay-1">
           <div class="skill-icon-wrap">
             <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -200,13 +177,7 @@
             </svg>
           </div>
           <h3 class="skill-name">Creative Thinking</h3>
-          <!-- FIX 1: em dash removed from desc -->
           <p class="skill-desc">Drawing, design sensibility, and an eye for aesthetics cultivated through years of artistic exploration.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 90%;"></div>
-            </div>
-          </div>
         </article>
 
         <article class="skill-card reveal-up delay-2">
@@ -217,11 +188,6 @@
           </div>
           <h3 class="skill-name">Communication</h3>
           <p class="skill-desc">Articulate and confident speaker, honed through academic environments, competitions, and leadership roles.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 88%;"></div>
-            </div>
-          </div>
         </article>
 
         <article class="skill-card reveal-up delay-3">
@@ -232,11 +198,6 @@
           </div>
           <h3 class="skill-name">Leadership</h3>
           <p class="skill-desc">Served as Temporary CR at IIM Rohtak. Captained badminton teams and led groups with clarity and empathy.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 85%;"></div>
-            </div>
-          </div>
         </article>
 
         <article class="skill-card reveal-up delay-1">
@@ -247,11 +208,6 @@
           </div>
           <h3 class="skill-name">Athletic Discipline</h3>
           <p class="skill-desc">National-level badminton player. Multiple district, state, and national wins demonstrate exceptional grit and consistency.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 95%;"></div>
-            </div>
-          </div>
         </article>
 
         <article class="skill-card reveal-up delay-2">
@@ -262,11 +218,6 @@
           </div>
           <h3 class="skill-name">Academic Rigour</h3>
           <p class="skill-desc">Dual-degree student managing IIMB and Osmania University curricula, organised, diligent and goal-driven.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 87%;"></div>
-            </div>
-          </div>
         </article>
 
         <article class="skill-card reveal-up delay-3">
@@ -277,11 +228,6 @@
           </div>
           <h3 class="skill-name">Adaptability</h3>
           <p class="skill-desc">Navigated transitions across institutions and life goals with courage, always pivoting towards better alignment.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-fill" style="--fill: 92%;"></div>
-            </div>
-          </div>
         </article>
 
       </div>
@@ -307,7 +253,6 @@
           <div class="exp-card-accent accent-warm"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <!-- FIX 8: emoji replaced with SVG -->
               <div class="exp-icon-wrap">
                 <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -345,7 +290,6 @@
           <div class="exp-card-accent accent-cool"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <!-- FIX 8: emoji replaced with SVG -->
               <div class="exp-icon-wrap">
                 <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M3 3h18v4H3z"/><path d="M3 10h18v4H3z"/><path d="M3 17h11v4H3z"/>
@@ -402,7 +346,6 @@
         <div class="achievement-era reveal-left">
           <div class="era-header"><span class="era-badge">2020 to 2025</span></div>
           <ul class="achievement-list">
-            <!-- FIX 8: emoji → SVG icon | FIX 1: em dashes removed -->
             <li class="achievement-item">
               <span class="ach-icon-svg" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
@@ -507,7 +450,6 @@
   </section>
 
   <!-- ===== EDUCATION ===== -->
-  <!-- FIX 11: uniform card styling, consistent section bg -->
   <section id="education" class="section-cream">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner">
@@ -522,7 +464,6 @@
 
       <div class="timeline">
 
-        <!-- FIX 1: em dashes in years kept as ndash (–) which are correct; em dashes in text removed -->
         <div class="timeline-node reveal-up delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -553,7 +494,6 @@
           </div>
         </div>
 
-        <!-- FIX 11: active-card enhanced with stronger but clean highlight -->
         <div class="timeline-node reveal-up delay-4">
           <div class="timeline-dot dot-active"></div>
           <div class="timeline-card active-card">
@@ -583,13 +523,11 @@
       <div class="contact-info reveal-left">
         <p class="section-label">Let's Connect</p>
         <h2 class="section-heading">Get In Touch</h2>
-        <!-- FIX 1: em dash removed -->
         <p class="contact-intro">
           Whether you have an opportunity, a collaboration idea, or just want
           to say hello, I'd love to hear from you!
         </p>
         <ul class="contact-details">
-          <!-- FIX 8: emoji → SVG icons -->
           <li>
             <span class="contact-icon-svg" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
@@ -665,7 +603,6 @@
       </div>
       <p class="footer-logo">Huela Sravya</p>
       <p class="footer-meaning"><em>Strong in Mind and Spirit.</em></p>
-      <!-- FIX 4: copyright updated to 2026 -->
       <p class="footer-copy">&copy; 2026 &nbsp;·&nbsp; Designed with grace &amp; purpose &nbsp;·&nbsp; All rights reserved.</p>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#home">Home</a>
@@ -679,7 +616,7 @@
     </div>
   </footer>
 
-  <!-- ===== JAVASCRIPT (unchanged logic) ===== -->
+  <!-- ===== JAVASCRIPT ===== -->
   <script>
   /* 1. CUSTOM CURSOR */
   (function () {
@@ -714,7 +651,7 @@
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
       });
-    }, { threshold: 0.10 });
+    }, { threshold: 0.08 });
     els.forEach(el => obs.observe(el));
   })();
 
