@@ -1,6 +1,11 @@
 /* =============================================================
-   STYLE.CSS — Huela Sravya Portfolio (v6 — Warm & Vibrant)
-   Warm Beige · EB Garamond · Red · Orange · Amber · Terracotta
+   STYLE.CSS — Huela Sravya Portfolio (v7 — Luxury Palette)
+   Goldish Beige · Emerald Green · Maroon Red
+   =============================================================
+   PALETTE:
+   Base    → golden beige  (#f5ead0 family — warm, luminous)
+   Primary → emerald green (#2a6b52 family — rich, jewel-toned)
+   Accent  → maroon red    (#8b2535 family — warm crimson-gold)
    ============================================================= */
 
 
@@ -8,67 +13,40 @@
    1. CSS VARIABLES
    ============================================================= */
 :root {
-  /* ── Base beige palette (unchanged) ── */
-  --bg:             #faf6f0;
-  --bg-alt:         #f5ede0;
-  --bg-warm:        #f0e6d2;
-  --bg-deep:        #e8dccb;
-  --card:           #fdf9f4;
-  --border:         #ddd0bb;
-  --border-light:   #ece4d6;
-  --border-faint:   #f3ece2;
+  /* ── Golden Beige Base ── */
+  --bg:             #f9f3e8;   /* warm parchment gold-white              */
+  --bg-alt:         #f2e8d5;   /* rich golden cream                      */
+  --bg-warm:        #ecddc0;   /* deeper golden tan                      */
+  --bg-deep:        #e3d0aa;   /* darkest base — footer, deep surfaces   */
+  --card:           #faf5eb;   /* card surface — lightest gold-white     */
+  --border:         #d4bc8a;   /* warm golden border                     */
+  --border-light:   #e8d9b8;   /* soft golden divider                    */
+  --border-faint:   #f0e5c8;   /* barely-there gold line                 */
 
-  /* ── Primary: warm brown (unchanged) ── */
-  --primary:        #8b6543;
-  --primary-light:  #b08a66;
-  --primary-pale:   #f0e4d4;
-  --primary-glow:   rgba(139,101,67,0.18);
+  /* ── Emerald Green — primary vibrant accent ── */
+  --em:             #1e6647;   /* deep forest emerald                    */
+  --em-bright:      #27855c;   /* lighter emerald for hover              */
+  --em-pale:        #dff0e8;   /* pale emerald wash                      */
+  --em-mid:         #a8d4be;   /* medium emerald for borders             */
+  --em-glow:        rgba(30,102,71,0.22);
+  --em-glow-soft:   rgba(30,102,71,0.12);
 
-  /* ── Accent: dusty taupe (unchanged) ── */
-  --accent:         #a08070;
-  --accent-light:   #d4c0b0;
+  /* ── Maroon Red — secondary vibrant accent ── */
+  --mr:             #8b2535;   /* warm rich maroon-crimson               */
+  --mr-bright:      #a83040;   /* brighter maroon for hover              */
+  --mr-pale:        #f5dde0;   /* pale maroon wash                       */
+  --mr-mid:         #d4a0a8;   /* medium maroon border                   */
+  --mr-glow:        rgba(139,37,53,0.22);
+  --mr-glow-soft:   rgba(139,37,53,0.12);
 
-  /* ══════════════════════════════════════════════════════════
-     VIBRANT WARM PALETTE — red · orange · amber · terracotta
-     ══════════════════════════════════════════════════════════ */
+  /* ── Deep warm brown (retained for text) ── */
+  --primary:        #6b4c2a;   /* deep golden-brown — kept for text/logo */
+  --primary-light:  #8c6840;
 
-  /* Amber / golden yellow — primary vibrant accent */
-  --amber:          #c8850a;        /* rich warm amber                  */
-  --amber-bright:   #e09a18;        /* brighter amber for hover         */
-  --amber-pale:     #fdf0d5;        /* pale amber wash                  */
-  --amber-mid:      #f5dfa0;        /* medium amber for borders         */
-  --amber-glow:     rgba(200,133,10,0.22);
-
-  /* Terracotta / burnt orange */
-  --terra:          #c0602a;        /* warm terracotta                  */
-  --terra-bright:   #d97038;        /* brighter terracotta hover        */
-  --terra-pale:     #fce8da;        /* pale terracotta wash             */
-  --terra-mid:      #f0c0a0;        /* medium terracotta border         */
-  --terra-glow:     rgba(192,96,42,0.22);
-
-  /* Warm red / crimson */
-  --red:            #b84030;        /* muted warm red                   */
-  --red-bright:     #cc5040;        /* brighter red hover               */
-  --red-pale:       #fce8e5;        /* pale red wash                    */
-  --red-mid:        #f0b0a8;        /* medium red border                */
-  --red-glow:       rgba(184,64,48,0.20);
-
-  /* Ember / deep orange (between amber and terra) */
-  --ember:          #c85020;        /* deep burnt orange                */
-  --ember-bright:   #e06030;        /* brighter ember hover             */
-  --ember-pale:     #fde8dc;        /* pale ember wash                  */
-  --ember-mid:      #f0b898;        /* medium ember border              */
-  --ember-glow:     rgba(200,80,32,0.22);
-
-  /* Gold (retained from v5 but shifted warmer) */
-  --gold:           #c8870e;        /* antique gold (amber-shifted)     */
-  --gold-pale:      #fdf0d5;        /* same as amber-pale               */
-  --gold-glow:      rgba(200,135,14,0.20);
-
-  /* Text (unchanged) */
-  --text:           #3d2e1e;
-  --text-muted:     #7a6858;
-  --heading:        #2a1e10;
+  /* ── Text ── */
+  --text:           #2c1e10;   /* deep warm brown-black                  */
+  --text-muted:     #6a5440;   /* warm medium brown                      */
+  --heading:        #1a1008;   /* near-black warm                        */
 
   /* Fonts (unchanged) */
   --fh: 'EB Garamond','Garamond','Times New Roman',serif;
@@ -87,22 +65,21 @@
   --r-md: 12px;
   --r-lg: 22px;
 
-  /* Shadows — warmed up */
-  --sh-soft:   0 2px 20px rgba(139,101,67,0.09);
-  --sh-card:   0 6px 36px rgba(139,101,67,0.13);
-  --sh-hover:  0 16px 52px rgba(192,96,42,0.22);
-  --sh-glow:   0 0 40px  rgba(200,133,10,0.25);
-  --sh-amber:  0 6px 28px rgba(200,133,10,0.28);
-  --sh-terra:  0 6px 28px rgba(192,96,42,0.28);
-  --sh-red:    0 6px 28px rgba(184,64,48,0.25);
+  /* Shadows */
+  --sh-soft:  0 2px 20px rgba(107,76,42,0.10);
+  --sh-card:  0 6px 36px rgba(107,76,42,0.14);
+  --sh-hover: 0 16px 52px rgba(30,102,71,0.22);
+  --sh-glow:  0 0 40px  rgba(30,102,71,0.28);
+  --sh-em:    0 6px 28px rgba(30,102,71,0.30);
+  --sh-mr:    0 6px 28px rgba(139,37,53,0.28);
 
   /* Transitions (unchanged) */
   --t:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
   --ts: 0.60s cubic-bezier(0.25,0.46,0.45,0.94);
 
-  /* Glassmorphism (unchanged) */
-  --glass-bg:     rgba(253,249,244,0.72);
-  --glass-border: rgba(221,208,187,0.55);
+  /* Glassmorphism — golden warmth */
+  --glass-bg:     rgba(250,245,235,0.75);
+  --glass-border: rgba(212,188,138,0.50);
   --glass-blur:   blur(18px);
 
   --nav-h: 74px;
@@ -136,29 +113,29 @@ img { display: block; }
 a   { text-decoration: none; color: inherit; }
 a, button { cursor: none; }
 
-/* Parchment texture */
+/* Parchment texture — golden warm */
 body::before {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   background-image: repeating-linear-gradient(
     0deg, transparent, transparent 30px,
-    rgba(139,101,67,0.016) 30px, rgba(139,101,67,0.016) 31px
+    rgba(107,76,42,0.016) 30px, rgba(107,76,42,0.016) 31px
   );
 }
 
-/* Diagonal pattern — amber-shifted */
+/* Diagonal weave — emerald-tinted crosshatch */
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
   background-image:
     repeating-linear-gradient(
-      45deg, rgba(200,133,10,0.025) 0, rgba(200,133,10,0.025) 1px,
+      45deg, rgba(30,102,71,0.018) 0, rgba(30,102,71,0.018) 1px,
       transparent 0, transparent 50%
     ),
     repeating-linear-gradient(
-      -45deg, rgba(192,96,42,0.018) 0, rgba(192,96,42,0.018) 1px,
+      -45deg, rgba(139,37,53,0.012) 0, rgba(139,37,53,0.012) 1px,
       transparent 0, transparent 50%
     );
   background-size: 20px 20px;
@@ -166,12 +143,12 @@ body::after {
 
 
 /* =============================================================
-   3. CUSTOM CURSOR — terracotta dot, amber halo
+   3. CUSTOM CURSOR — emerald dot, golden halo
    ============================================================= */
 #cursor-dot {
   position: fixed; top: 0; left: 0;
   width: 9px; height: 9px;
-  background: var(--terra);
+  background: var(--em);
   border-radius: 50%;
   pointer-events: none; z-index: 9999;
   transform: translate(-50%,-50%);
@@ -182,8 +159,8 @@ body::after {
 #cursor-halo {
   position: fixed; top: 0; left: 0;
   width: 38px; height: 38px;
-  border: 1.5px solid rgba(200,133,10,0.40);
-  background: rgba(253,240,213,0.10);
+  border: 1.5px solid rgba(30,102,71,0.40);
+  background: rgba(223,240,232,0.10);
   border-radius: 50%;
   pointer-events: none; z-index: 9998;
   transform: translate(-50%,-50%);
@@ -193,8 +170,8 @@ body::after {
 
 #cursor-halo.halo-hover {
   width: 58px; height: 58px;
-  background: rgba(253,240,213,0.22);
-  border-color: rgba(192,96,42,0.60);
+  background: rgba(223,240,232,0.22);
+  border-color: rgba(30,102,71,0.58);
 }
 
 
@@ -232,12 +209,12 @@ h1,h2,h3,h4 {
   line-height: 1.18; font-weight: 600;
 }
 
-/* Section label — amber */
+/* Section label — emerald */
 .section-label {
   font-family: var(--fh);
   font-size: 0.76rem; font-weight: 500;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--amber);
+  color: var(--em);
   display: block; margin-bottom: 0.65rem;
 }
 
@@ -257,15 +234,15 @@ h1,h2,h3,h4 {
 .section-cream { background: var(--bg-alt); }
 .section-warm  { background: var(--bg-warm); }
 
-/* Dot-grid — amber toned */
+/* Dot-grid — emerald toned */
 .section-pattern {
   position: absolute; inset: 0;
   pointer-events: none; z-index: 0;
-  background-image: radial-gradient(circle, rgba(200,133,10,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(30,102,71,0.07) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* Section top edge separator — amber-to-terracotta gradient */
+/* Section top-edge separator — emerald to maroon gradient */
 #about, #skills, #experience, #achievements, #education, #contact {
   position: relative;
 }
@@ -277,9 +254,9 @@ h1,h2,h3,h4 {
   background: linear-gradient(
     to right,
     transparent 3%,
-    rgba(200,133,10,0.25) 20%,
-    rgba(192,96,42,0.40) 50%,
-    rgba(200,133,10,0.25) 80%,
+    rgba(30,102,71,0.25) 20%,
+    rgba(139,37,53,0.30) 50%,
+    rgba(30,102,71,0.25) 80%,
     transparent 97%
   );
   position: absolute; top: 0; left: 0; right: 0; z-index: 2;
@@ -296,22 +273,22 @@ h1,h2,h3,h4 {
   justify-content: center; margin-bottom: var(--lg); margin-top: var(--xs);
 }
 
-/* Orn line: amber to terracotta gradient */
+/* Orn line — emerald to maroon */
 .orn-line {
   display: block; width: 100px; height: 1px;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(200,133,10,0.50) 30%,
-    rgba(192,96,42,0.70) 60%,
+    rgba(30,102,71,0.45) 30%,
+    rgba(139,37,53,0.55) 60%,
     transparent
   );
 }
 
-/* Orn motif: amber */
+/* Orn motif — maroon */
 .orn-motif {
   font-family: var(--fh); font-size: 1.3rem;
-  color: var(--terra); opacity: 0.70;
+  color: var(--mr); opacity: 0.65;
   line-height: 1; padding: 0 0.3rem;
 }
 
@@ -322,23 +299,23 @@ h1,h2,h3,h4 {
 
 .bottom-rule { margin-top: var(--lg); margin-bottom: 0; }
 
-/* Rule line — amber gradient */
+/* Rule line — golden beige */
 .rule-line {
   display: block; width: 88px; height: 1px;
   background: linear-gradient(
-    to right, transparent, rgba(200,133,10,0.45) 40%, rgba(192,96,42,0.55) 60%, transparent
+    to right, transparent, rgba(107,76,42,0.40) 40%, rgba(107,76,42,0.55) 60%, transparent
   );
 }
 
-/* Rule diamond — terracotta */
+/* Rule diamond — emerald */
 .rule-diamond {
-  font-size: 0.58rem; color: var(--terra);
+  font-size: 0.58rem; color: var(--em);
   letter-spacing: 0.1em; padding: 0 0.25rem;
 }
 
 
 /* =============================================================
-   7. BUTTONS — amber primary, terracotta outline
+   7. BUTTONS — emerald primary, maroon outline
    ============================================================= */
 .btn {
   display: inline-block;
@@ -348,7 +325,7 @@ h1,h2,h3,h4 {
   font-size: 0.90rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   cursor: none;
-  border: 1.5px solid var(--terra);
+  border: 1.5px solid var(--em);
   outline: none;
   -webkit-font-smoothing: antialiased;
   transform: translateZ(0);
@@ -356,43 +333,45 @@ h1,h2,h3,h4 {
   -webkit-backface-visibility: hidden;
   background-clip: padding-box;
   position: relative; overflow: hidden;
-  transition: background-color var(--t), color var(--t), transform var(--t), box-shadow var(--t), border-color var(--t);
+  transition: background-color var(--t), color var(--t), transform var(--t),
+              box-shadow var(--t), border-color var(--t);
 }
 
-/* Primary button: terracotta fill */
+/* Primary — deep emerald fill */
 .btn-primary {
-  background: linear-gradient(135deg, var(--terra) 0%, var(--ember) 100%);
-  color: #fdf9f4;
-  border-color: var(--terra);
+  background: var(--em);
+  color: #f9f3e8;
+  border-color: var(--em);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--ember) 0%, var(--red) 100%);
-  color: #fdf9f4;
+  background: var(--em-bright);
+  border-color: var(--em-bright);
+  color: #f9f3e8;
   transform: translateY(-3px) translateZ(0);
-  box-shadow: 0 10px 32px var(--terra-glow);
-  border-color: var(--red);
+  box-shadow: 0 10px 32px var(--em-glow);
 }
 
-/* Outline button: terracotta border */
+/* Outline — maroon border */
 .btn-outline {
   background: transparent;
-  color: var(--terra);
-  border-color: var(--terra);
+  color: var(--mr);
+  border-color: var(--mr);
 }
 
 .btn-outline:hover {
-  background: linear-gradient(135deg, var(--terra) 0%, var(--ember) 100%);
-  color: #fdf9f4;
+  background: var(--mr);
+  color: #f9f3e8;
+  border-color: var(--mr);
   transform: translateY(-3px) translateZ(0);
-  box-shadow: 0 10px 32px var(--terra-glow);
+  box-shadow: 0 10px 32px var(--mr-glow);
 }
 
 .btn.full-width { width: 100%; text-align: center; }
 
 
 /* =============================================================
-   8. NAVIGATION BAR — glassmorphism + amber accents
+   8. NAVIGATION BAR — glassmorphism + emerald accents
    ============================================================= */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0;
@@ -400,15 +379,15 @@ h1,h2,h3,h4 {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid rgba(192,96,42,0.20);
+  border-bottom: 1px solid rgba(30,102,71,0.18);
   transition: box-shadow var(--t), background var(--t);
 }
 
 #navbar::before { display: none; }
 
 #navbar.scrolled {
-  background: rgba(250,246,240,0.94);
-  box-shadow: 0 3px 28px rgba(192,96,42,0.14);
+  background: rgba(249,243,232,0.95);
+  box-shadow: 0 3px 28px rgba(30,102,71,0.12);
 }
 
 .nav-inner {
@@ -417,20 +396,20 @@ h1,h2,h3,h4 {
   display: flex; align-items: center; justify-content: space-between;
 }
 
-/* Logo — terracotta */
+/* Logo — emerald */
 .nav-logo {
   font-family: var(--fh); font-size: 1.5rem; font-weight: 700;
-  color: var(--terra); letter-spacing: 0.04em; font-style: italic;
+  color: var(--em); letter-spacing: 0.04em; font-style: italic;
   transition: opacity var(--t);
   display: flex; align-items: baseline; gap: 0.3rem;
 }
 
 .nav-logo:hover { opacity: 0.72; }
 
-/* Heart — warm red */
+/* Heart — maroon */
 .logo-heart {
   font-style: normal; font-weight: 400;
-  font-size: 1rem; color: var(--red);
+  font-size: 1rem; color: var(--mr);
   margin-left: 0.15rem;
 }
 
@@ -443,37 +422,36 @@ h1,h2,h3,h4 {
   transition: color var(--t);
 }
 
-/* Nav underline — amber to terracotta */
+/* Nav underline — emerald to maroon */
 .nav-links a::after {
   content: '';
   position: absolute; bottom: 0; left: 0;
   width: 0; height: 1.5px;
-  background: linear-gradient(to right, var(--amber), var(--terra));
+  background: linear-gradient(to right, var(--em), var(--mr));
   transition: width var(--t);
 }
 
-.nav-links a:hover { color: var(--terra); }
+.nav-links a:hover { color: var(--em); }
 .nav-links a:hover::after { width: 100%; }
 
 
 /* =============================================================
-   9. HERO / PARALLAX — richer warm gradient
+   9. HERO / PARALLAX — golden beige base + emerald/maroon layers
    ============================================================= */
 #home {
   position: relative; min-height: 100vh; padding-top: var(--nav-h);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; text-align: center;
-  /* warm amber-tinted gradient */
   background: linear-gradient(
     160deg,
-    #fdf9f2 0%,
-    #f9e8c8 30%,
-    #f2d9a8 60%,
-    #e8c88a 100%
+    #faf4e8 0%,
+    #f5e9cc 30%,
+    #edddb0 65%,
+    #e3cc95 100%
   );
 }
 
-/* Parallax mountain layers — warmed with terracotta tones */
+/* Parallax mountain layers */
 .parallax-layer {
   position: absolute; bottom: 0; left: 0; right: 0;
   pointer-events: none; will-change: transform;
@@ -481,7 +459,7 @@ h1,h2,h3,h4 {
 
 .layer-back {
   height: 46%;
-  background: linear-gradient(180deg, transparent 0%, rgba(192,96,42,0.18) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(30,102,71,0.15) 100%);
   clip-path: polygon(
     0% 100%, 0% 70%, 6% 48%, 12% 62%, 18% 34%, 26% 55%, 33% 22%,
     40% 48%, 47% 18%, 54% 44%, 60% 28%, 67% 52%, 74% 15%,
@@ -491,7 +469,7 @@ h1,h2,h3,h4 {
 
 .layer-mid {
   height: 34%;
-  background: linear-gradient(180deg, transparent 0%, rgba(192,80,32,0.26) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(30,90,60,0.24) 100%);
   clip-path: polygon(
     0% 100%, 0% 60%, 8% 40%, 16% 58%, 24% 30%, 32% 52%, 40% 20%,
     50% 46%, 58% 28%, 66% 50%, 74% 24%, 82% 46%, 90% 32%, 100% 52%, 100% 100%
@@ -500,23 +478,23 @@ h1,h2,h3,h4 {
 
 .layer-front {
   height: 20%;
-  background: linear-gradient(180deg, transparent 0%, rgba(184,64,48,0.30) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(139,37,53,0.22) 100%);
   clip-path: polygon(
     0% 100%, 0% 72%, 10% 52%, 22% 68%, 34% 40%, 46% 60%,
     58% 44%, 70% 62%, 82% 46%, 92% 58%, 100% 48%, 100% 100%
   );
 }
 
-/* Botanical SVGs — terracotta toned */
-.hero-deco { position: absolute; color: var(--terra); pointer-events: none; }
+/* Botanical SVGs — emerald toned */
+.hero-deco { position: absolute; color: var(--em); pointer-events: none; }
 
 .deco-tl {
-  top: -30px; left: -30px; width: 280px; opacity: 0.55;
+  top: -30px; left: -30px; width: 280px; opacity: 0.48;
   animation: decoSway 14s ease-in-out infinite alternate;
 }
 
 .deco-br {
-  bottom: -20px; right: -20px; width: 240px; opacity: 0.42;
+  bottom: -20px; right: -20px; width: 240px; opacity: 0.36;
   animation: decoSway 18s ease-in-out infinite alternate-reverse;
 }
 
@@ -525,16 +503,15 @@ h1,h2,h3,h4 {
   100% { transform: rotate(-7deg)  scale(1.05); }
 }
 
-/* Corner ornaments — amber */
+/* Corner ornaments — alternating emerald/maroon */
 .corner-ornament {
-  position: absolute; font-size: 0.80rem;
-  color: var(--amber); opacity: 0.40; pointer-events: none;
+  position: absolute; font-size: 0.80rem; pointer-events: none;
 }
 
-.corner-tl   { top: 90px;   left: 26px;  }
-.corner-tr   { top: 90px;   right: 26px; }
-.corner-bl   { bottom: 44px; left: 26px; }
-.corner-br-c { bottom: 44px; right: 26px; }
+.corner-tl   { top: 90px;   left: 26px;  color: var(--em); opacity: 0.38; }
+.corner-tr   { top: 90px;   right: 26px; color: var(--mr); opacity: 0.32; }
+.corner-bl   { bottom: 44px; left: 26px; color: var(--mr); opacity: 0.28; }
+.corner-br-c { bottom: 44px; right: 26px; color: var(--em); opacity: 0.35; }
 
 .hero-content {
   position: relative; z-index: 2;
@@ -560,11 +537,11 @@ h1,h2,h3,h4 {
   margin-bottom: 0.9rem; opacity: 0.85;
 }
 
-/* Hero title — terracotta */
+/* Hero title — emerald */
 .hero-title {
   font-size: clamp(1.05rem,2.4vw,1.42rem);
   font-style: italic; font-weight: 400;
-  color: var(--terra); letter-spacing: 0.03em;
+  color: var(--em); letter-spacing: 0.03em;
   margin-bottom: var(--md); margin-top: 0.25rem;
 }
 
@@ -584,10 +561,10 @@ h1,h2,h3,h4 {
   display: flex; flex-direction: column; align-items: center; z-index: 2;
 }
 
-/* Scroll line — amber to terracotta */
+/* Scroll line — emerald to golden */
 .scroll-line {
   width: 1px; height: 52px;
-  background: linear-gradient(to bottom, transparent, rgba(192,96,42,0.55));
+  background: linear-gradient(to bottom, transparent, rgba(30,102,71,0.55));
   animation: scrollPulse 2.2s ease-in-out infinite;
 }
 
@@ -611,24 +588,22 @@ h1,h2,h3,h4 {
 
 .about-image-wrap { position: relative; display: flex; justify-content: center; }
 
-/* Photo frame — amber-tinted glow */
+/* Photo frame — emerald-tinted border glow */
 .about-frame-outer {
   padding: 10px;
-  border: 1.5px solid rgba(192,96,42,0.28);
+  border: 1.5px solid rgba(30,102,71,0.28);
   border-radius: 50%;
   background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-deep) 100%);
   box-shadow: var(--sh-card);
   transition: box-shadow var(--ts);
 }
 
-.about-frame-outer:hover {
-  box-shadow: 0 0 44px rgba(200,133,10,0.30);
-}
+.about-frame-outer:hover { box-shadow: var(--sh-glow); }
 
 .about-image-frame {
   width: 290px; height: 290px;
   border-radius: 50%; overflow: hidden; position: relative;
-  border: 2px solid rgba(192,96,42,0.22);
+  border: 2px solid rgba(30,102,71,0.22);
   background: var(--bg-deep);
 }
 
@@ -638,65 +613,37 @@ h1,h2,h3,h4 {
   display: block; border-radius: 50%;
 }
 
-/* ══ BADGE — vibrant warm red-to-terracotta gradient ══ */
-.about-badge {
-  position: absolute; bottom: 14px; right: 6px;
-  background: linear-gradient(135deg, var(--red) 0%, var(--terra) 50%, var(--amber) 100%);
-  color: #fdf9f4;
-  border-radius: var(--r-md);
-  padding: 0.80rem 1.05rem;
-  text-align: center;
-  box-shadow: 0 6px 28px rgba(184,64,48,0.40), 0 2px 8px rgba(200,133,10,0.20);
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  transition: transform var(--t), box-shadow var(--t);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-.about-badge:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 40px rgba(184,64,48,0.45), 0 4px 12px rgba(200,133,10,0.25);
-}
-
-.badge-icon-svg {
-  display: flex; align-items: center; justify-content: center;
-  width: 22px; height: 22px; color: rgba(255,255,255,0.95);
-}
-
-.badge-icon-svg svg { width: 100%; height: 100%; }
-
-.badge-text {
-  font-family: var(--fh); font-size: 0.70rem; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5;
-}
+/* Badge removed — .about-badge CSS kept here as dead code (no selector matches in HTML) */
+.about-badge { display: none; }
 
 /* About text */
 .about-text p { color: var(--text-muted); margin-bottom: var(--sm); font-size: 1.02rem; }
 .about-text strong { color: var(--heading); }
 
-/* Facts box — amber-tinted */
+/* Facts box — emerald + maroon gradient tint */
 .about-facts {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: var(--sm); margin: var(--md) 0 var(--lg);
   padding: var(--md) var(--lg);
-  background: linear-gradient(135deg, var(--amber-pale) 0%, var(--terra-pale) 100%);
-  border: 1px solid rgba(192,96,42,0.25);
+  background: linear-gradient(135deg, var(--em-pale) 0%, rgba(245,221,224,0.50) 100%);
+  border: 1px solid rgba(30,102,71,0.22);
   border-radius: var(--r-md);
-  box-shadow: inset 0 0 0 1px rgba(200,133,10,0.08);
+  box-shadow: inset 0 0 0 1px rgba(30,102,71,0.06);
 }
 
 .about-facts li { display: flex; flex-direction: column; gap: 4px; }
 
-/* Facts label — amber */
+/* Facts labels — emerald */
 .about-facts strong {
   font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--em);
 }
 
 .about-facts span { font-size: 0.96rem; color: var(--heading); }
 
 
 /* =============================================================
-   11. SKILLS SECTION — clean cards, warm accents
+   11. SKILLS SECTION
    ============================================================= */
 #skills { background: var(--bg-alt); }
 
@@ -706,26 +653,25 @@ h1,h2,h3,h4 {
   gap: var(--md);
 }
 
-/* Skill card — glassmorphism + amber top border */
+/* Skill card — glassmorphism + emerald top border */
 .skill-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(192,96,42,0.18);
+  border: 1px solid rgba(30,102,71,0.16);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
   position: relative; overflow: hidden;
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-  /* Amber top edge */
-  border-top: 2.5px solid rgba(200,133,10,0.45);
+  border-top: 2.5px solid rgba(30,102,71,0.42);
 }
 
-/* Decorative warm gradient wash bottom strip */
+/* Bottom accent strip — maroon */
 .skill-card::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(to right, var(--amber), var(--terra), var(--red));
+  background: linear-gradient(to right, var(--em), var(--mr));
   opacity: 0;
   transition: opacity var(--t);
 }
@@ -734,34 +680,33 @@ h1,h2,h3,h4 {
 
 .skill-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 16px 52px rgba(192,96,42,0.20);
-  border-color: rgba(192,96,42,0.40);
-  border-top-color: var(--terra);
+  box-shadow: 0 16px 52px rgba(30,102,71,0.20);
+  border-color: rgba(30,102,71,0.38);
+  border-top-color: var(--em-bright);
 }
 
 .skill-card:hover::after { opacity: 1; }
 
 .skill-icon-wrap { margin-bottom: var(--sm); display: flex; align-items: center; }
 
-/* Skill icon — amber/terracotta */
+/* Skill SVG — emerald */
 .skill-svg {
   width: 28px; height: 28px;
-  color: var(--terra); opacity: 0.80;
+  color: var(--em); opacity: 0.80;
   transition: opacity var(--t), transform var(--t), color var(--t);
 }
 
-.skill-card:hover .skill-svg { opacity: 1; transform: scale(1.10); color: var(--amber); }
+.skill-card:hover .skill-svg { opacity: 1; transform: scale(1.10); color: var(--em-bright); }
 
 .skill-name { font-size: 1.15rem; margin-bottom: 0.6rem; }
-
 .skill-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
 
-/* Hide any progress remnants */
+/* Hide progress remnants */
 .progress-wrap, .progress-bar, .progress-fill, .progress-pct { display: none !important; }
 
 
 /* =============================================================
-   12. EXPERIENCE SECTION — warm palette, NO blue tones
+   12. EXPERIENCE SECTION
    ============================================================= */
 #experience { background: var(--bg); }
 
@@ -771,12 +716,12 @@ h1,h2,h3,h4 {
   gap: var(--lg);
 }
 
-/* Experience card base */
+/* Experience card */
 .exp-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(192,96,42,0.18);
+  border: 1px solid rgba(30,102,71,0.16);
   border-radius: var(--r-lg);
   box-shadow: var(--sh-card);
   overflow: hidden; display: flex; flex-direction: column;
@@ -785,66 +730,57 @@ h1,h2,h3,h4 {
 
 .exp-card:hover {
   transform: translateY(-9px);
-  box-shadow: 0 20px 56px rgba(192,96,42,0.24);
-  border-color: rgba(192,96,42,0.38);
+  box-shadow: 0 20px 56px rgba(30,102,71,0.20);
+  border-color: rgba(30,102,71,0.32);
 }
 
-/* ── Accent top bars — both fully warm, NO blue ── */
+/* Accent top bars */
 .exp-card-accent { height: 5px; width: 100%; }
 
-/* Card 1 (Badminton Coach): amber → terracotta */
-.accent-warm {
-  background: linear-gradient(90deg, var(--amber) 0%, var(--terra) 60%, var(--ember) 100%);
+/* Card 1 — emerald gradient */
+.accent-emerald {
+  background: linear-gradient(90deg, var(--em) 0%, var(--em-bright) 60%, #3a9470 100%);
 }
 
-/* Card 2 (Sid's Farm): ember → red — fully warm, replaces old blue/sage */
-.accent-ember {
-  background: linear-gradient(90deg, var(--ember) 0%, var(--terra) 40%, var(--red) 100%);
+/* Card 2 — maroon gradient */
+.accent-maroon {
+  background: linear-gradient(90deg, var(--mr) 0%, var(--mr-bright) 60%, #c04555 100%);
 }
 
 .exp-card-body { padding: var(--lg); flex: 1; display: flex; flex-direction: column; }
 
 .exp-header { display: flex; align-items: flex-start; gap: var(--md); margin-bottom: var(--md); }
 
-/* ── Icon wraps — warm palette ── */
+/* Icon wraps */
 .exp-icon-wrap {
   width: 52px; height: 52px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; transition: background var(--t), transform var(--t);
 }
 
-/* Card 1 icon: amber tint */
-.exp-icon-warm {
-  background: var(--amber-pale);
-  border: 1.5px solid rgba(200,133,10,0.30);
+/* Card 1 icon — emerald */
+.exp-icon-emerald {
+  background: var(--em-pale);
+  border: 1.5px solid rgba(30,102,71,0.28);
 }
 
-.exp-icon-warm:hover,
-.exp-card:hover .exp-icon-warm {
-  background: rgba(200,133,10,0.18); transform: scale(1.07);
+.exp-card:hover .exp-icon-emerald { background: rgba(30,102,71,0.16); transform: scale(1.07); }
+
+/* Card 2 icon — maroon */
+.exp-icon-maroon {
+  background: var(--mr-pale);
+  border: 1.5px solid rgba(139,37,53,0.28);
 }
 
-/* Card 2 icon: ember tint */
-.exp-icon-ember {
-  background: var(--ember-pale);
-  border: 1.5px solid rgba(200,80,32,0.30);
-}
-
-.exp-card:hover .exp-icon-ember {
-  background: rgba(200,80,32,0.18); transform: scale(1.07);
-}
+.exp-card:hover .exp-icon-maroon { background: rgba(139,37,53,0.14); transform: scale(1.07); }
 
 .exp-svg { width: 22px; height: 22px; opacity: 0.88; }
-
-/* Card 1 SVG: amber */
-.exp-svg { color: var(--amber); }
-
-/* Card 2 SVG: ember */
-.exp-svg-ember { color: var(--ember); }
+.exp-svg-emerald { color: var(--em); }
+.exp-svg-maroon  { color: var(--mr); }
 
 .exp-title-block { flex: 1; }
 
-/* ── Duration pills — warm ── */
+/* Duration pills */
 .exp-duration {
   display: inline-block; font-family: var(--fh);
   font-size: 0.72rem; font-weight: 500;
@@ -852,34 +788,28 @@ h1,h2,h3,h4 {
   border-radius: 99px; padding: 3px 12px; margin-bottom: 0.5rem;
 }
 
-/* Card 1 pill: amber */
-.exp-duration-warm {
-  color: var(--amber);
-  background: var(--amber-pale);
-  border: 1px solid rgba(200,133,10,0.28);
+.exp-duration-emerald {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.26);
 }
 
-/* Card 2 pill: ember (warm, NOT blue) */
-.exp-duration-ember {
-  color: var(--ember);
-  background: var(--ember-pale);
-  border: 1px solid rgba(200,80,32,0.28);
+.exp-duration-maroon {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.26);
 }
 
 .exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
-
 .exp-org { font-style: italic; font-size: 0.95rem; color: var(--text-muted); }
 
-/* ── Dividers inside cards ── */
+/* Dividers inside cards */
 .exp-divider { height: 1px; margin: 0 0 var(--md); }
-
-.exp-divider-warm { background: linear-gradient(to right, var(--amber-pale), rgba(200,133,10,0.15), var(--amber-pale)); }
-.exp-divider-ember { background: linear-gradient(to right, var(--ember-pale), rgba(200,80,32,0.15), var(--ember-pale)); }
+.exp-divider-emerald { background: linear-gradient(to right, var(--em-pale), rgba(30,102,71,0.14), var(--em-pale)); }
+.exp-divider-maroon  { background: linear-gradient(to right, var(--mr-pale), rgba(139,37,53,0.14), var(--mr-pale)); }
 
 .exp-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.88; margin-bottom: var(--md); flex: 1; }
 .exp-desc strong { color: var(--heading); }
 
-/* ── Tag pills — warm ── */
+/* Tag pills */
 .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--md); }
 
 .exp-tags li {
@@ -889,32 +819,28 @@ h1,h2,h3,h4 {
   transition: background var(--t), color var(--t), border-color var(--t);
 }
 
-/* Card 1 tags: amber */
-.exp-tags-warm li {
-  color: var(--amber);
-  background: var(--amber-pale);
-  border: 1px solid rgba(200,133,10,0.25);
+.exp-tags-emerald li {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.24);
 }
 
-.exp-tags-warm li:hover { background: var(--amber); color: #fdf9f4; border-color: var(--amber); }
+.exp-tags-emerald li:hover { background: var(--em); color: #f9f3e8; border-color: var(--em); }
 
-/* Card 2 tags: ember (warm, NOT blue) */
-.exp-tags-ember li {
-  color: var(--ember);
-  background: var(--ember-pale);
-  border: 1px solid rgba(200,80,32,0.25);
+.exp-tags-maroon li {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.24);
 }
 
-.exp-tags-ember li:hover { background: var(--ember); color: #fdf9f4; border-color: var(--ember); }
+.exp-tags-maroon li:hover { background: var(--mr); color: #f9f3e8; border-color: var(--mr); }
 
-/* ── Blockquote borders — warm ── */
+/* Blockquote borders */
 .exp-quote {
   font-family: var(--fh); font-style: italic; font-size: 0.93rem;
   color: var(--text-muted); padding-left: var(--sm); margin-top: auto; line-height: 1.72;
 }
 
-.exp-quote-warm { border-left: 2.5px solid rgba(200,133,10,0.45); }
-.exp-quote-ember { border-left: 2.5px solid rgba(200,80,32,0.45); }
+.exp-quote-emerald { border-left: 2.5px solid rgba(30,102,71,0.42); }
+.exp-quote-maroon  { border-left: 2.5px solid rgba(139,37,53,0.42); }
 
 
 /* =============================================================
@@ -926,33 +852,41 @@ h1,h2,h3,h4 {
 .achievement-era { flex: 1; }
 .era-header { margin-bottom: var(--md); }
 
-/* Era badge — terracotta */
+/* Era badge — alternating: first era emerald, second maroon handled via sibling rule */
 .era-badge {
   display: inline-block; font-family: var(--fh);
   font-size: 0.82rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--terra); background: var(--terra-pale);
-  border: 1px solid rgba(192,96,42,0.32);
   padding: 0.4rem 1.2rem; border-radius: 99px;
 }
 
-/* Era divider diamond — terracotta */
+.achievement-era:first-child .era-badge {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.30);
+}
+
+.achievement-era:last-child .era-badge {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.30);
+}
+
+/* Era divider — golden */
 .era-divider {
-  font-size: 0.7rem; color: rgba(192,96,42,0.45);
+  font-size: 0.7rem; color: rgba(107,76,42,0.40);
   padding-top: 3.5rem; writing-mode: vertical-rl; letter-spacing: 1.2rem;
   align-self: stretch; display: flex; align-items: flex-start; justify-content: center;
 }
 
 .achievement-list { display: flex; flex-direction: column; gap: var(--md); }
 
-/* Achievement item — glassmorphism + warm border */
+/* Achievement items — glassmorphism */
 .achievement-item {
   display: flex; gap: var(--sm); align-items: flex-start;
   padding: var(--sm) var(--md);
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(192,96,42,0.18);
+  border: 1px solid rgba(30,102,71,0.15);
   border-radius: var(--r-md);
   box-shadow: var(--sh-soft);
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
@@ -960,20 +894,22 @@ h1,h2,h3,h4 {
 
 .achievement-item:hover {
   transform: translateX(6px);
-  box-shadow: 0 8px 32px rgba(192,96,42,0.20);
-  border-color: rgba(192,96,42,0.38);
+  box-shadow: 0 8px 32px rgba(30,102,71,0.16);
+  border-color: rgba(30,102,71,0.32);
 }
 
-/* Achievement icon — amber */
+/* Achievement icons — alternating per era */
 .ach-icon-svg {
   display: flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px;
-  color: var(--amber); opacity: 0.80;
+  width: 28px; height: 28px; opacity: 0.80;
   flex-shrink: 0; margin-top: 2px;
 }
 
 .ach-icon-svg svg { width: 100%; height: 100%; }
 .ach-icon { display: none; }
+
+.achievement-era:first-child .ach-icon-svg { color: var(--em); }
+.achievement-era:last-child  .ach-icon-svg { color: var(--mr); }
 
 .achievement-item strong {
   display: block; font-family: var(--fh);
@@ -990,15 +926,16 @@ h1,h2,h3,h4 {
 
 .timeline { position: relative; margin-top: var(--md); padding-left: 2.9rem; }
 
-/* Timeline line — amber to terracotta gradient */
+/* Timeline line — emerald to maroon gradient */
 .timeline::before {
   content: '';
   position: absolute; left: 11px; top: 14px; bottom: 14px; width: 1px;
   background: linear-gradient(
     to bottom,
-    rgba(200,133,10,0.20),
-    rgba(192,96,42,0.55) 50%,
-    rgba(184,64,48,0.20)
+    rgba(30,102,71,0.22),
+    rgba(30,102,71,0.55) 40%,
+    rgba(139,37,53,0.45) 70%,
+    rgba(139,37,53,0.18)
   );
 }
 
@@ -1012,22 +949,22 @@ h1,h2,h3,h4 {
 .timeline-dot {
   position: absolute; left: -2.9rem; top: 14px;
   width: 14px; height: 14px; border-radius: 50%;
-  background: var(--bg-alt); border: 2px solid rgba(192,96,42,0.30);
+  background: var(--bg-alt); border: 2px solid rgba(30,102,71,0.30);
   z-index: 1;
   transition: background var(--t), border-color var(--t), transform var(--t);
 }
 
 .timeline-node:hover .timeline-dot {
   transform: scale(1.28);
-  border-color: var(--terra);
-  background: var(--terra-pale);
+  border-color: var(--em);
+  background: var(--em-pale);
 }
 
-/* Active dot — vibrant warm red */
+/* Active dot — emerald */
 .dot-active {
-  background: linear-gradient(135deg, var(--amber) 0%, var(--terra) 100%) !important;
-  border-color: var(--terra) !important;
-  box-shadow: 0 0 0 5px rgba(192,96,42,0.22);
+  background: var(--em) !important;
+  border-color: var(--em) !important;
+  box-shadow: 0 0 0 5px rgba(30,102,71,0.20);
 }
 
 /* Timeline cards — glassmorphism */
@@ -1036,8 +973,8 @@ h1,h2,h3,h4 {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(192,96,42,0.15);
-  border-left: 3px solid rgba(200,133,10,0.30);
+  border: 1px solid rgba(30,102,71,0.14);
+  border-left: 3px solid rgba(30,102,71,0.28);
   border-radius: var(--r-md);
   padding: var(--md) var(--lg);
   box-shadow: var(--sh-soft);
@@ -1045,21 +982,21 @@ h1,h2,h3,h4 {
 }
 
 .timeline-card:hover {
-  box-shadow: 0 10px 36px rgba(192,96,42,0.18);
+  box-shadow: 0 10px 36px rgba(30,102,71,0.16);
   transform: translateX(5px);
-  border-left-color: var(--terra);
+  border-left-color: var(--em);
 }
 
-.highlight-card { border-left-color: rgba(200,133,10,0.50); }
+.highlight-card { border-left-color: rgba(30,102,71,0.48); }
 
-/* Active card — amber warm wash */
+/* Active card — emerald pale wash */
 .active-card {
-  border-left-color: var(--terra);
+  border-left-color: var(--em);
   border-left-width: 4px;
-  background: linear-gradient(135deg, rgba(253,240,213,0.85) 0%, rgba(252,232,218,0.85) 100%);
+  background: linear-gradient(135deg, rgba(223,240,232,0.80) 0%, rgba(250,245,235,0.88) 100%);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(192,96,42,0.12);
+  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(30,102,71,0.10);
 }
 
 .active-card-header {
@@ -1067,30 +1004,30 @@ h1,h2,h3,h4 {
   flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;
 }
 
-/* Year label — amber */
+/* Timeline year — emerald */
 .timeline-year {
   font-family: var(--fh); font-size: 0.76rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--amber); display: block; margin-bottom: 0.45rem;
+  color: var(--em); display: block; margin-bottom: 0.45rem;
 }
 
 .active-card-header .timeline-year { margin-bottom: 0; }
-.active-year { color: var(--terra); }
+.active-year { color: var(--em); }
 
 .timeline-title { font-size: 1.14rem; margin-bottom: 0.38rem; }
 .timeline-place { font-style: italic; font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.5rem; }
 .timeline-detail { font-size: 0.91rem; color: var(--text-muted); line-height: 1.72; }
 .timeline-detail strong { color: var(--heading); }
 
-/* Active badge — red to amber gradient */
+/* Active badge — maroon (contrasting accent on emerald card) */
 .active-badge {
   display: inline-flex; align-items: center;
   font-family: var(--fh); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: #fdf9f4;
-  background: linear-gradient(135deg, var(--red) 0%, var(--terra) 50%, var(--amber) 100%);
+  color: #f9f3e8;
+  background: linear-gradient(135deg, var(--mr) 0%, var(--mr-bright) 100%);
   padding: 3px 14px; border-radius: 99px; white-space: nowrap;
-  box-shadow: 0 3px 12px rgba(184,64,48,0.35);
+  box-shadow: 0 3px 12px rgba(139,37,53,0.35);
 }
 
 
@@ -1113,35 +1050,34 @@ h1,h2,h3,h4 {
 
 .contact-details li:hover { transform: translateX(5px); }
 
-/* Contact icon circles — amber */
+/* Contact icon circles — emerald */
 .contact-icon-svg {
   width: 36px; height: 36px; border-radius: 50%;
-  background: var(--amber-pale);
-  border: 1px solid rgba(200,133,10,0.28);
+  background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.26);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 2px;
   transition: background var(--t), border-color var(--t);
 }
 
 .contact-details li:hover .contact-icon-svg {
-  background: rgba(200,133,10,0.18);
-  border-color: rgba(192,96,42,0.38);
+  background: rgba(30,102,71,0.18);
+  border-color: rgba(30,102,71,0.36);
 }
 
-.contact-icon-svg svg { width: 15px; height: 15px; color: var(--terra); opacity: 0.90; }
-
+.contact-icon-svg svg { width: 15px; height: 15px; color: var(--em); opacity: 0.88; }
 .contact-icon { display: none; }
 
-/* Contact labels — amber */
+/* Contact labels — emerald */
 .contact-details strong {
   display: block; font-family: var(--fh);
   font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 1px;
+  color: var(--em); margin-bottom: 1px;
 }
 
 .contact-details span, .contact-link { color: var(--text-muted); font-size: 0.93rem; word-break: break-all; }
 .contact-link { transition: color var(--t); }
-.contact-link:hover { color: var(--terra); }
+.contact-link:hover { color: var(--em); }
 
 /* Contact form — glassmorphism */
 .contact-form-wrap {
@@ -1149,38 +1085,37 @@ h1,h2,h3,h4 {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(192,96,42,0.20);
+  border: 1px solid rgba(30,102,71,0.18);
   border-radius: var(--r-lg);
-  padding: var(--lg);
-  box-shadow: var(--sh-card);
+  padding: var(--lg); box-shadow: var(--sh-card);
   transition: box-shadow var(--ts);
 }
 
-.contact-form-wrap:hover { box-shadow: 0 20px 56px rgba(192,96,42,0.22); }
+.contact-form-wrap:hover { box-shadow: 0 20px 56px rgba(30,102,71,0.20); }
 
 .form-group { display: flex; flex-direction: column; gap: 0.48rem; margin-bottom: var(--md); }
 
-/* Form labels — amber */
+/* Form labels — emerald */
 .form-group label {
   font-family: var(--fh); font-size: 0.74rem; font-weight: 500;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--em);
 }
 
 .contact-form input, .contact-form textarea {
   width: 100%; padding: 0.85rem 1.15rem;
-  background: rgba(250,246,240,0.78);
-  border: 1px solid rgba(192,96,42,0.22);
+  background: rgba(249,243,232,0.80);
+  border: 1px solid rgba(30,102,71,0.20);
   border-radius: var(--r-sm); color: var(--text);
   font-family: var(--fb); font-size: 1.0rem; outline: none;
   transition: border-color var(--t), box-shadow var(--t);
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
-  border-color: var(--terra);
-  box-shadow: 0 0 0 3px rgba(192,96,42,0.14);
+  border-color: var(--em);
+  box-shadow: 0 0 0 3px var(--em-glow-soft);
 }
 
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--accent-light); }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(106,84,64,0.50); }
 .contact-form textarea { resize: vertical; min-height: 140px; }
 
 
@@ -1188,8 +1123,8 @@ h1,h2,h3,h4 {
    16. FOOTER
    ============================================================= */
 #footer {
-  border-top: 1px solid rgba(192,96,42,0.18);
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #e2d4bc 100%);
+  border-top: 1px solid rgba(30,102,71,0.18);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #d8c090 100%);
 }
 
 #footer::before { display: none; }
@@ -1202,10 +1137,10 @@ h1,h2,h3,h4 {
   align-items: center; gap: var(--xs); text-align: center;
 }
 
-/* Footer logo — terracotta */
+/* Footer logo — emerald */
 .footer-logo {
   font-family: var(--fh); font-size: 1.6rem; font-weight: 700;
-  color: var(--terra); letter-spacing: 0.06em; margin-bottom: 0.2rem;
+  color: var(--em); letter-spacing: 0.06em; margin-bottom: 0.2rem;
 }
 
 .footer-meaning {
@@ -1226,15 +1161,15 @@ h1,h2,h3,h4 {
   color: var(--text-muted); transition: color var(--t);
 }
 
-/* Footer hover — amber */
-.footer-nav a:hover { color: var(--amber); }
+/* Alternating hover — emerald first half, maroon second */
+.footer-nav a:hover { color: var(--em); }
 
 .footer-rule { width: 100%; margin-bottom: var(--md); }
 .footer-rule .rule-line { width: 120px; }
 
 
 /* =============================================================
-   17. MEDIA QUERIES (unchanged structure)
+   17. MEDIA QUERIES (unchanged)
    ============================================================= */
 
 @media (max-width: 920px) {
@@ -1282,7 +1217,6 @@ h1,h2,h3,h4 {
 }
 
 @media (max-width: 380px) {
-  .about-badge { right: 0; bottom: 0; }
   .footer-nav { gap: var(--sm); }
   .nav-logo { font-size: 1.15rem; }
 }
