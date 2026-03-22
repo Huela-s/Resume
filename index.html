@@ -100,7 +100,6 @@
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner about-grid">
 
-      <!-- TASK 2: National Rank badge completely removed; only photo frame remains -->
       <div class="about-image-wrap reveal-left">
         <div class="about-frame-outer">
           <div class="about-image-frame">
@@ -238,23 +237,22 @@
 
       <div class="experience-grid">
 
-        <!-- Card 1: Badminton Coach — emerald accent -->
         <article class="exp-card reveal-up delay-1">
-          <div class="exp-card-accent accent-emerald"></div>
+          <div class="exp-card-accent accent-blue"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap exp-icon-emerald">
-                <svg class="exp-svg exp-svg-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <div class="exp-icon-wrap exp-icon-blue">
+                <svg class="exp-svg exp-svg-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
               </div>
               <div class="exp-title-block">
-                <span class="exp-duration exp-duration-emerald">1 Month · Internship</span>
+                <span class="exp-duration exp-duration-blue">1 Month · Internship</span>
                 <h3 class="exp-title">Assistant Badminton Coach</h3>
                 <p class="exp-org">Sports Training Academy</p>
               </div>
             </div>
-            <div class="exp-divider exp-divider-emerald" aria-hidden="true"></div>
+            <div class="exp-divider exp-divider-blue" aria-hidden="true"></div>
             <p class="exp-desc">
               Gained hands-on experience mentoring and training players in a
               high-discipline sports environment. This role strengthened my
@@ -263,36 +261,35 @@
               skills, adaptability, and ability to take initiative while managing
               responsibility in a dynamic setting.
             </p>
-            <ul class="exp-tags exp-tags-emerald">
+            <ul class="exp-tags exp-tags-blue">
               <li>Leadership</li>
               <li>Mentorship</li>
               <li>Communication</li>
               <li>Adaptability</li>
               <li>Initiative</li>
             </ul>
-            <blockquote class="exp-quote exp-quote-emerald">
+            <blockquote class="exp-quote exp-quote-blue">
               "Coaching taught me that the best leaders know when to push and when to encourage."
             </blockquote>
           </div>
         </article>
 
-        <!-- Card 2: Sid's Farm — maroon accent -->
         <article class="exp-card reveal-up delay-2">
-          <div class="exp-card-accent accent-maroon"></div>
+          <div class="exp-card-accent accent-lavender"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap exp-icon-maroon">
-                <svg class="exp-svg exp-svg-maroon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <div class="exp-icon-wrap exp-icon-lavender">
+                <svg class="exp-svg exp-svg-lavender" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M3 3h18v4H3z"/><path d="M3 10h18v4H3z"/><path d="M3 17h11v4H3z"/>
                 </svg>
               </div>
               <div class="exp-title-block">
-                <span class="exp-duration exp-duration-maroon">3 Months · Internship</span>
+                <span class="exp-duration exp-duration-lavender">3 Months · Internship</span>
                 <h3 class="exp-title">Marketing Intern</h3>
                 <p class="exp-org">Sid's Farm</p>
               </div>
             </div>
-            <div class="exp-divider exp-divider-maroon" aria-hidden="true"></div>
+            <div class="exp-divider exp-divider-lavender" aria-hidden="true"></div>
             <p class="exp-desc">
               Worked in a fast-paced, real-world business environment where I developed
               strong <strong>interpersonal and communication skills</strong>. I learned to
@@ -302,14 +299,14 @@
               challenging situations. It also built confidence in handling real-time
               interactions, decision-making, and professional collaboration.
             </p>
-            <ul class="exp-tags exp-tags-maroon">
+            <ul class="exp-tags exp-tags-lavender">
               <li>Marketing</li>
               <li>Consumer Behaviour</li>
               <li>Problem Solving</li>
               <li>Interpersonal Skills</li>
               <li>Decision-Making</li>
             </ul>
-            <blockquote class="exp-quote exp-quote-maroon">
+            <blockquote class="exp-quote exp-quote-lavender">
               "Every conversation with a customer was a lesson in empathy and persuasion."
             </blockquote>
           </div>
@@ -387,7 +384,7 @@
         <div class="era-divider" aria-hidden="true">◆</div>
 
         <div class="achievement-era reveal-right">
-          <div class="era-header"><span class="era-badge">2013 to 2019</span></div>
+          <div class="era-header"><span class="era-badge era-badge-pink">2013 to 2019</span></div>
           <ul class="achievement-list">
             <li class="achievement-item">
               <span class="ach-icon-svg" aria-hidden="true">
@@ -609,6 +606,7 @@
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
+  /* ── 1. CUSTOM CURSOR ── */
   (function () {
     const dot  = document.getElementById('cursor-dot');
     const halo = document.getElementById('cursor-halo');
@@ -633,21 +631,27 @@
     })();
   })();
 
+  /* ── 2. SCROLL REVEAL — fade-in + upward motion ── */
   (function () {
-    const els = document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right');
+    const els = document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right,.reveal-fade');
     if (!els.length) return;
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
+        }
       });
     }, { threshold: 0.08 });
     els.forEach(el => obs.observe(el));
   })();
 
+  /* ── 3. NAVBAR SCROLL STATE ── */
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  /* ── 4. PARALLAX ── */
   (function () {
     const back  = document.querySelector('.layer-back');
     const mid   = document.querySelector('.layer-mid');
