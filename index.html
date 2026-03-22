@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Huela Sravya — Portfolio</title>
+  <title>Huela Sravya · Portfolio</title>
 
-  <!-- Google Fonts: EB Garamond + Cormorant Garamond -->
+  <!-- Google Fonts: EB Garamond + Cormorant Garamond — unchanged -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
@@ -14,14 +14,13 @@
 </head>
 <body>
 
-  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <!-- ===== CUSTOM CURSOR ===== -->
   <div id="cursor-dot"  aria-hidden="true"></div>
   <div id="cursor-halo" aria-hidden="true"></div>
 
-  <!-- ===================== NAVBAR ===================== -->
+  <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
     <div class="nav-inner">
-      <!-- Updated branding: Huela ♡ -->
       <a class="nav-logo" href="#home">Huela <span class="logo-heart">♡</span></a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -35,26 +34,26 @@
     </div>
   </nav>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===== HERO ===== -->
   <header id="home">
 
-    <!-- Parallax mountain silhouette layers -->
-    <div class="parallax-layer layer-back"   aria-hidden="true"></div>
-    <div class="parallax-layer layer-mid"    aria-hidden="true"></div>
-    <div class="parallax-layer layer-front"  aria-hidden="true"></div>
+    <!-- Parallax mountain layers -->
+    <div class="parallax-layer layer-back"  aria-hidden="true"></div>
+    <div class="parallax-layer layer-mid"   aria-hidden="true"></div>
+    <div class="parallax-layer layer-front" aria-hidden="true"></div>
 
-    <!-- Botanical SVG deco — top-left -->
+    <!-- Botanical SVG deco top-left -->
     <div class="hero-deco deco-tl" aria-hidden="true">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100,10 Q130,50 100,100 Q70,50 100,10Z"  fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+        <path d="M100,10 Q130,50 100,100 Q70,50 100,10Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
         <path d="M60,30 Q100,80 60,140"  fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
         <path d="M140,30 Q100,80 140,140" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
-        <circle cx="100" cy="10" r="3"  fill="currentColor" opacity="0.3"/>
-        <circle cx="60"  cy="30" r="2"  fill="currentColor" opacity="0.2"/>
-        <circle cx="140" cy="30" r="2"  fill="currentColor" opacity="0.2"/>
+        <circle cx="100" cy="10" r="3" fill="currentColor" opacity="0.3"/>
+        <circle cx="60"  cy="30" r="2" fill="currentColor" opacity="0.2"/>
+        <circle cx="140" cy="30" r="2" fill="currentColor" opacity="0.2"/>
       </svg>
     </div>
-    <!-- Botanical SVG deco — bottom-right -->
+    <!-- Botanical SVG deco bottom-right -->
     <div class="hero-deco deco-br" aria-hidden="true">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="100" cy="100" rx="80" ry="40" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
@@ -78,10 +77,13 @@
       </div>
 
       <p class="hero-eyebrow reveal-up">Hello, I'm</p>
+
+      <!-- FIX 5: slightly reduced font size via .hero-name class -->
       <h1 class="hero-name reveal-up delay-1">C. Huela Sravya</h1>
 
+      <!-- FIX 1: em dash replaced with period + space -->
       <!-- Personal meaning line -->
-      <p class="hero-meaning reveal-up delay-2"><em>Huela — Strong in Mind and Spirit.</em></p>
+      <p class="hero-meaning reveal-up delay-2"><em>Huela. Strong in Mind and Spirit.</em></p>
 
       <h2 class="hero-title reveal-up delay-2">Dual-Degree Student &amp; National Badminton Athlete</h2>
       <p class="hero-tagline reveal-up delay-3">
@@ -89,6 +91,7 @@
         Creative · Communicative · Driven
       </p>
 
+      <!-- FIX 2: button crack fixed in CSS — no markup change needed -->
       <div class="hero-cta reveal-up delay-4">
         <a href="#about"   class="btn btn-primary">Discover My Story</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -101,43 +104,37 @@
       </div>
     </div>
 
-    <!-- Scroll hint -->
+    <!-- FIX 3: scroll-label removed; scroll-line kept -->
     <div class="scroll-hint" aria-hidden="true">
       <span class="scroll-line"></span>
-      <span class="scroll-label">scroll</span>
     </div>
+
   </header>
 
-  <!-- ===================== ABOUT ===================== -->
+  <!-- ===== ABOUT ===== -->
+  <!-- FIX 6: section-orn-top (wavy SVG) completely removed -->
   <section id="about">
     <div class="section-pattern" aria-hidden="true"></div>
-
-    <!-- Ornamental top border for section -->
-    <div class="section-orn-top" aria-hidden="true">
-      <svg viewBox="0 0 1200 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,12 Q300,0 600,12 Q900,24 1200,12" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
-        <circle cx="600" cy="12" r="3" fill="currentColor" opacity="0.3"/>
-        <circle cx="300" cy="6"  r="2" fill="currentColor" opacity="0.2"/>
-        <circle cx="900" cy="18" r="2" fill="currentColor" opacity="0.2"/>
-      </svg>
-    </div>
-
     <div class="section-inner about-grid">
 
       <!-- Left: photo -->
       <div class="about-image-wrap reveal-left">
         <div class="about-frame-outer">
-          <!-- Fixed photo frame — enforces clip, object-fit, and size explicitly -->
           <div class="about-image-frame">
-            <img
-              src="Sravya_Photo.jpg"
-              alt="C. Huela Sravya"
-              class="profile-photo"
-            />
+            <img src="Sravya_Photo.jpg" alt="C. Huela Sravya" class="profile-photo" />
           </div>
         </div>
+        <!-- FIX 8: emoji replaced with SVG icon -->
         <div class="about-badge">
-          <span class="badge-icon">🏸</span>
+          <span class="badge-icon-svg" aria-hidden="true">
+            <!-- Minimalist racquet icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="10" r="7"/>
+              <line x1="15" y1="15" x2="21" y2="21"/>
+              <line x1="7" y1="10" x2="13" y2="10"/>
+              <line x1="10" y1="7" x2="10" y2="13"/>
+            </svg>
+          </span>
           <span class="badge-text">National<br/>Rank #13</span>
         </div>
       </div>
@@ -147,8 +144,9 @@
         <p class="section-label">About Me</p>
         <h2 class="section-heading">Who I Am</h2>
 
+        <!-- FIX 1: em dashes replaced -->
         <p>
-          I am Cheppalli Huela Sravya — a focused and determined student from
+          I am Cheppalli Huela Sravya, a focused and determined student from
           Andhra Pradesh, balancing a dual degree with passion and purpose. I'm
           currently pursuing a <strong>BBA DBE at IIM Bangalore</strong> alongside a
           <strong>BCom at Osmania University</strong>.
@@ -167,8 +165,9 @@
 
         <ul class="about-facts">
           <li><strong>Location</strong><span>Andhra Pradesh, India</span></li>
-          <li><strong>Current Study</strong><span>BBA DBE — IIM Bangalore</span></li>
-          <li><strong>Also Pursuing</strong><span>BCom — Osmania University</span></li>
+          <!-- FIX 1: em dash replaced with comma -->
+          <li><strong>Current Study</strong><span>BBA DBE, IIM Bangalore</span></li>
+          <li><strong>Also Pursuing</strong><span>BCom, Osmania University</span></li>
           <li><strong>Interests</strong><span>Badminton, Singing, Drawing</span></li>
         </ul>
 
@@ -178,7 +177,7 @@
     </div>
   </section>
 
-  <!-- ===================== SKILLS ===================== -->
+  <!-- ===== SKILLS ===== -->
   <section id="skills" class="section-cream">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner">
@@ -193,75 +192,95 @@
 
       <div class="skills-grid">
 
+        <!-- FIX 8: emoji replaced with SVG icon | FIX 7: progress-pct spans removed -->
         <article class="skill-card reveal-up delay-1">
-          <div class="skill-icon-wrap"><span class="skill-emoji">🎨</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 1 10 10c0 4-2.5 7.5-6 9"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10"/><path d="M8 12l2 2 4-4"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Creative Thinking</h3>
+          <!-- FIX 1: em dash removed from desc -->
           <p class="skill-desc">Drawing, design sensibility, and an eye for aesthetics cultivated through years of artistic exploration.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 90%;"></div>
             </div>
-            <span class="progress-pct">90%</span>
           </div>
         </article>
 
         <article class="skill-card reveal-up delay-2">
-          <div class="skill-icon-wrap"><span class="skill-emoji">🗣️</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Communication</h3>
-          <p class="skill-desc">Articulate and confident speaker — honed through academic environments, competitions, and leadership roles.</p>
+          <p class="skill-desc">Articulate and confident speaker, honed through academic environments, competitions, and leadership roles.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 88%;"></div>
             </div>
-            <span class="progress-pct">88%</span>
           </div>
         </article>
 
         <article class="skill-card reveal-up delay-3">
-          <div class="skill-icon-wrap"><span class="skill-emoji">👑</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Leadership</h3>
           <p class="skill-desc">Served as Temporary CR at IIM Rohtak. Captained badminton teams and led groups with clarity and empathy.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 85%;"></div>
             </div>
-            <span class="progress-pct">85%</span>
           </div>
         </article>
 
         <article class="skill-card reveal-up delay-1">
-          <div class="skill-icon-wrap"><span class="skill-emoji">🏸</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Athletic Discipline</h3>
           <p class="skill-desc">National-level badminton player. Multiple district, state, and national wins demonstrate exceptional grit and consistency.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 95%;"></div>
             </div>
-            <span class="progress-pct">95%</span>
           </div>
         </article>
 
         <article class="skill-card reveal-up delay-2">
-          <div class="skill-icon-wrap"><span class="skill-emoji">📚</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Academic Rigour</h3>
-          <p class="skill-desc">Dual-degree student managing IIMB and Osmania University curricula — organised, diligent and goal-driven.</p>
+          <p class="skill-desc">Dual-degree student managing IIMB and Osmania University curricula, organised, diligent and goal-driven.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 87%;"></div>
             </div>
-            <span class="progress-pct">87%</span>
           </div>
         </article>
 
         <article class="skill-card reveal-up delay-3">
-          <div class="skill-icon-wrap"><span class="skill-emoji">🌱</span></div>
+          <div class="skill-icon-wrap">
+            <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
           <h3 class="skill-name">Adaptability</h3>
-          <p class="skill-desc">Navigated transitions across institutions and life goals with courage — always pivoting towards better alignment.</p>
+          <p class="skill-desc">Navigated transitions across institutions and life goals with courage, always pivoting towards better alignment.</p>
           <div class="progress-wrap">
             <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
               <div class="progress-fill" style="--fill: 92%;"></div>
             </div>
-            <span class="progress-pct">92%</span>
           </div>
         </article>
 
@@ -269,7 +288,7 @@
     </div>
   </section>
 
-  <!-- ===================== EXPERIENCE ===================== -->
+  <!-- ===== EXPERIENCE ===== -->
   <section id="experience">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner">
@@ -288,7 +307,12 @@
           <div class="exp-card-accent accent-warm"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap"><span class="exp-icon">🏸</span></div>
+              <!-- FIX 8: emoji replaced with SVG -->
+              <div class="exp-icon-wrap">
+                <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
               <div class="exp-title-block">
                 <span class="exp-duration">1 Month · Internship</span>
                 <h3 class="exp-title">Assistant Badminton Coach</h3>
@@ -321,7 +345,12 @@
           <div class="exp-card-accent accent-cool"></div>
           <div class="exp-card-body">
             <div class="exp-header">
-              <div class="exp-icon-wrap"><span class="exp-icon">🌿</span></div>
+              <!-- FIX 8: emoji replaced with SVG -->
+              <div class="exp-icon-wrap">
+                <svg class="exp-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 3h18v4H3z"/><path d="M3 10h18v4H3z"/><path d="M3 17h11v4H3z"/>
+                </svg>
+              </div>
               <div class="exp-title-block">
                 <span class="exp-duration">3 Months · Internship</span>
                 <h3 class="exp-title">Marketing Intern</h3>
@@ -355,8 +384,8 @@
     </div>
   </section>
 
-  <!-- ===================== ACHIEVEMENTS ===================== -->
-  <section id="achievements" class="section-cream">
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section id="achievements" class="section-warm">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner">
 
@@ -371,33 +400,50 @@
       <div class="achievements-layout">
 
         <div class="achievement-era reveal-left">
-          <div class="era-header"><span class="era-badge">2020 – 25</span></div>
+          <div class="era-header"><span class="era-badge">2020 to 2025</span></div>
           <ul class="achievement-list">
+            <!-- FIX 8: emoji → SVG icon | FIX 1: em dashes removed -->
             <li class="achievement-item">
-              <span class="ach-icon">🏅</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                </svg>
+              </span>
               <div>
                 <strong>National Rank #13 in Badminton</strong>
-                <p>Achieved a national ranking of 13th across India — a testament to years of dedicated training and competition.</p>
+                <p>Achieved a national ranking of 13th across India, a testament to years of dedicated training and competition.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">🏆</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>
+                </svg>
+              </span>
               <div>
-                <strong>Winner — Badminton Interschool Competition</strong>
+                <strong>Winner, Badminton Interschool Competition</strong>
                 <p>Claimed the top spot at the interschool level, outperforming competitors across the region.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">🥇</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>
+                </svg>
+              </span>
               <div>
-                <strong>Winner — South-Zone Khel Utsav Badminton Tournament</strong>
+                <strong>Winner, South-Zone Khel Utsav Badminton Tournament</strong>
                 <p>Represented and won at the prestigious South-Zone Khel Utsav tournament.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">🎓</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </span>
               <div>
-                <strong>Temporary Class Representative — IIM Rohtak</strong>
+                <strong>Temporary Class Representative, IIM Rohtak</strong>
                 <p>Trusted by peers as the temporary CR during the IPM programme at IIM Rohtak.</p>
               </div>
             </li>
@@ -407,31 +453,47 @@
         <div class="era-divider" aria-hidden="true">◆</div>
 
         <div class="achievement-era reveal-right">
-          <div class="era-header"><span class="era-badge">2013 – 19</span></div>
+          <div class="era-header"><span class="era-badge">2013 to 2019</span></div>
           <ul class="achievement-list">
             <li class="achievement-item">
-              <span class="ach-icon">🥈</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+                </svg>
+              </span>
               <div>
-                <strong>2nd Place — Intra-School Carrom Board Competition</strong>
+                <strong>2nd Place, Intra-School Carrom Board Competition</strong>
                 <p>Runner-up in the intra-school carrom board competition, demonstrating skill beyond badminton.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">🏸</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </span>
               <div>
                 <strong>District &amp; State Badminton Championships</strong>
                 <p>Won various district and state-level championships in badminton throughout schooling years.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">🏃</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="3"/><path d="M12 8v13"/><path d="M5 11l7-3 7 3"/>
+                </svg>
+              </span>
               <div>
                 <strong>Completed 5K Marathon</strong>
                 <p>Successfully completed a 5K marathon as part of a school-level programme, showcasing endurance.</p>
               </div>
             </li>
             <li class="achievement-item">
-              <span class="ach-icon">📝</span>
+              <span class="ach-icon-svg" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </span>
               <div>
                 <strong>Spell-Bee &amp; Olympiad Participations</strong>
                 <p>Actively participated in various spell-bee competitions and academic olympiads.</p>
@@ -444,8 +506,9 @@
     </div>
   </section>
 
-  <!-- ===================== EDUCATION ===================== -->
-  <section id="education">
+  <!-- ===== EDUCATION ===== -->
+  <!-- FIX 11: uniform card styling, consistent section bg -->
+  <section id="education" class="section-cream">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner">
 
@@ -459,21 +522,22 @@
 
       <div class="timeline">
 
+        <!-- FIX 1: em dashes in years kept as ndash (–) which are correct; em dashes in text removed -->
         <div class="timeline-node reveal-up delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <span class="timeline-year">2013 – 2019</span>
             <h3 class="timeline-title">Primary &amp; Secondary Schooling</h3>
             <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
-            <p class="timeline-detail">Foundation years — combining academics with national-level badminton training.</p>
+            <p class="timeline-detail">Foundation years, combining academics with national-level badminton training.</p>
           </div>
         </div>
 
         <div class="timeline-node reveal-up delay-2">
           <div class="timeline-dot"></div>
-          <div class="timeline-card highlight-card">
+          <div class="timeline-card">
             <span class="timeline-year">2020 – 2021</span>
-            <h3 class="timeline-title">10th Grade — CBSE</h3>
+            <h3 class="timeline-title">10th Grade, CBSE</h3>
             <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
             <p class="timeline-detail">Scored <strong>87.33%</strong> in the 10th grade board examinations.</p>
           </div>
@@ -481,26 +545,29 @@
 
         <div class="timeline-node reveal-up delay-3">
           <div class="timeline-dot"></div>
-          <div class="timeline-card highlight-card">
+          <div class="timeline-card">
             <span class="timeline-year">2022 – 2023</span>
-            <h3 class="timeline-title">12th Grade — CBSE</h3>
+            <h3 class="timeline-title">12th Grade, CBSE</h3>
             <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
             <p class="timeline-detail">Scored <strong>81.80%</strong> in the 12th grade board examinations.</p>
           </div>
         </div>
 
+        <!-- FIX 11: active-card enhanced with stronger but clean highlight -->
         <div class="timeline-node reveal-up delay-4">
           <div class="timeline-dot dot-active"></div>
           <div class="timeline-card active-card">
-            <span class="timeline-year active-year">2024 – Present</span>
+            <div class="active-card-header">
+              <span class="timeline-year active-year">2024 – Present</span>
+              <span class="active-badge">Currently Enrolled ✦</span>
+            </div>
             <h3 class="timeline-title">BBA DBE (Dual Degree)</h3>
             <p class="timeline-place">Indian Institute of Management, Bangalore (IIMB) &amp; Osmania University</p>
             <p class="timeline-detail">
-              Currently pursuing a dual degree — <strong>BBA DBE at IIM Bangalore</strong> and
-              <strong>BCom at Osmania University</strong> — bridging elite management education
+              Currently pursuing a dual degree, <strong>BBA DBE at IIM Bangalore</strong> and
+              <strong>BCom at Osmania University</strong>, bridging elite management education
               with conventional commerce studies.
             </p>
-            <span class="active-badge">Currently Enrolled ✦</span>
           </div>
         </div>
 
@@ -508,29 +575,43 @@
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" class="section-cream">
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
     <div class="section-pattern" aria-hidden="true"></div>
     <div class="section-inner contact-layout">
 
       <div class="contact-info reveal-left">
         <p class="section-label">Let's Connect</p>
         <h2 class="section-heading">Get In Touch</h2>
+        <!-- FIX 1: em dash removed -->
         <p class="contact-intro">
           Whether you have an opportunity, a collaboration idea, or just want
-          to say hello — I'd love to hear from you!
+          to say hello, I'd love to hear from you!
         </p>
         <ul class="contact-details">
+          <!-- FIX 8: emoji → SVG icons -->
           <li>
-            <span class="contact-icon">📞</span>
+            <span class="contact-icon-svg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/>
+              </svg>
+            </span>
             <div><strong>Phone</strong><span>+91 93470 56504</span></div>
           </li>
           <li>
-            <span class="contact-icon">✉️</span>
+            <span class="contact-icon-svg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
             <div><strong>Email</strong><span>huelasravya110206@gmail.com</span></div>
           </li>
           <li>
-            <span class="contact-icon">🔗</span>
+            <span class="contact-icon-svg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
             <div>
               <strong>LinkedIn</strong>
               <a href="https://www.linkedin.com/in/huela-sravya-38b224321" target="_blank" rel="noopener" class="contact-link">
@@ -539,7 +620,11 @@
             </div>
           </li>
           <li>
-            <span class="contact-icon">📍</span>
+            <span class="contact-icon-svg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
             <div><strong>Location</strong><span>Andhra Pradesh, India</span></div>
           </li>
         </ul>
@@ -570,7 +655,7 @@
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ===== FOOTER ===== -->
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-rule" aria-hidden="true">
@@ -580,7 +665,8 @@
       </div>
       <p class="footer-logo">Huela Sravya</p>
       <p class="footer-meaning"><em>Strong in Mind and Spirit.</em></p>
-      <p class="footer-copy">&copy; 2025 &nbsp;·&nbsp; Designed with grace &amp; purpose &nbsp;·&nbsp; All rights reserved.</p>
+      <!-- FIX 4: copyright updated to 2026 -->
+      <p class="footer-copy">&copy; 2026 &nbsp;·&nbsp; Designed with grace &amp; purpose &nbsp;·&nbsp; All rights reserved.</p>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -593,28 +679,25 @@
     </div>
   </footer>
 
-  <!-- ===================== JAVASCRIPT ===================== -->
+  <!-- ===== JAVASCRIPT (unchanged logic) ===== -->
   <script>
-  /* ---- 1. CUSTOM CURSOR ---- */
+  /* 1. CUSTOM CURSOR */
   (function () {
     const dot  = document.getElementById('cursor-dot');
     const halo = document.getElementById('cursor-halo');
     let hx = window.innerWidth / 2, hy = window.innerHeight / 2;
     let tx = hx, ty = hy;
     const ease = 0.10;
-
     document.addEventListener('mousemove', e => {
       tx = e.clientX; ty = e.clientY;
       dot.style.transform = `translate(${tx}px,${ty}px)`;
     });
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; halo.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; halo.style.opacity = '1'; });
-
+    document.addEventListener('mouseleave', () => { dot.style.opacity='0'; halo.style.opacity='0'; });
+    document.addEventListener('mouseenter', () => { dot.style.opacity='1'; halo.style.opacity='1'; });
     document.querySelectorAll('a,button,.skill-card,.exp-card,.achievement-item,.timeline-card').forEach(el => {
       el.addEventListener('mouseenter', () => halo.classList.add('halo-hover'));
       el.addEventListener('mouseleave', () => halo.classList.remove('halo-hover'));
     });
-
     (function loop() {
       hx += (tx - hx) * ease;
       hy += (ty - hy) * ease;
@@ -623,7 +706,7 @@
     })();
   })();
 
-  /* ---- 2. SCROLL REVEAL ---- */
+  /* 2. SCROLL REVEAL */
   (function () {
     const els = document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right');
     if (!els.length) return;
@@ -635,29 +718,24 @@
     els.forEach(el => obs.observe(el));
   })();
 
-  /* ---- 3. NAVBAR SCROLL STATE ---- */
+  /* 3. NAVBAR SCROLL STATE */
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  /* ---- 4. PARALLAX — mountain layers move at different speeds on scroll ---- */
+  /* 4. PARALLAX */
   (function () {
     const back  = document.querySelector('.layer-back');
     const mid   = document.querySelector('.layer-mid');
     const front = document.querySelector('.layer-front');
     if (!back) return;
-
-    function onScroll() {
+    window.addEventListener('scroll', () => {
       const y = window.scrollY;
       back.style.transform  = `translateY(${y * 0.18}px)`;
       mid.style.transform   = `translateY(${y * 0.32}px)`;
       front.style.transform = `translateY(${y * 0.50}px)`;
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }, { passive: true });
   })();
-
-  /* ---- 5. SPIRAL SCROLL COUNTER — decorative floating numbers ---- */
-  /* Horizontal marquee scroll handled purely in CSS (see style.css) */
   </script>
 
 </body>
