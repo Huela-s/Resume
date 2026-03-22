@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C. Huela Sravya — Portfolio</title>
+
+  <!-- Google Fonts: EB Garamond (headings) + Cormorant Garamond (body/italic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <!-- Two-layer cursor: the crisp dot + a soft trailing halo -->
+  <div id="cursor-dot"    aria-hidden="true"></div>
+  <div id="cursor-halo"   aria-hidden="true"></div>
+
+  <!-- ===================== FIXED NAVIGATION ===================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#home">CHS.</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO / HEADER ===================== -->
+  <header id="home">
+    <!-- Botanical SVG deco — top-left -->
+    <div class="hero-deco deco-tl" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100,10 Q130,50 100,100 Q70,50 100,10Z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <path d="M60,30 Q100,80 60,140" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
+        <path d="M140,30 Q100,80 140,140" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="100" cy="10" r="3" fill="currentColor" opacity="0.3"/>
+        <circle cx="60"  cy="30" r="2" fill="currentColor" opacity="0.2"/>
+        <circle cx="140" cy="30" r="2" fill="currentColor" opacity="0.2"/>
+      </svg>
+    </div>
+    <!-- Botanical SVG deco — bottom-right -->
+    <div class="hero-deco deco-br" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="100" rx="80" ry="40" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.2"/>
+        <ellipse cx="100" cy="100" rx="50" ry="70" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.2"/>
+        <path d="M20,100 Q100,60 180,100 Q100,140 20,100Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+      </svg>
+    </div>
+    <!-- Corner ornaments -->
+    <div class="corner-ornament corner-tl" aria-hidden="true">✦</div>
+    <div class="corner-ornament corner-tr" aria-hidden="true">✦</div>
+    <div class="corner-ornament corner-bl" aria-hidden="true">✦</div>
+    <div class="corner-ornament corner-br-c" aria-hidden="true">✦</div>
+
+    <div class="hero-content">
+      <div class="hero-rule" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-diamond">◆</span>
+        <span class="rule-line"></span>
+      </div>
+
+      <p class="hero-eyebrow reveal-up">Hello, I'm</p>
+      <h1 class="hero-name reveal-up delay-1">C. Huela Sravya</h1>
+      <h2 class="hero-title reveal-up delay-2">Dual-Degree Student &amp; National Badminton Athlete</h2>
+      <p class="hero-tagline reveal-up delay-3">
+        BBA DBE @ IIM Bangalore &nbsp;·&nbsp; BCom @ Osmania University<br/>
+        Creative · Communicative · Driven
+      </p>
+
+      <div class="hero-cta reveal-up delay-4">
+        <a href="#about"   class="btn btn-primary">Discover My Story</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+
+      <div class="hero-rule bottom-rule" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-diamond">◆</span>
+        <span class="rule-line"></span>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">scroll</span>
+    </div>
+  </header>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section id="about">
+    <!-- Subtle ornamental background pattern -->
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner about-grid">
+
+      <!-- Left: photo + floating badge -->
+      <div class="about-image-wrap reveal-left">
+        <div class="about-frame-outer">
+          <div class="about-image-frame" aria-label="Profile photo of C. Huela Sravya">
+            <!-- Real photo -->
+            <img src="Sravya_Photo.jpg" alt="C. Huela Sravya" />
+          </div>
+        </div>
+        <div class="about-badge">
+          <span class="badge-icon">🏸</span>
+          <span class="badge-text">National<br/>Rank #13</span>
+        </div>
+      </div>
+
+      <!-- Right: bio -->
+      <div class="about-text reveal-right">
+        <p class="section-label">About Me</p>
+        <h2 class="section-heading">Who I Am</h2>
+        <p>
+          I am Cheppalli Huela Sravya — a focused and determined student from
+          Andhra Pradesh, balancing a dual degree with passion and purpose. I'm
+          currently pursuing a <strong>BBA DBE at IIM Bangalore</strong> alongside a
+          <strong>BCom at Osmania University</strong>.
+        </p>
+        <p>
+          Prior to IIMB, I was enrolled in the IPM programme at IIM Rohtak,
+          which I chose to discontinue to pursue a path better aligned with my
+          long-term goals and values. I completed my schooling at
+          Bharatiya Vidya Bhavan's Atmakuri Rama Rao School.
+        </p>
+        <p>
+          A former national-level badminton player ranked <strong>13th across India</strong>,
+          I carry the same discipline and drive into everything I do. In my free time,
+          I enjoy singing, drawing, reading, and exploring creative pursuits.
+        </p>
+
+        <ul class="about-facts">
+          <li><strong>Location</strong><span>Andhra Pradesh, India</span></li>
+          <li><strong>Current Study</strong><span>BBA DBE — IIM Bangalore</span></li>
+          <li><strong>Also Pursuing</strong><span>BCom — Osmania University</span></li>
+          <li><strong>Interests</strong><span>Badminton, Singing, Drawing</span></li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS SECTION ===================== -->
+  <section id="skills" class="section-cream">
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="section-label centered reveal-up">Core Strengths</p>
+      <h2 class="section-heading centered reveal-up delay-1">Skills &amp; Attributes</h2>
+
+      <div class="skills-grid">
+
+        <article class="skill-card reveal-up delay-1">
+          <div class="skill-icon-wrap"><span class="skill-emoji">🎨</span></div>
+          <h3 class="skill-name">Creative Thinking</h3>
+          <p class="skill-desc">Drawing, design sensibility, and an eye for aesthetics cultivated through years of artistic exploration.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 90%;"></div>
+          </div>
+          <span class="progress-pct">90%</span>
+        </article>
+
+        <article class="skill-card reveal-up delay-2">
+          <div class="skill-icon-wrap"><span class="skill-emoji">🗣️</span></div>
+          <h3 class="skill-name">Communication</h3>
+          <p class="skill-desc">Articulate and confident speaker — honed through academic environments, competitions, and leadership roles.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 88%;"></div>
+          </div>
+          <span class="progress-pct">88%</span>
+        </article>
+
+        <article class="skill-card reveal-up delay-3">
+          <div class="skill-icon-wrap"><span class="skill-emoji">👑</span></div>
+          <h3 class="skill-name">Leadership</h3>
+          <p class="skill-desc">Served as Temporary CR at IIM Rohtak. Captained badminton teams and led groups with clarity and empathy.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 85%;"></div>
+          </div>
+          <span class="progress-pct">85%</span>
+        </article>
+
+        <article class="skill-card reveal-up delay-1">
+          <div class="skill-icon-wrap"><span class="skill-emoji">🏸</span></div>
+          <h3 class="skill-name">Athletic Discipline</h3>
+          <p class="skill-desc">National-level badminton player. Multiple district, state, and national wins demonstrate exceptional grit and consistency.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 95%;"></div>
+          </div>
+          <span class="progress-pct">95%</span>
+        </article>
+
+        <article class="skill-card reveal-up delay-2">
+          <div class="skill-icon-wrap"><span class="skill-emoji">📚</span></div>
+          <h3 class="skill-name">Academic Rigour</h3>
+          <p class="skill-desc">Dual-degree student managing IIMB and Osmania University curricula — organised, diligent and goal-driven.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 87%;"></div>
+          </div>
+          <span class="progress-pct">87%</span>
+        </article>
+
+        <article class="skill-card reveal-up delay-3">
+          <div class="skill-icon-wrap"><span class="skill-emoji">🌱</span></div>
+          <h3 class="skill-name">Adaptability</h3>
+          <p class="skill-desc">Navigated transitions across institutions and life goals with courage — always pivoting towards better alignment.</p>
+          <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="--fill: 92%;"></div>
+          </div>
+          <span class="progress-pct">92%</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE SECTION ===================== -->
+  <section id="experience">
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="section-label centered reveal-up">Professional Journey</p>
+      <h2 class="section-heading centered reveal-up delay-1">Experience</h2>
+
+      <!-- Decorative rule under heading -->
+      <div class="section-rule reveal-up delay-2" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-diamond">◆</span>
+        <span class="rule-line"></span>
+      </div>
+
+      <div class="experience-grid">
+
+        <!-- Experience Card 1: Badminton Coach -->
+        <article class="exp-card reveal-up delay-1">
+          <!-- Top accent bar -->
+          <div class="exp-card-accent accent-warm"></div>
+          <div class="exp-card-body">
+            <!-- Header row -->
+            <div class="exp-header">
+              <div class="exp-icon-wrap">
+                <span class="exp-icon">🏸</span>
+              </div>
+              <div class="exp-title-block">
+                <span class="exp-duration">1 Month · Internship</span>
+                <h3 class="exp-title">Assistant Badminton Coach</h3>
+                <p class="exp-org">Sports Training Academy</p>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="exp-divider" aria-hidden="true"></div>
+
+            <!-- Description -->
+            <p class="exp-desc">
+              Gained hands-on experience mentoring and training players in a
+              high-discipline sports environment. This role strengthened my
+              <strong>leadership</strong>, patience, and ability to guide individuals
+              toward meaningful performance improvement.
+            </p>
+
+            <!-- Key takeaways -->
+            <ul class="exp-tags">
+              <li>Leadership</li>
+              <li>Mentorship</li>
+              <li>Communication</li>
+              <li>Adaptability</li>
+              <li>Initiative</li>
+            </ul>
+
+            <!-- Highlight quote -->
+            <blockquote class="exp-quote">
+              "Coaching taught me that the best leaders know when to push and when to encourage."
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- Experience Card 2: Marketing Intern at Sid's Farm -->
+        <article class="exp-card reveal-up delay-2">
+          <div class="exp-card-accent accent-cool"></div>
+          <div class="exp-card-body">
+            <div class="exp-header">
+              <div class="exp-icon-wrap">
+                <span class="exp-icon">🌿</span>
+              </div>
+              <div class="exp-title-block">
+                <span class="exp-duration">3 Months · Internship</span>
+                <h3 class="exp-title">Marketing Intern</h3>
+                <p class="exp-org">Sid's Farm</p>
+              </div>
+            </div>
+
+            <div class="exp-divider" aria-hidden="true"></div>
+
+            <p class="exp-desc">
+              Worked in a fast-paced, real-world business environment where I
+              developed strong <strong>interpersonal and communication skills</strong>.
+              I learned to engage effectively with diverse individuals, understand
+              consumer behaviour, and persuasively present ideas that resonate.
+              This experience sharpened my ability to think on my feet, solve
+              problems under pressure, and adapt swiftly to challenging situations.
+              It built lasting confidence in real-time decision-making and
+              professional collaboration.
+            </p>
+
+            <ul class="exp-tags">
+              <li>Marketing</li>
+              <li>Consumer Behaviour</li>
+              <li>Problem Solving</li>
+              <li>Interpersonal Skills</li>
+              <li>Decision-Making</li>
+            </ul>
+
+            <blockquote class="exp-quote">
+              "Every conversation with a customer was a lesson in empathy and persuasion."
+            </blockquote>
+          </div>
+        </article>
+
+      </div><!-- /experience-grid -->
+    </div>
+  </section>
+
+  <!-- ===================== ACHIEVEMENTS SECTION ===================== -->
+  <section id="achievements" class="section-cream">
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="section-label centered reveal-up">Milestones</p>
+      <h2 class="section-heading centered reveal-up delay-1">Achievements</h2>
+
+      <div class="achievements-layout">
+
+        <!-- Era 2020-25 -->
+        <div class="achievement-era reveal-left">
+          <div class="era-header">
+            <span class="era-badge">2020 – 25</span>
+          </div>
+          <ul class="achievement-list">
+            <li class="achievement-item">
+              <span class="ach-icon">🏅</span>
+              <div>
+                <strong>National Rank #13 in Badminton</strong>
+                <p>Achieved a national ranking of 13th across India — a testament to years of dedicated training and competition.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">🏆</span>
+              <div>
+                <strong>Winner — Badminton Interschool Competition</strong>
+                <p>Claimed the top spot at the interschool level, outperforming competitors across the region.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">🥇</span>
+              <div>
+                <strong>Winner — South-Zone Khel Utsav Badminton Tournament</strong>
+                <p>Represented and won at the prestigious South-Zone Khel Utsav tournament.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">🎓</span>
+              <div>
+                <strong>Temporary Class Representative — IIM Rohtak</strong>
+                <p>Trusted by peers as the temporary CR during the IPM programme at IIM Rohtak.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="era-divider" aria-hidden="true">◆</div>
+
+        <!-- Era 2013-19 -->
+        <div class="achievement-era reveal-right">
+          <div class="era-header">
+            <span class="era-badge">2013 – 19</span>
+          </div>
+          <ul class="achievement-list">
+            <li class="achievement-item">
+              <span class="ach-icon">🥈</span>
+              <div>
+                <strong>2nd Place — Intra-School Carrom Board Competition</strong>
+                <p>Runner-up in the intra-school carrom board competition, demonstrating skill beyond badminton.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">🏸</span>
+              <div>
+                <strong>District &amp; State Badminton Championships</strong>
+                <p>Won various district and state-level championships in badminton throughout schooling years.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">🏃</span>
+              <div>
+                <strong>Completed 5K Marathon</strong>
+                <p>Successfully completed a 5K marathon as part of a school-level programme, showcasing endurance.</p>
+              </div>
+            </li>
+            <li class="achievement-item">
+              <span class="ach-icon">📝</span>
+              <div>
+                <strong>Spell-Bee &amp; Olympiad Participations</strong>
+                <p>Actively participated in various spell-bee competitions and academic olympiads.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /achievements-layout -->
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION SECTION ===================== -->
+  <section id="education">
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="section-label centered reveal-up">Academic Journey</p>
+      <h2 class="section-heading centered reveal-up delay-1">Education</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-node reveal-up delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2013 – 2019</span>
+            <h3 class="timeline-title">Primary &amp; Secondary Schooling</h3>
+            <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
+            <p class="timeline-detail">Foundation years — combining academics with national-level badminton training.</p>
+          </div>
+        </div>
+
+        <div class="timeline-node reveal-up delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card highlight-card">
+            <span class="timeline-year">2020 – 2021</span>
+            <h3 class="timeline-title">10th Grade — CBSE</h3>
+            <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
+            <p class="timeline-detail">Scored <strong>87.33%</strong> in the 10th grade board examinations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-node reveal-up delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card highlight-card">
+            <span class="timeline-year">2022 – 2023</span>
+            <h3 class="timeline-title">12th Grade — CBSE</h3>
+            <p class="timeline-place">Bharatiya Vidya Bhavan's Atmakuri Rama Rao School</p>
+            <p class="timeline-detail">Scored <strong>81.80%</strong> in the 12th grade board examinations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-node reveal-up delay-4">
+          <div class="timeline-dot dot-active"></div>
+          <div class="timeline-card active-card">
+            <span class="timeline-year active-year">2024 – Present</span>
+            <h3 class="timeline-title">BBA DBE (Dual Degree)</h3>
+            <p class="timeline-place">Indian Institute of Management, Bangalore (IIMB) &amp; Osmania University</p>
+            <p class="timeline-detail">
+              Currently pursuing a dual degree — <strong>BBA DBE at IIM Bangalore</strong> and
+              <strong>BCom at Osmania University</strong> — bridging elite management education
+              with conventional commerce studies.
+            </p>
+            <span class="active-badge">Currently Enrolled ✦</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section id="contact" class="section-cream">
+    <div class="section-pattern" aria-hidden="true"></div>
+    <div class="section-inner contact-layout">
+
+      <div class="contact-info reveal-left">
+        <p class="section-label">Let's Connect</p>
+        <h2 class="section-heading">Get In Touch</h2>
+        <p>
+          Whether you have an opportunity, a collaboration idea, or just want
+          to say hello — I'd love to hear from you!
+        </p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="contact-icon">📞</span>
+            <div><strong>Phone</strong><span>+91 93470 56504</span></div>
+          </li>
+          <li>
+            <span class="contact-icon">✉️</span>
+            <div><strong>Email</strong><span>huelasravya110206@gmail.com</span></div>
+          </li>
+          <li>
+            <span class="contact-icon">🔗</span>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/huela-sravya-38b224321" target="_blank" rel="noopener" class="contact-link">
+                linkedin.com/in/huela-sravya-38b224321
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <div><strong>Location</strong><span>Andhra Pradesh, India</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-form-wrap reveal-right">
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Collaboration / Opportunity / Hello!" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me what's on your mind..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Send Message ✦</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-rule" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-diamond">◆</span>
+        <span class="rule-line"></span>
+      </div>
+      <p class="footer-logo">C. Huela Sravya</p>
+      <p class="footer-copy">
+        &copy; 2025 &nbsp;·&nbsp; Designed with grace &amp; purpose &nbsp;·&nbsp; All rights reserved.
+      </p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    /* -------------------------------------------------------
+       1. CUSTOM CURSOR
+       Two elements: a crisp dot that follows instantly,
+       and a soft halo that eases behind with a lag.
+    ------------------------------------------------------- */
+    (function () {
+      const dot  = document.getElementById('cursor-dot');
+      const halo = document.getElementById('cursor-halo');
+
+      // Current halo position (interpolated)
+      let hx = window.innerWidth  / 2;
+      let hy = window.innerHeight / 2;
+
+      // Target position (mouse)
+      let tx = hx, ty = hy;
+
+      // Easing factor — lower = slower/smoother trail
+      const ease = 0.10;
+
+      document.addEventListener('mousemove', (e) => {
+        tx = e.clientX;
+        ty = e.clientY;
+        // Dot snaps instantly
+        dot.style.transform  = `translate(${tx}px, ${ty}px)`;
+      });
+
+      // Hide on leave, show on enter
+      document.addEventListener('mouseleave', () => {
+        dot.style.opacity  = '0';
+        halo.style.opacity = '0';
+      });
+      document.addEventListener('mouseenter', () => {
+        dot.style.opacity  = '1';
+        halo.style.opacity = '1';
+      });
+
+      // Grow halo on interactive elements
+      const interactables = 'a, button, .skill-card, .project-card, .exp-card, .achievement-item, .timeline-card';
+      document.querySelectorAll(interactables).forEach(el => {
+        el.addEventListener('mouseenter', () => halo.classList.add('halo-hover'));
+        el.addEventListener('mouseleave', () => halo.classList.remove('halo-hover'));
+      });
+
+      // Smooth halo animation loop
+      function animateHalo() {
+        hx += (tx - hx) * ease;
+        hy += (ty - hy) * ease;
+        halo.style.transform = `translate(${hx}px, ${hy}px)`;
+        requestAnimationFrame(animateHalo);
+      }
+      animateHalo();
+    })();
+
+    /* -------------------------------------------------------
+       2. SCROLL REVEAL — IntersectionObserver
+       Adds .is-visible when element enters the viewport.
+       CSS handles the actual animation.
+    ------------------------------------------------------- */
+    (function () {
+      const targets = document.querySelectorAll(
+        '.reveal-up, .reveal-left, .reveal-right'
+      );
+
+      if (!targets.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target); // Fire once
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      targets.forEach(el => observer.observe(el));
+    })();
+
+    /* -------------------------------------------------------
+       3. NAVBAR — add .scrolled class after 60px scroll
+       (triggers backdrop enhancement via CSS)
+    ------------------------------------------------------- */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar')
+        .classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+
+</body>
+</html>
