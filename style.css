@@ -1,0 +1,1222 @@
+/* =============================================================
+   STYLE.CSS — Huela Sravya Portfolio (v7 — Luxury Palette)
+   Goldish Beige · Emerald Green · Maroon Red
+   =============================================================
+   PALETTE:
+   Base    → golden beige  (#f5ead0 family — warm, luminous)
+   Primary → emerald green (#2a6b52 family — rich, jewel-toned)
+   Accent  → maroon red    (#8b2535 family — warm crimson-gold)
+   ============================================================= */
+
+
+/* =============================================================
+   1. CSS VARIABLES
+   ============================================================= */
+:root {
+  /* ── Golden Beige Base ── */
+  --bg:             #f9f3e8;   /* warm parchment gold-white              */
+  --bg-alt:         #f2e8d5;   /* rich golden cream                      */
+  --bg-warm:        #ecddc0;   /* deeper golden tan                      */
+  --bg-deep:        #e3d0aa;   /* darkest base — footer, deep surfaces   */
+  --card:           #faf5eb;   /* card surface — lightest gold-white     */
+  --border:         #d4bc8a;   /* warm golden border                     */
+  --border-light:   #e8d9b8;   /* soft golden divider                    */
+  --border-faint:   #f0e5c8;   /* barely-there gold line                 */
+
+  /* ── Emerald Green — primary vibrant accent ── */
+  --em:             #1e6647;   /* deep forest emerald                    */
+  --em-bright:      #27855c;   /* lighter emerald for hover              */
+  --em-pale:        #dff0e8;   /* pale emerald wash                      */
+  --em-mid:         #a8d4be;   /* medium emerald for borders             */
+  --em-glow:        rgba(30,102,71,0.22);
+  --em-glow-soft:   rgba(30,102,71,0.12);
+
+  /* ── Maroon Red — secondary vibrant accent ── */
+  --mr:             #8b2535;   /* warm rich maroon-crimson               */
+  --mr-bright:      #a83040;   /* brighter maroon for hover              */
+  --mr-pale:        #f5dde0;   /* pale maroon wash                       */
+  --mr-mid:         #d4a0a8;   /* medium maroon border                   */
+  --mr-glow:        rgba(139,37,53,0.22);
+  --mr-glow-soft:   rgba(139,37,53,0.12);
+
+  /* ── Deep warm brown (retained for text) ── */
+  --primary:        #6b4c2a;   /* deep golden-brown — kept for text/logo */
+  --primary-light:  #8c6840;
+
+  /* ── Text ── */
+  --text:           #2c1e10;   /* deep warm brown-black                  */
+  --text-muted:     #6a5440;   /* warm medium brown                      */
+  --heading:        #1a1008;   /* near-black warm                        */
+
+  /* Fonts (unchanged) */
+  --fh: 'EB Garamond','Garamond','Times New Roman',serif;
+  --fb: 'Cormorant Garamond','EB Garamond',Georgia,serif;
+
+  /* Spacing (unchanged) */
+  --xs:   0.55rem;
+  --sm:   1.2rem;
+  --md:   1.9rem;
+  --lg:   3.2rem;
+  --xl:   5.2rem;
+  --2xl:  8.5rem;
+
+  /* Radii (unchanged) */
+  --r-sm: 5px;
+  --r-md: 12px;
+  --r-lg: 22px;
+
+  /* Shadows */
+  --sh-soft:  0 2px 20px rgba(107,76,42,0.10);
+  --sh-card:  0 6px 36px rgba(107,76,42,0.14);
+  --sh-hover: 0 16px 52px rgba(30,102,71,0.22);
+  --sh-glow:  0 0 40px  rgba(30,102,71,0.28);
+  --sh-em:    0 6px 28px rgba(30,102,71,0.30);
+  --sh-mr:    0 6px 28px rgba(139,37,53,0.28);
+
+  /* Transitions (unchanged) */
+  --t:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  --ts: 0.60s cubic-bezier(0.25,0.46,0.45,0.94);
+
+  /* Glassmorphism — golden warmth */
+  --glass-bg:     rgba(250,245,235,0.75);
+  --glass-border: rgba(212,188,138,0.50);
+  --glass-blur:   blur(18px);
+
+  --nav-h: 74px;
+}
+
+
+/* =============================================================
+   2. RESET & BASE
+   ============================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  cursor: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fb);
+  font-size: 1.12rem;
+  line-height: 1.88;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+ul  { list-style: none; }
+img { display: block; }
+a   { text-decoration: none; color: inherit; }
+a, button { cursor: none; }
+
+/* Parchment texture — golden warm */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 30px,
+    rgba(107,76,42,0.016) 30px, rgba(107,76,42,0.016) 31px
+  );
+}
+
+/* Diagonal weave — emerald-tinted crosshatch */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg, rgba(30,102,71,0.018) 0, rgba(30,102,71,0.018) 1px,
+      transparent 0, transparent 50%
+    ),
+    repeating-linear-gradient(
+      -45deg, rgba(139,37,53,0.012) 0, rgba(139,37,53,0.012) 1px,
+      transparent 0, transparent 50%
+    );
+  background-size: 20px 20px;
+}
+
+
+/* =============================================================
+   3. CUSTOM CURSOR — emerald dot, golden halo
+   ============================================================= */
+#cursor-dot {
+  position: fixed; top: 0; left: 0;
+  width: 9px; height: 9px;
+  background: var(--em);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: opacity 0.22s ease;
+  will-change: transform;
+}
+
+#cursor-halo {
+  position: fixed; top: 0; left: 0;
+  width: 38px; height: 38px;
+  border: 1.5px solid rgba(30,102,71,0.40);
+  background: rgba(223,240,232,0.10);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width var(--t), height var(--t), background 0.4s, border-color 0.4s, opacity 0.22s;
+  will-change: transform;
+}
+
+#cursor-halo.halo-hover {
+  width: 58px; height: 58px;
+  background: rgba(223,240,232,0.22);
+  border-color: rgba(30,102,71,0.58);
+}
+
+
+/* =============================================================
+   4. SCROLL-REVEAL ANIMATIONS (unchanged)
+   ============================================================= */
+.reveal-up, .reveal-left, .reveal-right {
+  opacity: 0;
+  transition:
+    opacity  0.90s cubic-bezier(0.22,1,0.36,1),
+    transform 0.90s cubic-bezier(0.22,1,0.36,1);
+  will-change: opacity, transform;
+}
+
+.reveal-up    { transform: translateY(40px); }
+.reveal-left  { transform: translateX(-48px); }
+.reveal-right { transform: translateX(48px); }
+
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible { opacity: 1; transform: translate(0,0); }
+
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.26s; }
+.delay-3 { transition-delay: 0.40s; }
+.delay-4 { transition-delay: 0.54s; }
+
+
+/* =============================================================
+   5. TYPOGRAPHY & UTILITIES
+   ============================================================= */
+h1,h2,h3,h4 {
+  font-family: var(--fh);
+  color: var(--heading);
+  line-height: 1.18; font-weight: 600;
+}
+
+/* Section label — emerald */
+.section-label {
+  font-family: var(--fh);
+  font-size: 0.76rem; font-weight: 500;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--em);
+  display: block; margin-bottom: 0.65rem;
+}
+
+.section-heading {
+  font-size: clamp(2.1rem,4.2vw,3rem);
+  margin-bottom: 0.45rem; font-weight: 700;
+}
+
+.centered { text-align: center; }
+
+.section-inner {
+  position: relative; z-index: 1;
+  max-width: 1080px; margin: 0 auto;
+  padding: var(--2xl) var(--md);
+}
+
+.section-cream { background: var(--bg-alt); }
+.section-warm  { background: var(--bg-warm); }
+
+/* Dot-grid — emerald toned */
+.section-pattern {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  background-image: radial-gradient(circle, rgba(30,102,71,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Section top-edge separator — emerald to maroon gradient */
+#about, #skills, #experience, #achievements, #education, #contact {
+  position: relative;
+}
+
+#about::before, #skills::before, #experience::before,
+#achievements::before, #education::before, #contact::before {
+  content: '';
+  display: block; height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 3%,
+    rgba(30,102,71,0.25) 20%,
+    rgba(139,37,53,0.30) 50%,
+    rgba(30,102,71,0.25) 80%,
+    transparent 97%
+  );
+  position: absolute; top: 0; left: 0; right: 0; z-index: 2;
+}
+
+#home::before, #footer::before { display: none; }
+
+
+/* =============================================================
+   6. ORNAMENTAL DIVIDERS & RULES
+   ============================================================= */
+.ornamental-divider {
+  display: flex; align-items: center; gap: var(--sm);
+  justify-content: center; margin-bottom: var(--lg); margin-top: var(--xs);
+}
+
+/* Orn line — emerald to maroon */
+.orn-line {
+  display: block; width: 100px; height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(30,102,71,0.45) 30%,
+    rgba(139,37,53,0.55) 60%,
+    transparent
+  );
+}
+
+/* Orn motif — maroon */
+.orn-motif {
+  font-family: var(--fh); font-size: 1.3rem;
+  color: var(--mr); opacity: 0.65;
+  line-height: 1; padding: 0 0.3rem;
+}
+
+.hero-rule, .footer-rule {
+  display: flex; align-items: center; gap: var(--sm);
+  justify-content: center; margin-bottom: var(--md);
+}
+
+.bottom-rule { margin-top: var(--lg); margin-bottom: 0; }
+
+/* Rule line — golden beige */
+.rule-line {
+  display: block; width: 88px; height: 1px;
+  background: linear-gradient(
+    to right, transparent, rgba(107,76,42,0.40) 40%, rgba(107,76,42,0.55) 60%, transparent
+  );
+}
+
+/* Rule diamond — emerald */
+.rule-diamond {
+  font-size: 0.58rem; color: var(--em);
+  letter-spacing: 0.1em; padding: 0 0.25rem;
+}
+
+
+/* =============================================================
+   7. BUTTONS — emerald primary, maroon outline
+   ============================================================= */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  border-radius: var(--r-sm);
+  font-family: var(--fh);
+  font-size: 0.90rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  cursor: none;
+  border: 1.5px solid var(--em);
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background-clip: padding-box;
+  position: relative; overflow: hidden;
+  transition: background-color var(--t), color var(--t), transform var(--t),
+              box-shadow var(--t), border-color var(--t);
+}
+
+/* Primary — deep emerald fill */
+.btn-primary {
+  background: var(--em);
+  color: #f9f3e8;
+  border-color: var(--em);
+}
+
+.btn-primary:hover {
+  background: var(--em-bright);
+  border-color: var(--em-bright);
+  color: #f9f3e8;
+  transform: translateY(-3px) translateZ(0);
+  box-shadow: 0 10px 32px var(--em-glow);
+}
+
+/* Outline — maroon border */
+.btn-outline {
+  background: transparent;
+  color: var(--mr);
+  border-color: var(--mr);
+}
+
+.btn-outline:hover {
+  background: var(--mr);
+  color: #f9f3e8;
+  border-color: var(--mr);
+  transform: translateY(-3px) translateZ(0);
+  box-shadow: 0 10px 32px var(--mr-glow);
+}
+
+.btn.full-width { width: 100%; text-align: center; }
+
+
+/* =============================================================
+   8. NAVIGATION BAR — glassmorphism + emerald accents
+   ============================================================= */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h); z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid rgba(30,102,71,0.18);
+  transition: box-shadow var(--t), background var(--t);
+}
+
+#navbar::before { display: none; }
+
+#navbar.scrolled {
+  background: rgba(249,243,232,0.95);
+  box-shadow: 0 3px 28px rgba(30,102,71,0.12);
+}
+
+.nav-inner {
+  max-width: 1080px; height: 100%;
+  margin: 0 auto; padding: 0 var(--md);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* Logo — emerald */
+.nav-logo {
+  font-family: var(--fh); font-size: 1.5rem; font-weight: 700;
+  color: var(--em); letter-spacing: 0.04em; font-style: italic;
+  transition: opacity var(--t);
+  display: flex; align-items: baseline; gap: 0.3rem;
+}
+
+.nav-logo:hover { opacity: 0.72; }
+
+/* Heart — maroon */
+.logo-heart {
+  font-style: normal; font-weight: 400;
+  font-size: 1rem; color: var(--mr);
+  margin-left: 0.15rem;
+}
+
+.nav-links { display: flex; align-items: center; gap: 2.1rem; }
+
+.nav-links a {
+  font-family: var(--fh); font-size: 0.79rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); position: relative; padding-bottom: 4px;
+  transition: color var(--t);
+}
+
+/* Nav underline — emerald to maroon */
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background: linear-gradient(to right, var(--em), var(--mr));
+  transition: width var(--t);
+}
+
+.nav-links a:hover { color: var(--em); }
+.nav-links a:hover::after { width: 100%; }
+
+
+/* =============================================================
+   9. HERO / PARALLAX — golden beige base + emerald/maroon layers
+   ============================================================= */
+#home {
+  position: relative; min-height: 100vh; padding-top: var(--nav-h);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; text-align: center;
+  background: linear-gradient(
+    160deg,
+    #faf4e8 0%,
+    #f5e9cc 30%,
+    #edddb0 65%,
+    #e3cc95 100%
+  );
+}
+
+/* Parallax mountain layers */
+.parallax-layer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  pointer-events: none; will-change: transform;
+}
+
+.layer-back {
+  height: 46%;
+  background: linear-gradient(180deg, transparent 0%, rgba(30,102,71,0.15) 100%);
+  clip-path: polygon(
+    0% 100%, 0% 70%, 6% 48%, 12% 62%, 18% 34%, 26% 55%, 33% 22%,
+    40% 48%, 47% 18%, 54% 44%, 60% 28%, 67% 52%, 74% 15%,
+    80% 42%, 86% 30%, 92% 50%, 96% 38%, 100% 55%, 100% 100%
+  );
+}
+
+.layer-mid {
+  height: 34%;
+  background: linear-gradient(180deg, transparent 0%, rgba(30,90,60,0.24) 100%);
+  clip-path: polygon(
+    0% 100%, 0% 60%, 8% 40%, 16% 58%, 24% 30%, 32% 52%, 40% 20%,
+    50% 46%, 58% 28%, 66% 50%, 74% 24%, 82% 46%, 90% 32%, 100% 52%, 100% 100%
+  );
+}
+
+.layer-front {
+  height: 20%;
+  background: linear-gradient(180deg, transparent 0%, rgba(139,37,53,0.22) 100%);
+  clip-path: polygon(
+    0% 100%, 0% 72%, 10% 52%, 22% 68%, 34% 40%, 46% 60%,
+    58% 44%, 70% 62%, 82% 46%, 92% 58%, 100% 48%, 100% 100%
+  );
+}
+
+/* Botanical SVGs — emerald toned */
+.hero-deco { position: absolute; color: var(--em); pointer-events: none; }
+
+.deco-tl {
+  top: -30px; left: -30px; width: 280px; opacity: 0.48;
+  animation: decoSway 14s ease-in-out infinite alternate;
+}
+
+.deco-br {
+  bottom: -20px; right: -20px; width: 240px; opacity: 0.36;
+  animation: decoSway 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes decoSway {
+  0%   { transform: rotate(-15deg) scale(1); }
+  100% { transform: rotate(-7deg)  scale(1.05); }
+}
+
+/* Corner ornaments — alternating emerald/maroon */
+.corner-ornament {
+  position: absolute; font-size: 0.80rem; pointer-events: none;
+}
+
+.corner-tl   { top: 90px;   left: 26px;  color: var(--em); opacity: 0.38; }
+.corner-tr   { top: 90px;   right: 26px; color: var(--mr); opacity: 0.32; }
+.corner-bl   { bottom: 44px; left: 26px; color: var(--mr); opacity: 0.28; }
+.corner-br-c { bottom: 44px; right: 26px; color: var(--em); opacity: 0.35; }
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 820px; padding: 0 var(--md);
+}
+
+.hero-eyebrow {
+  font-family: var(--fh); font-size: 0.92rem; font-weight: 400;
+  color: var(--text-muted); letter-spacing: 0.24em; text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.9rem, 6.8vw, 5.8rem);
+  font-weight: 800; color: var(--heading);
+  line-height: 1.0; margin-bottom: 0.7rem; letter-spacing: 0.01em;
+}
+
+.hero-meaning {
+  font-family: var(--fh); font-style: italic;
+  font-size: clamp(0.90rem,1.4vw,1.08rem);
+  color: var(--text-muted); letter-spacing: 0.08em;
+  margin-bottom: 0.9rem; opacity: 0.85;
+}
+
+/* Hero title — emerald */
+.hero-title {
+  font-size: clamp(1.05rem,2.4vw,1.42rem);
+  font-style: italic; font-weight: 400;
+  color: var(--em); letter-spacing: 0.03em;
+  margin-bottom: var(--md); margin-top: 0.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.0rem; color: var(--text-muted);
+  letter-spacing: 0.05em; line-height: 2.0; margin-bottom: var(--lg);
+}
+
+.hero-cta {
+  display: flex; gap: var(--sm);
+  justify-content: center; flex-wrap: wrap; margin-bottom: var(--md);
+}
+
+.scroll-hint {
+  position: absolute; bottom: 2.8rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; z-index: 2;
+}
+
+/* Scroll line — emerald to golden */
+.scroll-line {
+  width: 1px; height: 52px;
+  background: linear-gradient(to bottom, transparent, rgba(30,102,71,0.55));
+  animation: scrollPulse 2.2s ease-in-out infinite;
+}
+
+.scroll-label { display: none; }
+
+@keyframes scrollPulse {
+  0%,100% { opacity: 0.3; }
+  50%     { opacity: 1; }
+}
+
+
+/* =============================================================
+   10. ABOUT SECTION
+   ============================================================= */
+#about { background: var(--bg); }
+
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: var(--xl); align-items: center;
+}
+
+.about-image-wrap { position: relative; display: flex; justify-content: center; }
+
+/* Photo frame — emerald-tinted border glow */
+.about-frame-outer {
+  padding: 10px;
+  border: 1.5px solid rgba(30,102,71,0.28);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-deep) 100%);
+  box-shadow: var(--sh-card);
+  transition: box-shadow var(--ts);
+}
+
+.about-frame-outer:hover { box-shadow: var(--sh-glow); }
+
+.about-image-frame {
+  width: 290px; height: 290px;
+  border-radius: 50%; overflow: hidden; position: relative;
+  border: 2px solid rgba(30,102,71,0.22);
+  background: var(--bg-deep);
+}
+
+.profile-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block; border-radius: 50%;
+}
+
+/* Badge removed — .about-badge CSS kept here as dead code (no selector matches in HTML) */
+.about-badge { display: none; }
+
+/* About text */
+.about-text p { color: var(--text-muted); margin-bottom: var(--sm); font-size: 1.02rem; }
+.about-text strong { color: var(--heading); }
+
+/* Facts box — emerald + maroon gradient tint */
+.about-facts {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--sm); margin: var(--md) 0 var(--lg);
+  padding: var(--md) var(--lg);
+  background: linear-gradient(135deg, var(--em-pale) 0%, rgba(245,221,224,0.50) 100%);
+  border: 1px solid rgba(30,102,71,0.22);
+  border-radius: var(--r-md);
+  box-shadow: inset 0 0 0 1px rgba(30,102,71,0.06);
+}
+
+.about-facts li { display: flex; flex-direction: column; gap: 4px; }
+
+/* Facts labels — emerald */
+.about-facts strong {
+  font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--em);
+}
+
+.about-facts span { font-size: 0.96rem; color: var(--heading); }
+
+
+/* =============================================================
+   11. SKILLS SECTION
+   ============================================================= */
+#skills { background: var(--bg-alt); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: var(--md);
+}
+
+/* Skill card — glassmorphism + emerald top border */
+.skill-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(30,102,71,0.16);
+  border-radius: var(--r-md);
+  padding: var(--md) var(--lg);
+  box-shadow: var(--sh-soft);
+  position: relative; overflow: hidden;
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+  border-top: 2.5px solid rgba(30,102,71,0.42);
+}
+
+/* Bottom accent strip — maroon */
+.skill-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--em), var(--mr));
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
+.skill-card::before { display: none; }
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 52px rgba(30,102,71,0.20);
+  border-color: rgba(30,102,71,0.38);
+  border-top-color: var(--em-bright);
+}
+
+.skill-card:hover::after { opacity: 1; }
+
+.skill-icon-wrap { margin-bottom: var(--sm); display: flex; align-items: center; }
+
+/* Skill SVG — emerald */
+.skill-svg {
+  width: 28px; height: 28px;
+  color: var(--em); opacity: 0.80;
+  transition: opacity var(--t), transform var(--t), color var(--t);
+}
+
+.skill-card:hover .skill-svg { opacity: 1; transform: scale(1.10); color: var(--em-bright); }
+
+.skill-name { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.skill-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+/* Hide progress remnants */
+.progress-wrap, .progress-bar, .progress-fill, .progress-pct { display: none !important; }
+
+
+/* =============================================================
+   12. EXPERIENCE SECTION
+   ============================================================= */
+#experience { background: var(--bg); }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: var(--lg);
+}
+
+/* Experience card */
+.exp-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(30,102,71,0.16);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-card);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+
+.exp-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 20px 56px rgba(30,102,71,0.20);
+  border-color: rgba(30,102,71,0.32);
+}
+
+/* Accent top bars */
+.exp-card-accent { height: 5px; width: 100%; }
+
+/* Card 1 — emerald gradient */
+.accent-emerald {
+  background: linear-gradient(90deg, var(--em) 0%, var(--em-bright) 60%, #3a9470 100%);
+}
+
+/* Card 2 — maroon gradient */
+.accent-maroon {
+  background: linear-gradient(90deg, var(--mr) 0%, var(--mr-bright) 60%, #c04555 100%);
+}
+
+.exp-card-body { padding: var(--lg); flex: 1; display: flex; flex-direction: column; }
+
+.exp-header { display: flex; align-items: flex-start; gap: var(--md); margin-bottom: var(--md); }
+
+/* Icon wraps */
+.exp-icon-wrap {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background var(--t), transform var(--t);
+}
+
+/* Card 1 icon — emerald */
+.exp-icon-emerald {
+  background: var(--em-pale);
+  border: 1.5px solid rgba(30,102,71,0.28);
+}
+
+.exp-card:hover .exp-icon-emerald { background: rgba(30,102,71,0.16); transform: scale(1.07); }
+
+/* Card 2 icon — maroon */
+.exp-icon-maroon {
+  background: var(--mr-pale);
+  border: 1.5px solid rgba(139,37,53,0.28);
+}
+
+.exp-card:hover .exp-icon-maroon { background: rgba(139,37,53,0.14); transform: scale(1.07); }
+
+.exp-svg { width: 22px; height: 22px; opacity: 0.88; }
+.exp-svg-emerald { color: var(--em); }
+.exp-svg-maroon  { color: var(--mr); }
+
+.exp-title-block { flex: 1; }
+
+/* Duration pills */
+.exp-duration {
+  display: inline-block; font-family: var(--fh);
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  border-radius: 99px; padding: 3px 12px; margin-bottom: 0.5rem;
+}
+
+.exp-duration-emerald {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.26);
+}
+
+.exp-duration-maroon {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.26);
+}
+
+.exp-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
+.exp-org { font-style: italic; font-size: 0.95rem; color: var(--text-muted); }
+
+/* Dividers inside cards */
+.exp-divider { height: 1px; margin: 0 0 var(--md); }
+.exp-divider-emerald { background: linear-gradient(to right, var(--em-pale), rgba(30,102,71,0.14), var(--em-pale)); }
+.exp-divider-maroon  { background: linear-gradient(to right, var(--mr-pale), rgba(139,37,53,0.14), var(--mr-pale)); }
+
+.exp-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.88; margin-bottom: var(--md); flex: 1; }
+.exp-desc strong { color: var(--heading); }
+
+/* Tag pills */
+.exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--md); }
+
+.exp-tags li {
+  font-family: var(--fh); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  border-radius: 99px; padding: 3px 12px;
+  transition: background var(--t), color var(--t), border-color var(--t);
+}
+
+.exp-tags-emerald li {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.24);
+}
+
+.exp-tags-emerald li:hover { background: var(--em); color: #f9f3e8; border-color: var(--em); }
+
+.exp-tags-maroon li {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.24);
+}
+
+.exp-tags-maroon li:hover { background: var(--mr); color: #f9f3e8; border-color: var(--mr); }
+
+/* Blockquote borders */
+.exp-quote {
+  font-family: var(--fh); font-style: italic; font-size: 0.93rem;
+  color: var(--text-muted); padding-left: var(--sm); margin-top: auto; line-height: 1.72;
+}
+
+.exp-quote-emerald { border-left: 2.5px solid rgba(30,102,71,0.42); }
+.exp-quote-maroon  { border-left: 2.5px solid rgba(139,37,53,0.42); }
+
+
+/* =============================================================
+   13. ACHIEVEMENTS SECTION
+   ============================================================= */
+#achievements { background: var(--bg-warm); }
+
+.achievements-layout { display: flex; gap: var(--lg); align-items: flex-start; }
+.achievement-era { flex: 1; }
+.era-header { margin-bottom: var(--md); }
+
+/* Era badge — alternating: first era emerald, second maroon handled via sibling rule */
+.era-badge {
+  display: inline-block; font-family: var(--fh);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.4rem 1.2rem; border-radius: 99px;
+}
+
+.achievement-era:first-child .era-badge {
+  color: var(--em); background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.30);
+}
+
+.achievement-era:last-child .era-badge {
+  color: var(--mr); background: var(--mr-pale);
+  border: 1px solid rgba(139,37,53,0.30);
+}
+
+/* Era divider — golden */
+.era-divider {
+  font-size: 0.7rem; color: rgba(107,76,42,0.40);
+  padding-top: 3.5rem; writing-mode: vertical-rl; letter-spacing: 1.2rem;
+  align-self: stretch; display: flex; align-items: flex-start; justify-content: center;
+}
+
+.achievement-list { display: flex; flex-direction: column; gap: var(--md); }
+
+/* Achievement items — glassmorphism */
+.achievement-item {
+  display: flex; gap: var(--sm); align-items: flex-start;
+  padding: var(--sm) var(--md);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(30,102,71,0.15);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-soft);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+
+.achievement-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 32px rgba(30,102,71,0.16);
+  border-color: rgba(30,102,71,0.32);
+}
+
+/* Achievement icons — alternating per era */
+.ach-icon-svg {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; opacity: 0.80;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+.ach-icon-svg svg { width: 100%; height: 100%; }
+.ach-icon { display: none; }
+
+.achievement-era:first-child .ach-icon-svg { color: var(--em); }
+.achievement-era:last-child  .ach-icon-svg { color: var(--mr); }
+
+.achievement-item strong {
+  display: block; font-family: var(--fh);
+  font-size: 1.02rem; color: var(--heading); margin-bottom: 4px;
+}
+
+.achievement-item p { font-size: 0.90rem; color: var(--text-muted); line-height: 1.68; }
+
+
+/* =============================================================
+   14. EDUCATION TIMELINE
+   ============================================================= */
+#education { background: var(--bg-alt); }
+
+.timeline { position: relative; margin-top: var(--md); padding-left: 2.9rem; }
+
+/* Timeline line — emerald to maroon gradient */
+.timeline::before {
+  content: '';
+  position: absolute; left: 11px; top: 14px; bottom: 14px; width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(30,102,71,0.22),
+    rgba(30,102,71,0.55) 40%,
+    rgba(139,37,53,0.45) 70%,
+    rgba(139,37,53,0.18)
+  );
+}
+
+.timeline-node {
+  position: relative; margin-bottom: var(--lg);
+  display: flex; align-items: flex-start; gap: var(--md);
+}
+
+.timeline-node:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute; left: -2.9rem; top: 14px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg-alt); border: 2px solid rgba(30,102,71,0.30);
+  z-index: 1;
+  transition: background var(--t), border-color var(--t), transform var(--t);
+}
+
+.timeline-node:hover .timeline-dot {
+  transform: scale(1.28);
+  border-color: var(--em);
+  background: var(--em-pale);
+}
+
+/* Active dot — emerald */
+.dot-active {
+  background: var(--em) !important;
+  border-color: var(--em) !important;
+  box-shadow: 0 0 0 5px rgba(30,102,71,0.20);
+}
+
+/* Timeline cards — glassmorphism */
+.timeline-card {
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(30,102,71,0.14);
+  border-left: 3px solid rgba(30,102,71,0.28);
+  border-radius: var(--r-md);
+  padding: var(--md) var(--lg);
+  box-shadow: var(--sh-soft);
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t), border-left-color var(--t);
+}
+
+.timeline-card:hover {
+  box-shadow: 0 10px 36px rgba(30,102,71,0.16);
+  transform: translateX(5px);
+  border-left-color: var(--em);
+}
+
+.highlight-card { border-left-color: rgba(30,102,71,0.48); }
+
+/* Active card — emerald pale wash */
+.active-card {
+  border-left-color: var(--em);
+  border-left-width: 4px;
+  background: linear-gradient(135deg, rgba(223,240,232,0.80) 0%, rgba(250,245,235,0.88) 100%);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--sh-card), inset 0 0 0 1px rgba(30,102,71,0.10);
+}
+
+.active-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;
+}
+
+/* Timeline year — emerald */
+.timeline-year {
+  font-family: var(--fh); font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--em); display: block; margin-bottom: 0.45rem;
+}
+
+.active-card-header .timeline-year { margin-bottom: 0; }
+.active-year { color: var(--em); }
+
+.timeline-title { font-size: 1.14rem; margin-bottom: 0.38rem; }
+.timeline-place { font-style: italic; font-size: 0.93rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.timeline-detail { font-size: 0.91rem; color: var(--text-muted); line-height: 1.72; }
+.timeline-detail strong { color: var(--heading); }
+
+/* Active badge — maroon (contrasting accent on emerald card) */
+.active-badge {
+  display: inline-flex; align-items: center;
+  font-family: var(--fh); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #f9f3e8;
+  background: linear-gradient(135deg, var(--mr) 0%, var(--mr-bright) 100%);
+  padding: 3px 14px; border-radius: 99px; white-space: nowrap;
+  box-shadow: 0 3px 12px rgba(139,37,53,0.35);
+}
+
+
+/* =============================================================
+   15. CONTACT SECTION
+   ============================================================= */
+#contact { background: var(--bg); }
+
+.contact-layout { display: flex; gap: var(--xl); align-items: flex-start; }
+.contact-info { flex: 1; }
+
+.contact-intro { color: var(--text-muted); font-size: 1.0rem; line-height: 1.92; margin-bottom: var(--lg); }
+
+.contact-details { display: flex; flex-direction: column; gap: var(--md); margin-bottom: var(--lg); }
+
+.contact-details li {
+  display: flex; align-items: flex-start; gap: var(--sm); font-size: 0.96rem;
+  transition: transform var(--t);
+}
+
+.contact-details li:hover { transform: translateX(5px); }
+
+/* Contact icon circles — emerald */
+.contact-icon-svg {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--em-pale);
+  border: 1px solid rgba(30,102,71,0.26);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+  transition: background var(--t), border-color var(--t);
+}
+
+.contact-details li:hover .contact-icon-svg {
+  background: rgba(30,102,71,0.18);
+  border-color: rgba(30,102,71,0.36);
+}
+
+.contact-icon-svg svg { width: 15px; height: 15px; color: var(--em); opacity: 0.88; }
+.contact-icon { display: none; }
+
+/* Contact labels — emerald */
+.contact-details strong {
+  display: block; font-family: var(--fh);
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--em); margin-bottom: 1px;
+}
+
+.contact-details span, .contact-link { color: var(--text-muted); font-size: 0.93rem; word-break: break-all; }
+.contact-link { transition: color var(--t); }
+.contact-link:hover { color: var(--em); }
+
+/* Contact form — glassmorphism */
+.contact-form-wrap {
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(30,102,71,0.18);
+  border-radius: var(--r-lg);
+  padding: var(--lg); box-shadow: var(--sh-card);
+  transition: box-shadow var(--ts);
+}
+
+.contact-form-wrap:hover { box-shadow: 0 20px 56px rgba(30,102,71,0.20); }
+
+.form-group { display: flex; flex-direction: column; gap: 0.48rem; margin-bottom: var(--md); }
+
+/* Form labels — emerald */
+.form-group label {
+  font-family: var(--fh); font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--em);
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 0.85rem 1.15rem;
+  background: rgba(249,243,232,0.80);
+  border: 1px solid rgba(30,102,71,0.20);
+  border-radius: var(--r-sm); color: var(--text);
+  font-family: var(--fb); font-size: 1.0rem; outline: none;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--em);
+  box-shadow: 0 0 0 3px var(--em-glow-soft);
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(106,84,64,0.50); }
+.contact-form textarea { resize: vertical; min-height: 140px; }
+
+
+/* =============================================================
+   16. FOOTER
+   ============================================================= */
+#footer {
+  border-top: 1px solid rgba(30,102,71,0.18);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #d8c090 100%);
+}
+
+#footer::before { display: none; }
+
+.footer-inner {
+  position: relative; z-index: 1;
+  max-width: 1080px; margin: 0 auto;
+  padding: var(--lg) var(--md);
+  display: flex; flex-direction: column;
+  align-items: center; gap: var(--xs); text-align: center;
+}
+
+/* Footer logo — emerald */
+.footer-logo {
+  font-family: var(--fh); font-size: 1.6rem; font-weight: 700;
+  color: var(--em); letter-spacing: 0.06em; margin-bottom: 0.2rem;
+}
+
+.footer-meaning {
+  font-family: var(--fh); font-style: italic; font-size: 0.92rem;
+  color: var(--text-muted); letter-spacing: 0.06em; opacity: 0.82; margin-bottom: 0.3rem;
+}
+
+.footer-copy { font-family: var(--fh); font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.06em; }
+
+.footer-nav {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  justify-content: center; margin-top: var(--sm);
+}
+
+.footer-nav a {
+  font-family: var(--fh); font-size: 0.76rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); transition: color var(--t);
+}
+
+/* Alternating hover — emerald first half, maroon second */
+.footer-nav a:hover { color: var(--em); }
+
+.footer-rule { width: 100%; margin-bottom: var(--md); }
+.footer-rule .rule-line { width: 120px; }
+
+
+/* =============================================================
+   17. MEDIA QUERIES (unchanged)
+   ============================================================= */
+
+@media (max-width: 920px) {
+  html, body, a, button { cursor: auto; }
+  #cursor-dot, #cursor-halo { display: none; }
+
+  .about-grid { grid-template-columns: 1fr; text-align: center; }
+  .about-image-wrap { justify-content: center; }
+  .about-facts { margin: var(--md) auto var(--lg); }
+
+  .experience-grid { grid-template-columns: 1fr; }
+
+  .achievements-layout { flex-direction: column; }
+  .era-divider { display: none; }
+
+  .contact-layout { flex-direction: column; }
+  .contact-info, .contact-form-wrap { width: 100%; flex: none; }
+
+  .nav-links { gap: 1.4rem; }
+  .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display: none; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1.05rem; }
+
+  .nav-links { gap: var(--xs); }
+  .nav-links a { font-size: 0.72rem; letter-spacing: 0.07em; }
+  .nav-links li:nth-child(4), .nav-links li:nth-child(5),
+  .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display: none; }
+
+  .hero-tagline { font-size: 0.94rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; text-align: center; }
+
+  .about-facts { grid-template-columns: 1fr; }
+  .about-image-frame { width: 220px; height: 220px; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .timeline { padding-left: 2rem; }
+  .section-inner { padding: var(--xl) var(--sm); }
+  .contact-form-wrap { padding: var(--md); }
+  .exp-card-body { padding: var(--md); }
+  .exp-header { flex-direction: column; align-items: flex-start; }
+  .active-card-header { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 380px) {
+  .footer-nav { gap: var(--sm); }
+  .nav-logo { font-size: 1.15rem; }
+}
